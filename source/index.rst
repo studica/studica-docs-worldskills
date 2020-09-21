@@ -1,7 +1,7 @@
 Studica Robotics
 ================
 
-Welcome to the Studica Robotics documentation page. Here you will find lots of information and tutorials regarding WorldSkills and FIRST Training.
+Welcome to the Studica Robotics documentation page. Here you will find lots of information and tutorials regarding WorldSkills.
 
 .. toctree::
    :maxdepth: 1
@@ -11,15 +11,6 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/WorldSkills/robotics-and-control-systems/index
    docs/WorldSkills/programming/index
    docs/WorldSkills/troubleshooting
-
-.. toctree::
-   :maxdepth: 1
-   :caption: FRC Training
-   
-   docs/FRCTraining/software-setup/index
-   docs/FRCTraining/robotics-and-control-systems/index
-   docs/FRCTraining/programming/index
-   docs/FRCTraining/troubleshooting
    
 .. toctree::
    :maxdepth: 1
@@ -59,5 +50,5 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    :maxdepth: 1
    :caption: Issues
    
-   Report an Issue <https://github.com/studica/studica-docs/issues>
+   Report an Issue <https://github.com/studica/studica-docs-worldskills/issues>
    
