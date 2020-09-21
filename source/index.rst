@@ -30,6 +30,35 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/Titan/using-the-update-app
    docs/Titan/titan-status-light
    docs/Titan/troubleshooting
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Sensors
+   
+   docs/Sensors/cobra
+   docs/Sensors/ultrasonic
+   docs/Sensors/sharpIR
+   docs/Sensors/limit-switches
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: SR Pro Camera
+   
+   docs/SRProCamera/sr-pro-camera
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Motors
+   
+   docs/Motors/servo-motors
+   docs/Motors/maverick-dc-motor 
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Servo Control
+   
+   docs/Servo/servo-power-block
+   docs/Servo/servo-smart-programmer 
    
 .. toctree::
    :maxdepth: 1
