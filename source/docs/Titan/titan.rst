@@ -74,7 +74,7 @@ Electrical Characteristics
       - 14VDC
    *  - Motor Output Amperage
       - 0A
-      - 
+      - ---
       - 20A
    *  - Motor Frequency
       - 0Hz
@@ -94,6 +94,6 @@ Electrical Characteristics
       - 5.5V
    *  - LED Output Amperage
       - 0A
-      - 
+      - ---
       - 6A
       

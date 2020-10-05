@@ -1,7 +1,7 @@
 Servo Motors
 ============
 
-The collection now has a Multi-Mode Smart Servo included. The new servo will replace the old servos and provide more functionality than before. The multi-mode servo allows for continuous and standard operation of the servo motor. In continuous mode, the servo will spin proportionally based on input in the CW or CCW direction. The max speed the servo will spin is 72rpm. In standard mode, the servo will act as a regular servo and have a range of motion of 300°. That is 150° CW and 150° CCW.
+The collection now has a Multi-Mode Smart Servo included. The new servo will replace the old servos and provide more functionality than before. The multi-mode servo allows for continuous and standard operation of the servo motor. In continuous mode, the servo will spin proportionally based on input in the CW or CCW direction. The max speed the servo will spin is 50rpm. In standard mode, the servo will act as a regular servo and have a range of motion of 300°. That is 150° CW and 150° CCW.
 
 .. figure:: images/servo-motor-1.jpg
     :align: center
@@ -23,13 +23,13 @@ Servo Specs
     * - Gear Type
       - Steel 
     * - Bearing
-      - 2 Ball Bearings
+      - Dual Ball Bearings
     * - Spline
       - 25T
     * - Case
       - Nylon & Fiberglass
     * - Connector Wire
-      - 300mm ± 5mm (White, Red, Black)
+      - 750mm ± 5mm (White, Red, Black)
     * - Motor
       - Metal Brush Motor
     * - Water Resistance
@@ -54,7 +54,7 @@ Servo Specs
       - 150mA
     * - Stall Torque
       - 180.85oz-in 
-      - 215.6oz-in 
+      - 300oz-in 
     * - Stall Current
       - 1500mA
       - 1800mA
