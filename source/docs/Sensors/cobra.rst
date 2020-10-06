@@ -48,10 +48,13 @@ Programming the Cobra
         .. code-block:: java
             :linenos:
 
+            //import the Cobra Library
             import com.studica.frc.Cobra;
 
+            //Create the Cobra Object
             private Cobra cobra;
 
+            //Constuct a new instance
             cobra = new Cobra();
             // or if sensor is using 3.3V
             cobra = new Cobra(3.3F);
@@ -64,27 +67,21 @@ Programming the Cobra
 
     .. tab:: C++
 
-        **Header**
-
         .. code-block:: c++
             :linenos:
 
-            #include "Cobra.h"
+            //Include the Cobra Library
+            #include "studica/Cobra.h"
 
-            private:
-                Cobra cobra(void);
-                //or if sensor is using 3.3V
-                Cobra cobra(3.3F);
-        
-        **CPP**
-
-        .. code-block:: c++
-            :linenos:
+            //Constructors
+            studica::Cobra cobra{};
+            // or if sensor is using 3.3V
+            studica::Cobra cobra{3.3F}; 
 
             //Use these to access data
-            cobra.getVoltage(channel); //returns a float
-            cobra.getRawValue(channel); //returns a double
+            cobra.GetVoltage(channel); //returns a float
+            cobra.GetRawValue(channel); //returns a double
 
-        The accessor methods will output either the voltage (0 - 5V) or the raw ADC value (0 - 2047).
+        The accessor functions will output either the voltage (0 - 5V) or the raw ADC value (0 - 2047).
 
 

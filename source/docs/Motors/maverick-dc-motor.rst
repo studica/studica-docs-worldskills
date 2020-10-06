@@ -66,3 +66,9 @@ Motor Specs
       - ---
       - 6mA 
       - ---
+    * - Encoder CPR
+      - ---
+      - 12
+      - ---
+
+.. note:: With a CPR of ``12`` and a gear ratio of ``1:61`` the encoder counts per revolution on the output shaft will be :math:`\begin{equation}12*61 = 732\end{equation}`
