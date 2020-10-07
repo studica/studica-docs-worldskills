@@ -11,13 +11,15 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/WorldSkills/robotics-and-control-systems/index
    docs/WorldSkills/programming/index
    docs/WorldSkills/troubleshooting
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: VMX
-   
+
    docs/VMX/setup
+   docs/VMX/wpi-channel-addressing
    docs/VMX/vision
+   docs/VMX/navx
    docs/VMX/update
    docs/VMX/troubleshooting
    
