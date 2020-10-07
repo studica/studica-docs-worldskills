@@ -5,17 +5,28 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
 
 .. toctree::
    :maxdepth: 1
-   :caption: WorldSkills
+   :caption: Getting Started
 
-   docs/WorldSkills/software-setup/index
-   docs/WorldSkills/robotics-and-control-systems/index
-   docs/WorldSkills/programming/index
-   docs/WorldSkills/troubleshooting
+   docs/GettingStarted/index.rst
 
 .. toctree::
    :maxdepth: 1
-   :caption: VMX
+   :caption: Software
 
+   docs/Software/software-setup/index
+   docs/Software/programming/index
+   docs/Software/troubleshooting
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Building System
+
+   docs/BuildingSystem/robotics-and-control-systems/index
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: VMX-pi
+   
    docs/VMX/setup
    docs/VMX/wpi-channel-addressing
    docs/VMX/vision
@@ -44,9 +55,9 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    
 .. toctree::
    :maxdepth: 1
-   :caption: SR Pro Camera
+   :caption: Vision
    
-   docs/SRProCamera/sr-pro-camera
+   docs/Vision/sr-pro-camera
    
 .. toctree::
    :maxdepth: 1
