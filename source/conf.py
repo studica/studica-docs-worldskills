@@ -66,7 +66,7 @@ html_favicon = "assets/Studica_Favicon.ico"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
 
 html_theme_options = {
         'collapse_navigation': True,
@@ -81,5 +81,5 @@ StandaloneHTMLBuilder.supported_image_types = [
     'image/jpg'
 ]
 
-def setup(app):
-    app.add_css_file('css/studica-rtd.css')
+#def setup(app):
+    #app.add_css_file('css/studica-rtd.css')
