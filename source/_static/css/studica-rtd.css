@@ -34,6 +34,7 @@
 /* Change caption color to be more legible */
 .wy-menu > .caption > span.caption-text {
    color: #F7E341;
+   font-size: 20px;
 }
 
 /* Change the version color to match caption color */

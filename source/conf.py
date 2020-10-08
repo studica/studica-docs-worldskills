@@ -34,8 +34,13 @@ release = '0.0.1'
 extensions = [
     'sphinx_tabs.tabs',
     'sphinx_rtd_theme',
+    'sphinx.ext.intersphinx',
     'notfound.extension'
 ]
+
+intersphinx_mapping = {
+    
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
