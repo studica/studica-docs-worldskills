@@ -25,7 +25,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    
 .. toctree::
    :maxdepth: 1
-   :caption: VMX-pi
+   :caption: VMX
    
    docs/VMX/setup
    docs/VMX/wpi-channel-addressing

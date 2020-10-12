@@ -1,18 +1,18 @@
 .. _vmx-electrical-wiring:
 
-Connecting Sensors and Actuators to VMX-pi
-==========================================
-The VMX-pi Robotics Controller provides a large number of electrical power and signal "pins" which connect to external devices including Sensors and Actuators.
+Connecting Sensors and Actuators
+================================
+The VMX Robotics Controller provides a large number of electrical power and signal "pins" which connect to external devices including Sensors and Actuators.
 
-.. note:: This summary of VMX-pi IO configuration is sufficient for most robot Programming uses; more detailed information is available in the `VMX-pi Hardware Reference Manual <https://pdocs.kauailabs.com/vmx-pi/intro/hardware-reference-manual/>`__.
+.. note:: This summary of VMX IO configuration is sufficient for most robot Programming uses; more detailed information is available in the `Hardware Reference Manual <https://pdocs.kauailabs.com/vmx-pi/intro/hardware-reference-manual/>`__.
 
 .. figure:: images/Enclosure_Top_Trimmed.jpg
    :align: center
    :width: 500
 
-   VMX-pi Connector Blocks
+   VMX Connector Blocks
 
-VMX-pi provides several different Connector Blocks.
+VMX provides several different Connector Blocks.
 
 =======================      ===========================  ================
   Connector Block                Connector Type           Location on VMX

@@ -1,7 +1,7 @@
 WPI Channel Addressing
 ======================
 
-When programming a robot application using the WPI Library, logical *WPI Channel Numbers* are used; these WPI Channel Numbers are different than the *VMX-pi Pin Numbers* described in :ref:`vmx-electrical-wiring`.
+When programming a robot application using the WPI Library, logical *WPI Channel Numbers* are used; these WPI Channel Numbers are different than the *VMX Pin Numbers* described in :ref:`vmx-electrical-wiring`.
 
 .. important:: *WPI Channel Addressing is impacted by whether the High-Current DIO Direction Selection Jumper is set to OUTPUT or INPUT.*
 
@@ -9,11 +9,11 @@ Similarly, WPI Channel Identifiers are also used to address Digital Communicatio
 
 High Current DIO Header OUTPUT DIRECTION (Default)
 --------------------------------------------------
-When the VMX-pi High Current DIO Direction is set to OUTPUT, the various WPI Library Channel types (Analog Input, PWM, Relay, Digital IO) must be addressed as described in this section.
+When the VMX High Current DIO Direction is set to OUTPUT, the various WPI Library Channel types (Analog Input, PWM, Relay, Digital IO) must be addressed as described in this section.
 
 Analog Input Channel Addressing
 *******************************
-Four (4) Pins on VMX-pi's Analog Input Header are addressable via four (4) WPI Library Analog Input Channel Addresses.
+Four (4) Pins on the VMX Analog Input Header are addressable via four (4) WPI Library Analog Input Channel Addresses.
 
 .. figure:: images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_WPIChannels_ANIN.jpg
    :align: center
@@ -23,7 +23,7 @@ Four (4) Pins on VMX-pi's Analog Input Header are addressable via four (4) WPI L
 
 PWM Channel Addressing
 **********************
-28 VMX-pi pins are usable for PWM and are addressable via 28 WPI Library PWM Channel Addresses.
+28 VMX pins are usable for PWM and are addressable via 28 WPI Library PWM Channel Addresses.
 
 .. figure:: images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_WPIChannels_PWM.jpg
    :align: center
@@ -41,7 +41,7 @@ PWM Channel Addressing
 
 Digital I/O (DIO) Channel Addressing
 ************************************
-30 VMX-pi pins are usable for Digital I/O Channels and are addressable via 30 WPI Libray DIO Channel Addresses.
+30 VMX pins are usable for Digital I/O Channels and are addressable via 30 WPI Libray DIO Channel Addresses.
 
 .. note:: All FlexDIO pins are direction-selectable in software.
 
@@ -63,7 +63,7 @@ Digital I/O (DIO) Channel Addressing
 
 Relay Channel Addressing
 ************************
-8 pins on VMX-pi's High Current DIO Header are usable as 4 Relay Channel pairs – each with a forward direction pin and a reverse direction pin – and are addressable via 4 WPI Library Relay Channel Addresses.
+8 pins on the VMX High Current DIO Header are usable as 4 Relay Channel pairs – each with a forward direction pin and a reverse direction pin – and are addressable via 4 WPI Library Relay Channel Addresses.
 
 .. figure:: images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_WPIChannels_Relays.jpg
    :align: center
@@ -107,7 +107,7 @@ DI 10 & 11                  kTwoPulse [1]_, kSemiPeriod
 
 .. [1] kTwoPulse mode using two separate input signals (e.g., one “Up” input signal and a separate “Down” input signal) are not supported. However, a single input configured as both “Up” and “Down” is supported.
 
-.. note:: kPulseLength mode is not supported on any VMX-pi Counter. By extension, this implies that the “Direction Sensitive” mode of the WPI Library’s “Geartooth” class is not supported on VMX-pi.
+.. note:: kPulseLength mode is not supported on any VMX Counter. By extension, this implies that the “Direction Sensitive” mode of the WPI Library’s “Geartooth” class is not supported.
 
 .. note:: If configuring a counter to use one input channel (e.g., kTwoPulse or kSemiPeriod modes), the unused input channel in that Counter’s Channel Pair may be configured in software for other uses (including Digital Input, Interrupt, Digital Output), although it may not be configured for PWM Generation or PWM Capture.
 
@@ -130,7 +130,7 @@ WPI Library Digital IO Channels on the HiCurrDIO Header are in *INPUT MODE ONLY*
 
 Digital Communication Port Addressing
 -------------------------------------
-VMX-pi provides several different types of Digital Communications Ports:
+VMX provides several different types of Digital Communications Ports:
 
 - Serial Ports
 - I2C Port
@@ -145,13 +145,13 @@ The WPI Library *SerialPort* class includes Serial Port Identifiers, as follows:
 Serial Port Identifier      Type             Notes
 ==========================  ===============  =============================================
 kOnboard                    RS-232 Port      Not implemented on VMX
-kMXP                        TTL UART         VMX-pi CommDIO "UART" Connector 
+kMXP                        TTL UART         VMX CommDIO "UART" Connector 
 kUSB                        USB Serial Port  Raspberry Pi "top-left" USB port; aka 'kUSB1'
 kUSB1                       USB Serial Port  Raspberry Pi "top left" USB port
 kUSB2                       USB Serial Port  Raspberry Pi "bottom left" USB port
 ==========================  ===============  =============================================
  
-.. note:: As can be seen in the table above, both kUSB and kUSB1 identifiers map to the same physical connector, and thus cannot be used simultaneously on VMX-pi.
+.. note:: As can be seen in the table above, both kUSB and kUSB1 identifiers map to the same physical connector, and thus cannot be used simultaneously.
 
 The Raspberry Pi 4 provides multiple USB Ports which support the USB Serial Port standard; the WPI Serial Port Identifiers which are mapped to these USB Ports are shown below:
 
@@ -163,7 +163,7 @@ The Raspberry Pi 4 provides multiple USB Ports which support the USB Serial Port
 
 TTL UART Communication Speeds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Available TTL UART Communication speeds can be as high as 230400 bits/sec. Note that the TTL UART-capable device to which VMX-pi is connected may only communicate at a lower speed than 230400 kbps; consult the external device technical documentation for further details.
+Available TTL UART Communication speeds can be as high as 230400 bits/sec. Note that the TTL UART-capable device connected to VMX may only communicate at a lower speed than 230400 kbps; consult the external device technical documentation for further details.
 
 USB Serial Port Communication Speeds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,45 +172,45 @@ USB Serial Port Communication Speeds can be much higher than TTL UART Communicat
 I2C Port
 ********
 
-VMX-pi provides one I2C port.
+VMX provides one I2C port.
 
 The WPI Library *I2C* class includes two (2) I2C Port identifiers, as follows:
 
 ==========================  =================  =============================================
 Serial Port Identifier      Type               Notes
 ==========================  =================  =============================================
-kOnboard                    I2C Fast Mode[2]_  VMX-pi CommDIO “I2C” Connector
-kMXP                        I2C Fast Mode[2]_  VMX-pi CommDIO “I2C” Connector 
+kOnboard                    I2C Fast Mode[2]_  VMX CommDIO “I2C” Connector
+kMXP                        I2C Fast Mode[2]_  VMX CommDIO “I2C” Connector 
 ==========================  =================  =============================================
 
 .. [2] See I2C Communication Speeds section below.
 
-.. note:: As can be seen in the table above, both kOnboard and kMXP identifiers map to the same physical connector, and thus cannot be used simultaneously on VMX-pi.
+.. note:: As can be seen in the table above, both kOnboard and kMXP identifiers map to the same physical connector, and thus cannot be used simultaneously.
 
 .. note:: The Raspberry Pi 4B supports I2C clock-stretching, however previous versions of Raspberry Pi do not. If the I2C device accessed requires I2C clock stretching, Raspberry Pi 4B is required.
 
 I2C Communication Speeds
 ~~~~~~~~~~~~~~~~~~~~~~~~
-By default, the Raspberry Pi I2C bus speed is 100Khz (“Standard Mode”). To change the bus speed to 400Khz (Fast Mode) follow `these I2C bus speed configuration instructions <https://www.raspberrypi-spy.co.uk/2018/02/change-raspberry-pi-i2c-bus-speed/>`_. Note that the I2C-capable device to which VMX-pi is connected may only communicate at a lower speed than 400Khz; consult the external device technical documentation for further details.
+By default, the Raspberry Pi I2C bus speed is 100Khz (“Standard Mode”). To change the bus speed to 400Khz (Fast Mode) follow `these I2C bus speed configuration instructions <https://www.raspberrypi-spy.co.uk/2018/02/change-raspberry-pi-i2c-bus-speed/>`_. Note that the I2C-capable device connected to VMX may only communicate at a lower speed than 400Khz; consult the external device technical documentation for further details.
 
 SPI Port
 ********
 
-VMX-pi provides one SPI port.
+VMX provides one SPI port.
 
 The WPI Library “SPI” class includes five (5) SPI Port identifiers, as follows:
 
 ==========================  =================  =============================================
 Serial Port Identifier      Type               Notes
 ==========================  =================  =============================================
-kOnboardCS0                 4-wire SPI         VMX-pi CommDIO “SPI” Connector
-kOnboardCS1                 4-wire SPI         VMX-pi CommDIO “SPI” Connector
-kOnboardCS2                 4-wire SPI         VMX-pi CommDIO “SPI” Connector
-kOnboardCS3                 4-wire SPI         VMX-pi CommDIO “SPI” Connector
-kMXP                        4-wire SPI         VMX-pi CommDIO “SPI” Connector
+kOnboardCS0                 4-wire SPI         VMX CommDIO “SPI” Connector
+kOnboardCS1                 4-wire SPI         VMX CommDIO “SPI” Connector
+kOnboardCS2                 4-wire SPI         VMX CommDIO “SPI” Connector
+kOnboardCS3                 4-wire SPI         VMX CommDIO “SPI” Connector
+kMXP                        4-wire SPI         VMX CommDIO “SPI” Connector
 ==========================  =================  =============================================
 
-.. note:: As can be seen in the table above, each kOnboardx and kMXP identifiers map to the same physical connector, and thus cannot be used simultaneously on VMX-pi.
+.. note:: As can be seen in the table above, each kOnboardx and kMXP identifiers map to the same physical connector, and thus cannot be used simultaneously.
 
 SPI Communication Speeds
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,6 +218,6 @@ The Raspberry pi supports a wide range of SPI speeds.
 
 By default, the WPI Library SPI class defaults to 500Khz, but this can be increased as necessary.
 
-Although higher speeds are theoretically possible, 16Mhz is considered a safe maximum speed, and lower is recommended due since very fast signals can be easily degraded. Note that the SPI-capable device to which VMX-pi is connected may only communicate at a lower speed than 16Mhz; consult the external device technical documentation for further details.
+Although higher speeds are theoretically possible, 16Mhz is considered a safe maximum speed, and lower is recommended due since very fast signals can be easily degraded. Note that the SPI-capable device connected to VMX may only communicate at a lower speed than 16Mhz; consult the external device technical documentation for further details.
 
 Note that the actual speed may not match the requested speed; more information on the actual speeds is contained within the `Raspberry Pi SPI Documentation <https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md>`_.
