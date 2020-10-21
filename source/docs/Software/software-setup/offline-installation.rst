@@ -209,7 +209,7 @@ Offline Installer
       
       **Vulkan Installation**
       
-      .. note:: This section needs to be created for offline use.
+         For the simulation GUI to run, Vulkan is required. To install Vulkan there is a ``libvulkan1_1.2.131.2-1_amd64.deb`` file located in the Linux folder on the USB. Right click on the file and select ``Open With Other Application`` and chose ``Software Install``. This will then bring up the software install screen where you will hit ``Install``, and the driver will then proceed to install. 
       
       **What was just Installed**
       
