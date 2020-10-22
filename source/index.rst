@@ -58,6 +58,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    :caption: Vision
    
    docs/Vision/sr-pro-camera
+   docs/Vision/installing-the-ribbon-cable
    
 .. toctree::
    :maxdepth: 1
