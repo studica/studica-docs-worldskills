@@ -104,3 +104,86 @@ Servo Specs
       - 25°C ± 5°C
     * - Humidity
       - 65% ± 10%
+
+Programming
+-----------
+
+Standard Servo
+^^^^^^^^^^^^^^
+
+.. tabs::
+   
+    .. tab:: Java
+
+        .. code-block:: java
+            :linenos:
+
+            //import the Servo Library
+            import com.studica.frc.Servo;
+
+            //Create the Servo Object
+            private Servo servo;
+
+            //Constuct a new instance
+            servo = new Servo(port);
+
+            //Can then use this mutator to set the servo angle
+            servo.setAngle(degrees); //Range 0° - 300°
+    
+        The mutator method will allow you to set the angle of the servo
+
+    .. tab:: C++
+
+        .. code-block:: c++
+            :linenos:
+
+            //Include the Servo Library
+            #include "studica/Servo.h"
+
+            //Constructor
+            studica::Servo servo{port};
+
+            //Use this function to set the servo angle
+            servo.SetAngle(degrees); //Range 0° - 300°
+
+        The function will allow you to set the angle of the servo
+
+Continuous Servo
+^^^^^^^^^^^^^^^^
+
+.. tabs::
+   
+    .. tab:: Java
+
+        .. code-block:: java
+            :linenos:
+
+            //import the Servo Continuous Library
+            import com.studica.frc.ServoContinous;
+
+            //Create the Servo Continuous Object
+            private ServoContinous servo;
+
+            //Constuct a new instance
+            servo = new ServoContinuous(port);
+
+            //Can then use this mutator to set the servo speed
+            servo.set(speed); //Range -1 - 1 (0 Stop)
+    
+        The mutator method will allow you to set the speed of the servo
+
+    .. tab:: C++
+
+        .. code-block:: c++
+            :linenos:
+
+            //Include the Servo Library
+            #include "studica/ServoContinuous.h"
+
+            //Constructor
+            studica::ServoContinuous servo{port};
+
+            //Use this function to set the servo angle
+            servo.Set(speed); //Range -1 - 1 (0 Stop)
+
+        The function will allow you to set the speed of the servo

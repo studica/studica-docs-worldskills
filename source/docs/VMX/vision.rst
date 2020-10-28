@@ -70,7 +70,8 @@ Note that in the script code below, the "0" parameter to the cv2.VideoCapture() 
 
 Since both OpenCV and Python are pre-installed on the VMX Robotics Controller SD-Card, no other software must be installed to run the following script:
 
-::
+.. code-block:: python
+    :linenos:
 
     import numpy as np
     import cv2
