@@ -46,3 +46,26 @@ There are four commands in the extension palette.
 -  ``Verify the Project's build.grade file`` checks if everything is good to go with the file
 
 To switch the project over for the VMXpi, the command ``Change the deploy target to VMX-Pi (from RoboRIO)`` needs to be run. After running, it will auto rebuild the project and cache any libraries that are missing. 
+
+Installing the Raspbain Toolchain (c++ only)
+--------------------------------------------
+
+For c++ the Raspbian Toolchain is required for building and deploying to the VMX-pi.
+
+Option 1
+^^^^^^^^
+
+The first option is to use the VMX-pi Extension. Open the extension and use the command ``Change the deploy target to VMX-pi (from RoboRIO)``. This process will then install a bunch of files including the toolchain. 
+
+Option 2
+^^^^^^^^
+
+The second option is to download toolchain manually. Open the WPILib extension and use the run a command in gradle command.
+
+.. figure:: images/configuring-the-project-for-vmxpi-6.png
+   :align: center
+
+In the window then use the command ``installRaspbianToolchain``
+
+.. figure:: images/configuring-the-project-for-vmxpi-7.png
+   :align: center
