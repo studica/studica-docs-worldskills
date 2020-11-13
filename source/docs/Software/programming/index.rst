@@ -9,4 +9,5 @@ Programming
    configuring-the-project-for-vmxpi
    base-project-outline/index
    adding-vendor-libraries
+   autonomous/index
    

@@ -7,7 +7,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    :maxdepth: 1
    :caption: Getting Started
 
-   docs/GettingStarted/index.rst
+   docs/GettingStarted/index
 
 .. toctree::
    :maxdepth: 1
