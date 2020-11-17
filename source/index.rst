@@ -52,6 +52,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/Sensors/ultrasonic
    docs/Sensors/sharpIR
    docs/Sensors/limit-switches
+   docs/Sensors/encoders
    
 .. toctree::
    :maxdepth: 1
