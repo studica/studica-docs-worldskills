@@ -27,6 +27,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    :maxdepth: 1
    :caption: VMX
    
+   docs/VMX/networking
    docs/VMX/setup
    docs/VMX/wpi-channel-addressing
    docs/VMX/vision
