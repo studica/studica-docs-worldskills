@@ -35,6 +35,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/VMX/vision
    docs/VMX/navx
    docs/VMX/update
+   docs/VMX/os-image
    docs/VMX/troubleshooting
    
 .. toctree::
