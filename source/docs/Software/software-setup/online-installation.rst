@@ -11,7 +11,7 @@ Online Installer
 		
       .. warning:: Windows 7: You **must** install the standalone version of .NET Version 4.62+ which can be found `here <https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows>`__. Before preceding!
          
-      Download the installer (32bit or 64bit) `from WPI <https://github.com/wpilibsuite/allwpilib/releases>`__. 
+      Download the installer (32bit or 64bit) `from WPI <https://github.com/wpilibsuite/allwpilib/releases/tag/v2020.3.2>`__. 
 		
       .. figure:: images/windows/installer-1.png
          :align: center
@@ -74,7 +74,7 @@ Online Installer
             
       **WPILib Download**
       
-         The latest release for the WPILib can be found `here <https://github.com/wpilibsuite/allwpilib/releases>`__ 
+         The latest release for the WPILib can be found `here <https://github.com/wpilibsuite/allwpilib/releases/tag/v2020.3.2>`__ 
          
          Chose the macOS version ``WPILib_Mac-2020.3.2.tar.gz``
          
@@ -175,7 +175,7 @@ Online Installer
       
       **WPILib Download**
       
-         The latest release for the WPILib can be found `here <https://github.com/wpilibsuite/allwpilib/releases>`__ 
+         The latest release for the WPILib can be found `here <https://github.com/wpilibsuite/allwpilib/releases/tag/v2020.3.2>`__ 
          
          Chose the Linux version ``WPILib_Linux-2020.3.2.tar.gz``
          
