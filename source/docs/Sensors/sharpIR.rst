@@ -67,7 +67,7 @@ Programming the Sharp IR Sensor
     
         The accessor method will output the range in cm.
 
-        .. note:: The valid Analog ports are ``22-25`` 
+        .. note:: The valid Analog ports are ``0-3`` 
 
     .. tab:: C++
 
@@ -89,6 +89,6 @@ Programming the Sharp IR Sensor
 
         The accessor function will output the range in cm.  
 
-        .. note:: The valid Analog ports are ``22-25`` 
+        .. note:: The valid Analog ports are ``0-3`` 
 
     

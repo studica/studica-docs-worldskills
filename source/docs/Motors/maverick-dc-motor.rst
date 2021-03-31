@@ -24,7 +24,7 @@ Motor Specs
       - ---
     * - Gear Ratio
       - ---
-      - 1:61
+      - 1:60
       - ---
     * - No Load RPM
       - 88
@@ -41,7 +41,7 @@ Motor Specs
     * - Rated Current
       - ---
       - ---
-      - 2.5A
+      - 2.2A
     * - Rated Torque
       - ---
       - 139oz-in
@@ -49,9 +49,9 @@ Motor Specs
     * - Stall Current
       - ---
       - ---
-      - 13A
+      - 11A
     * - Stall Torque
-      - 903oz-in
+      - 708oz-in
       - ---
       - ---
     * - Direction
@@ -68,7 +68,7 @@ Motor Specs
       - ---
     * - Encoder CPR
       - ---
-      - 12
+      - 6
       - ---
 
-.. note:: With a CPR of ``12`` and a gear ratio of ``1:61`` the encoder counts per revolution on the output shaft will be :math:`\begin{equation}12*61 = 732\end{equation}`
+.. note:: With a CPR of ``6`` and a gear ratio of ``1:60`` the encoder counts per revolution on the output shaft will be :math:`\begin{equation}6*60*4 = 1440\end{equation}`

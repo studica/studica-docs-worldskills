@@ -29,19 +29,19 @@ Example
 Lets look at an example using the Maverick with the 100mm omni wheel attached directly on the shaft of the motor. 
 
 - ``r`` = 51 mm (actual measured value)
-- ``ticksPerRev`` = 732 (encoder counts per 1 revolution of the motor output shaft)
+- ``ticksPerRev`` = 1440 (encoder counts per 1 revolution of the motor output shaft)
 - ``gearRatio`` = 1:1
 
 .. math::
 
       \begin{equation}
       {distancePerTick} = \frac{2 \pi r}{ticksPerRev * gearRatio}
-      = \frac{2 \pi 51}{732 * 1}
-      = \frac{102 \pi}{732}
-      = 0.43776291
+      = \frac{2 \pi 51}{1440 * 1}
+      = \frac{102 \pi}{1440}
+      = 0.2225294796
       \end{equation}
 
-Therefor we can conculde that the distancePerTick for the Maverick using the 100mm omni wheels is **0.43776291**. 
+Therefor we can conculde that the distancePerTick for the Maverick using the 100mm omni wheels is **0.2225294796**. 
 
 Application
 ^^^^^^^^^^^
@@ -54,28 +54,28 @@ Now that we have the distancePerTick we can calculate the distance traveled. Thi
 
 Where:
 
-- ``distancePerTick`` = 0.43776291
+- ``distancePerTick`` = 0.2225294796
 - ``encoderCount`` = is the incremental count from the encoder
 
 Lets look at a few examples:
 
 **One Wheel Rotation**
 
-encoderCount = 732
+encoderCount = 1440
 
 .. math::
 
-    distance = {0.43776291} * {732} = 320.44 mm
+    distance = {0.2225294796} * {1440} = 320.44 mm
 
 .. note:: The distance measured is in mm as the radius was specficed in mm.
 
 **Ten Wheel Rotations**
 
-encoderCount = 7320
+encoderCount = 14400
 
 .. math::
 
-    distance = {0.43776291} * {7320} = 3204.43 mm
+    distance = {0.2225294796} * {14400} = 3204.43 mm
 
 Code
 ----
@@ -105,7 +105,7 @@ Now that we know the math behind it, let's look at how to program the encoder.
             public static final int wheelRadius             = 51;
 
             //Encoder pulses per rotation of motor shaft    
-            public static final int pulsePerRotation        = 732;
+            public static final int pulsePerRotation        = 1440;
 
             //Gear ratio between motor shaft and output shaft
             public static final double gearRatio            = 1/1;
@@ -188,7 +188,7 @@ Now that we know the math behind it, let's look at how to program the encoder.
                     #define wheelRadius             51
 
                     //Encoder pulses per rotation of motor shaft    
-                    #define pulsePerRotation        732
+                    #define pulsePerRotation        1440
 
                     //Gear ratio between motor shaft and output shaft
                     #define gearRatio               1/1

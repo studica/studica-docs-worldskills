@@ -62,8 +62,6 @@ Programming the Ultrasonic Distance Sensor
             //Create an accessor method
             public double getDistance()
             {
-                sonar.ping();
-                Timer.delay(0.005);
                 return sonar.getRangeInches();
                 // or can use 
                 return sonar.getRangeMM();
@@ -87,8 +85,6 @@ Programming the Ultrasonic Distance Sensor
             //Create an accessor function
             double getDistance(void)
             {
-                sonar.Ping();
-                Timer.delay(0.005);
                 return sonar.GetRangeInches();
                 // or can use 
                 return sonar.GetRangeMM();
