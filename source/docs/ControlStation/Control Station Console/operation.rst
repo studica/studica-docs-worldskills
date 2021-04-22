@@ -9,14 +9,14 @@ The control station console is an easy to use program to enable and disable the 
 .. figure:: images/operation-1.png
    :alt: Operation start screen
    :align: center
-   :width: 500
+   :width: 80%
 
 The console will ask you to enter your robots IP address. If your team number is ``1234`` then using the format ``10.xx.xx.2`` your IP address will be ``10.12.34.2``. If you have an ethernet connection to the robot the IP address will be ``172.22.11.2``.
 
 .. figure:: images/operation-2.png
    :alt: Operation loading screen
    :align: center
-   :width: 500
+   :width: 80%
 
 The console will then connect the Shuffleboard key to your IP address and launch Shuffleboard for you. 
 
@@ -26,7 +26,7 @@ Control Station Console Main Screen
 .. figure:: images/operation-3.png
    :alt: Operation main screen
    :align: center
-   :width: 500
+   :width: 80%
 
 1. Battery Voltage Indicator - This will tell you the current voltage of the battery. When the battery starts to approach 11.5V it is time to replace with a charged battery. 
 

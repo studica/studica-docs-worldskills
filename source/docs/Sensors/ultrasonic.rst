@@ -69,7 +69,7 @@ Programming the Ultrasonic Distance Sensor
     
         The accessor methods will then output the range in either inches or mm.
 
-        .. note:: The valid digital pairs for Trigger and Echo pins are ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
+        .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
 
     .. tab:: C++
 
@@ -92,4 +92,4 @@ Programming the Ultrasonic Distance Sensor
 
         The accessor functions will then output the range in either inches or mm.  
 
-        .. note:: The valid digital pairs for Trigger and Echo pins are ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
+        .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``

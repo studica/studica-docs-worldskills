@@ -204,7 +204,7 @@ Now that we know the math behind it, let's look at how to program the encoder.
                      */
                     studica::TitanQuad motor{TITAN_ID, MOTOR_N};
                     studica::TitanQuadEncoder encoder{motor, MOTOR_N, distancePerTick};
-            }
+            };
     
     .. tab:: C++ (Source)
 
@@ -220,7 +220,7 @@ Now that we know the math behind it, let's look at how to program the encoder.
              * <p>
              * @return the distance traveled
              */
-            double GetEncoderDistance (void)
+            double Subsystem::GetEncoderDistance (void)
             {
                 return encoder.GetEncoderDistance();
             }
