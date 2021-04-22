@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Studica Robotics'
-copyright = '2020, Studica'
+copyright = '2021, Studica'
 author = 'Studica'
 
 # The full version, including alpha/beta/rc tags
