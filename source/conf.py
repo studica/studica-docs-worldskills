@@ -86,6 +86,6 @@ StandaloneHTMLBuilder.supported_image_types = [
     'image/jpg'
 ]
 
-#def setup(app):
-    #app.add_css_file('css/studica-rtd.css')
+def setup(app):
+    app.add_css_file('css/studica-rtd.css')
 
