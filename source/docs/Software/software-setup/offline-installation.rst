@@ -3,6 +3,8 @@
 Offline Installer
 =================
 
+.. important:: If the USB in your kit does not contain the correct files, they can be downloaded `here <https://studicalimited.sharepoint.com/:f:/s/SR-Resources/EthAxkm4x1dNropZVW7TmpwB9mmQFKnIrEiO4Vgcd51rzA?e=woH78E>`__.
+
 .. tabs::
    
    .. tab:: Windows
@@ -87,7 +89,7 @@ Offline Installer
          .. figure:: images/macOS/offline-installation-4.png
             :align: center
             
-         The tools need to be update so they can be used. Run the commands below to do so.
+         The tools need to be updated so they can be used. Run the commands below to do so.
          
          .. code-block:: bash
          
