@@ -6,7 +6,7 @@ This guide will instruct on reading a barcode or QR Code from the VMX and relayi
 VMX
 ---
 
-The Python Scripts used here can be downloaded from here.
+The Python Scripts used here can be downloaded from `here <https://github.com/studica/WorldSkills-Example-Projects/tree/main/Vision/VMX%20Python%20Scripts>`__.
 
 .. toctree::
    :maxdepth: 1
@@ -18,7 +18,7 @@ The Python Scripts used here can be downloaded from here.
 VS Code
 -------
 
-The VS Code Project used here can be downloaded from here.
+The VS Code Project used here can be downloaded from `here <https://github.com/studica/WorldSkills-Example-Projects/tree/main/Vision/Barcode%20Reader>`__.
 
 .. toctree::
    :maxdepth: 1
