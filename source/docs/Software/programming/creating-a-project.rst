@@ -23,7 +23,7 @@ This guide will show ho to create a Java or C++ project for use in robotics
       
       2. Chose a programing language by selecting the *Select a language* button. In this case ``Java``
       
-      3. For *Select a project base* select ``Old Command Robot``
+      3. For *Select a project base* select ``Command Robot``
       
       4. Chose a folder location to store the project
       
