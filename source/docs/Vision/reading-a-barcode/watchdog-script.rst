@@ -243,7 +243,7 @@ Full Script
     class MyHandler(FileSystemEventHandler):
         def on_modified(self, event):
             try:
-                file = open('./barcodes.txt', 'r')
+                file = open('./home/pi/barcodes.txt', 'r')
                 table.putString('barcodeData', file.readline())
                 table.putString('barcodeType', file.readline())
                 file.close()
@@ -252,7 +252,7 @@ Full Script
     
     event_handler = MyHandler()
     observer = Observer()
-    observer.schedule(event_handler, path='./barcodes.txt', recursive=False)
+    observer.schedule(event_handler, path='./home/pi/barcodes.txt', recursive=False)
     observer.start()
 
     #The forever loop
