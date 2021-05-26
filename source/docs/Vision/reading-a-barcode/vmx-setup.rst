@@ -29,8 +29,8 @@ This package is used to read the barcode data. In the terminal, run the followin
 .. code-block:: text
 
     sudo apt-get install libzbar0
-    pip install pyzbar 
-    pip install pyzbar[scripts]
+    sudo pip install pyzbar 
+    sudo pip install pyzbar[scripts]
 
 pynetworktables
 ^^^^^^^^^^^^^^^
@@ -39,7 +39,7 @@ This package is what is used to communicate with the robot and shuffleboard.
 
 .. code-block:: text
 
-    pip install pynetworktables
+    sudo pip install pynetworktables
 
 Watchdog
 ^^^^^^^^
@@ -48,7 +48,7 @@ This package acts as a watchdog that is used to check filesystem changes. The ma
 
 .. code-block:: text
 
-    pip install watchdog
+    sudo pip install watchdog
 
 
 Going back to WiFi AP Mode

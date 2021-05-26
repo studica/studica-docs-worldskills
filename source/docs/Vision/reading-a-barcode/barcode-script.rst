@@ -80,7 +80,7 @@ A simple text file is used to pass the barcode data from this script to the watc
     :linenos:
     :lineno-start: 23
 
-    file = open('./barcodes.txt', 'w')
+    file = open('/home/pi/barcodes.txt', 'w')
     file.write(BarcodeData)
     file.write('/n')
     file.write(BarcodeType)
@@ -120,7 +120,7 @@ Full Script
         BarcodeType = barcode.type
         #print("Found {} barcode: {}".format(barcode.type, barcode.data.decode("utf-8"))) # For debugging
         
-    file = open('./barcodes.txt', 'w')
+    file = open('/home/pi/barcodes.txt', 'w')
     file.write(BarcodeData)
     file.write('\n')
     file.write(BarcodeType)

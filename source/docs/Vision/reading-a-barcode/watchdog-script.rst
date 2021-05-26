@@ -117,7 +117,7 @@ To optimize the code that it does not open, read, close the code continuously. A
     class MyHandler(FileSystemEventHandler):
         def on_modified(self, event):
             try:
-                file = open('./barcodes.txt', 'r')
+                file = open('./home/pi/barcodes.txt', 'r')
                 table.putString('barcodeData', file.readline())
                 table.putString('barcodeType', file.readline())
                 file.close()
@@ -126,7 +126,7 @@ To optimize the code that it does not open, read, close the code continuously. A
  
     event_handler = MyHandler()
     observer = Observer()
-    observer.schedule(event_handler, path='./barcodes.txt', recursive=False)
+    observer.schedule(event_handler, path='./home/pi/barcodes.txt', recursive=False)
     observer.start()
 
 - Line ``43`` creates a class that uses the FileSystemEventHandler
