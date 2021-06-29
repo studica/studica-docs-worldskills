@@ -67,8 +67,8 @@ Byte
    System.out.println("Enter a byte integer:");
    
    // Reading the input as byte data type
-   byte a_byte = input.nextByte(); 
-   System.out.println("a_byte = " + a_byte);
+   byte aByte = input.nextByte(); 
+   System.out.println("aByte = " + aByte);
    
 Output
 
@@ -77,7 +77,7 @@ Output
    
    Enter a byte integer:
    5
-   a_byte = 5
+   aByte = 5
 
 Short
 ~~~~~
@@ -88,8 +88,8 @@ Short
    System.out.println("Enter a short integer:");
    
    // Reading the input as short data type
-   short a_short = input.nextShort();
-   System.out,println("a_short = " + a_short);
+   short aShort = input.nextShort();
+   System.out.println("aShort = " + aShort);
    
 Output
 
@@ -98,7 +98,7 @@ Output
    
    Enter a short integer:
    50
-   a_short = 50
+   aShort = 50
    
 Int
 ~~~
@@ -109,8 +109,8 @@ Int
    System.out.println("Enter a integer:");
    
    // Reading the input as a int data type
-   int a_int = input.nextInt();
-   System.out.println("a_int = " + a_int);
+   int aInt = input.nextInt();
+   System.out.println("aInt = " + aInt);
 
 Output
 
@@ -119,7 +119,7 @@ Output
 
    Enter a integer:
    100
-   a_int = 100
+   aInt = 100
 
 Long
 ~~~~
@@ -130,8 +130,8 @@ Long
    System.out.println("Enter a long integer:");
 
    // Reading the input as a long data type
-   long a_long = input.nextLong();
-   System.out.println("a_long = " + a_long);
+   long aLong = input.nextLong();
+   System.out.println("aLong = " + aLong);
 
 Output
 
@@ -140,7 +140,7 @@ Output
 
    Enter a long integer:
    12345
-   a_long = 12345
+   aLong = 12345
 
 Float
 ~~~~~
@@ -151,8 +151,8 @@ Float
    System.out.println("Enter a float:");
    
    // Reading the input as a float data type
-   float a_float = input.nextFloat();
-   System.out.println("a_float = " + a_float);
+   float aFloat = input.nextFloat();
+   System.out.println("aFloat = " + aFloat);
    
 Output
 
@@ -161,7 +161,7 @@ Output
    
    Enter a float:
    95.43
-   a_float = 95.43
+   aFloat = 95.43
    
 Double
 ~~~~~~
@@ -169,24 +169,20 @@ Double
 .. code-block:: java
    :linenos:
    
-   System.out.println("Enter a double integer and a double float respectively:");
+   System.out.println("Enter a double:");
    
    // Reading the input as a double data type
-   double a_dint = input.nextDouble();
-   double a_dfloat = input.nextDouble();
-   System.out.println("a_dint = " + a_dint);
-   System.out.println("a_dfloat = " + a_dfloat);
+   double aDouble = input.nextDouble();
+   System.out.println("aDouble = " + aDouble);
    
 Output
 
 .. code-block:: java
    :linenos:
    
-   Enter a double integer and a double float respectively:
-   97584
-   673.45
-   a_dint = 97584
-   a_dfloat = 673.45
+   Enter a double:
+   97584.45
+   aDouble = 97584.45
    
 
 String 
@@ -198,8 +194,8 @@ String
    System.out.println("Enter a string:");
    
    // Reading the input as a string data type
-   String a_string = input.nextLine();
-   System.out.println("a_string = " + a_string);
+   String aString = input.nextLine();
+   System.out.println("aString = " + aString);
    
 Output 
 
@@ -208,7 +204,7 @@ Output
    
    Enter a string:
    Hello World
-   a_string = Hello World
+   aString = Hello World
    
 Boolean
 ~~~~~~~
@@ -219,8 +215,8 @@ Boolean
    System.out.println("Enter a boolean:");
    
    // Reading the input as a boolean variable
-   boolean a_boolean = input.nextBoolean();
-   System.out.println("a_boolean = " + a_boolean);
+   boolean aBoolean = input.nextBoolean();
+   System.out.println("aBoolean = " + aBoolean);
    
 Output 
 
@@ -229,7 +225,7 @@ Output
    
    Enter a boolean:
    true
-   a_boolean = true
+   aBoolean = true
    
 Example
 ^^^^^^^

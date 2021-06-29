@@ -6,7 +6,7 @@ Type casting is process of assigning a value of one data type to another data ty
 Widening Casting
 ----------------
 
-Widening casts are done automatically. A widening cast only happens when going from a smaller data type to a larger data type. The list from smaller to larger is listed below. 
+Widening casts are done automatically. A widening cast only happens when going from a smaller data type to a larger data type. The list from smallest to largest is listed below. 
 
 1. byte
 2. short
@@ -19,6 +19,7 @@ Widening casts are done automatically. A widening cast only happens when going f
 .. note:: The data type boolean cannot be type casted.
 
 Examples
+^^^^^^^^
 
 ``int`` -> ``long``
 
