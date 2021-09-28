@@ -17,14 +17,9 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    C++ API <https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html>
    docs/Software/software-setup/index
    docs/Software/programming/index
-   docs/Software/troubleshooting
-
-.. toctree::
-   :maxdepth: 1
-   :caption: LabVIEW
-
    docs/labview/setup/index
    docs/labview/toolkit/index
+   docs/Software/troubleshooting
 
 .. toctree::
    :maxdepth: 1
