@@ -1,5 +1,5 @@
-LabVIEW Toolkit
-===============
+LabVIEW Toolkit (Beta)
+======================
 
 .. toctree::
     :maxdepth: 1
