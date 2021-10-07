@@ -70,7 +70,7 @@ A vi that allows for setting the motor speed from the port specified by the ``Cr
 CAN Example
 -----------
 
-This example controls M1 on the Titan. 
+This example controls M0 on the Titan. 
 
 .. figure:: images/can-write-example.png
     :align: center

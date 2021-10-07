@@ -19,6 +19,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/Software/programming/index
    docs/labview/setup/index
    docs/labview/toolkit/index
+   docs/labview/using-labview/index
    docs/Software/troubleshooting
 
 .. toctree::
