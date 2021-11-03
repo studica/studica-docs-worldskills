@@ -83,5 +83,30 @@ Programming the Cobra
             cobra.GetRawValue(channel); //returns a double
 
         The accessor functions will output either the voltage (0 - 5V) or the raw ADC value (0 - 2047).
-
-
+        
+    .. tab:: Roscpp
+    
+        .. code-block:: c++
+            :linenos:
+            
+            //Include the Cobra Library
+            #include "Cobra_ros.h"
+            
+            //Running Cobra publishers
+            void runCobra(CobraROS *cobra) {
+               cobra->Run_t();
+            }
+            
+            //int main(int argc, char **argv)
+            
+            //Constructors
+            CobraROS cobra(&nh, &vmx);
+            
+            //Function call to run cobra's ros threads asynschronously
+            std::thread cobrarunth(runCobra, &cobra);
+            
+            //Use these to access data
+            cobra.GetVoltage(channel); //returns a float
+            cobra.GetRawValue(channel); //returns an int
+            
+        .. note:: Subscribe to cobra topics to access the data being published and write callbacks to pass messages between various processes.
