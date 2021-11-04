@@ -92,20 +92,13 @@ Programming the Cobra
             //Include the Cobra Library
             #include "Cobra_ros.h"
             
-            //Running Cobra publishers
-            void runCobra(CobraROS *cobra) {
-               cobra->Run_t();
-            }
-            
-            //int main(int argc, char **argv)
-            
-            //Constructors
+            /**
+             * Constructors
+             * Cobra's ros threads (publishers and services) will run asynchronously in the background
+             */
             CobraROS cobra(&nh, &vmx);
             
-            //Function call to run cobra's ros threads asynschronously
-            std::thread cobrarunth(runCobra, &cobra);
-            
-            //Use these to access data
+            //Use these to directly access data
             cobra.GetVoltage(channel); //returns a float
             cobra.GetRawValue(channel); //returns an int
             
