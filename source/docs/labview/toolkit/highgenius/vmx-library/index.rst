@@ -90,6 +90,12 @@ LabVIEW VMX-Library Available Pins
     *  - PWM
        - 16
        - 16
+    *  - PWM
+       - 17
+       - 17
+    *  - PWM
+       - 18
+       - 18
     *  - Pulse
        - 12
        - 12
@@ -106,12 +112,6 @@ LabVIEW VMX-Library Available Pins
        - 0
        - IIC
     *  - DO
-       - 17
-       - 17
-    *  - DO
-       - 18
-       - 18
-    *  - DO
        - 19
        - 19
     *  - DO
@@ -126,3 +126,35 @@ LabVIEW VMX-Library Available Pins
     *  - DI
        - 11
        - 11
+
+.. list-table:: Inputs from Titan
+    :widths: 30 20
+    :header-rows: 1
+    :align: center
+   
+    *  - Function
+       - LabVIEW Interface
+    *  - M0 Limit Low
+       - 0
+    *  - M0 Limit High
+       - 1
+    *  - M1 Limit Low
+       - 2
+    *  - M1 Limit High
+       - 3
+    *  - M2 Limit Low
+       - 4
+    *  - M2 Limit High
+       - 5
+    *  - M3 Limit Low
+       - 6
+    *  - M3 Limit High
+       - 7
+    *  - M0 Encoder
+       - 0
+    *  - M1 Encoder
+       - 1
+    *  - M2 Encoder
+       - 2
+    *  - M3 Encoder
+       - 3
