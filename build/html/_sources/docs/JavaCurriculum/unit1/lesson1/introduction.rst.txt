@@ -1,6 +1,0 @@
-Introduction
-============
-
-This curriculum was created for a better understanding of programming for those that do not get or would like to understand programming. This curriculum will teach basic to advanced principles in Java. Java is a high-level programing language that is perfect for beginners. Java contains many of the basic and advanced principles in all languages, thus making Java the first starting step for many. The general saying is that once you learn one language, the others become easier to adapt. Any programmer will tell you that to be successful, you have to continually learn new languages and adapt to changes in a language you already know. Knowing many languages allows you to use the correct language in the right situation. Some languages operate better in specific conditions and on specific operating systems and machines.  What makes Java good is that it is platform-independent. Thus meaning the same code can mostly be run on any device. This will be explained in the subsequent sections. 
-
-.. note:: Some content in this curriculum will be very bland. This information must still be absorbed for better understanding. 

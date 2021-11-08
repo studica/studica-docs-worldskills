@@ -1,9 +1,0 @@
-:orphan:
-
-The Requested Page Was Not Found
-================================
-
-The page you were searching for does not exist. If it should exist or you would like it to exist open an issue `here <https://github.com/studica/studica-docs/issues>`__
-
-.. image:: assets/404.jpg
-   :align: center
