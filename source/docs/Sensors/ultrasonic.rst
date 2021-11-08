@@ -93,3 +93,34 @@ Programming the Ultrasonic Distance Sensor
         The accessor functions will then output the range in either inches or mm.  
 
         .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
+     
+    .. tab:: Roscpp
+     
+        .. code-block:: c++
+            :linenos:
+            
+            //Include the Ping Library
+            #include "Ping_ros.h"
+            
+            /**
+             * Constructors
+             * Ping's ros threads (publishers and services) will run asynchronously in the background
+             */
+            PingROS ping(&nh, &vmx, 8, 9);
+            ping.Ping(); //Sends an ultrasonic pulse for the ping object to read
+            
+            //Create an accessor function
+            double getDistance()
+            {
+               return ping.GetRawValue(); // returns distance in microseconds
+               // or can use
+               return ping.GetDistanceCM(difference); //difference is the raw microsecond distance from GetRawValue();
+               // or can use
+               return ping.GetDistanceIN(difference);
+            }
+         
+        The accessor functions will then output the range in either microseconds, inches, or mm.  
+
+        .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
+        
+        .. important:: Subscribe to ping topics to access the data being published and write callbacks to pass messages between various processes.
