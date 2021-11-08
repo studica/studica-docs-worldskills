@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using the IDE &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Exercises" href="exercises.html" />
+    <link rel="prev" title="Lesson 2: Writing Some Programs" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Studica Robotics<img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/reading-a-barcode/index.html">Reading a Barcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Unit 2: Starting Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../lesson1/index.html">Lesson 1: Installing Java</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Lesson 2: Writing Some Programs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using the IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercise-answers.html">Exercise Answers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Unit 2: Starting Java</a> &raquo;</li>
+          <li><a href="index.html">Lesson 2: Writing Some Programs</a> &raquo;</li>
+      <li>Using the IDE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/JavaCurriculum/unit2/lesson2/using-the-ide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="using-the-ide">
+<h1>Using the IDE<a class="headerlink" href="#using-the-ide" title="Permalink to this headline"></a></h1>
+<p>Now that the IDE is installed we can start writing some Java code without needing the command prompt.</p>
+<div class="section" id="creating-a-project">
+<h2>Creating a Project<a class="headerlink" href="#creating-a-project" title="Permalink to this headline"></a></h2>
+<p>The first step is to create a Java project. Open NetBeans and select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Project</span></code>. This can be done by going to <code class="docutils literal notranslate"><span class="pre">File&gt;New</span> <span class="pre">Project</span></code>, using the shortcut <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">N</span></code> or by clicking on the icon as shown.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-1.png" src="../../../../_images/using-the-ide-1.png" />
+</div>
+<p>This will open up the project creation window.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-2.png" src="../../../../_images/using-the-ide-2.png" />
+</div>
+<p>We are going to use <code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">with</span> <span class="pre">Maven</span></code> and select <code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">Application</span></code> for projects.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-3.png" src="../../../../_images/using-the-ide-3.png" />
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Maven is a project automation tool used for building Java projects. You can find out more <a class="reference external" href="https://maven.apache.org/">here</a></p>
+</div>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-4.png" src="../../../../_images/using-the-ide-4.png" />
+</div>
+<p>For <strong>Project Name</strong> use <code class="docutils literal notranslate"><span class="pre">FirstProject</span></code> and for <strong>Group Id:</strong> use <code class="docutils literal notranslate"><span class="pre">com.edu</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-5.png" src="../../../../_images/using-the-ide-5.png" />
+</div>
+<p>This will create the project. In the project window on the left you will see a project displayed called <code class="docutils literal notranslate"><span class="pre">FirstProject</span></code>. This is the project we just created.</p>
+</div>
+<div class="section" id="adding-a-java-file-to-the-project">
+<h2>Adding a Java file to the Project<a class="headerlink" href="#adding-a-java-file-to-the-project" title="Permalink to this headline"></a></h2>
+<p>To create a Java file right click on <code class="docutils literal notranslate"><span class="pre">com.edu.firstproject</span></code> and select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">&gt;</span> <span class="pre">Java</span> <span class="pre">Class</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-6.png" src="../../../../_images/using-the-ide-6.png" />
+</div>
+<p>This will open another window for creating the Java Class.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-7.png" src="../../../../_images/using-the-ide-7.png" />
+</div>
+<p>The <strong>Class Name</strong> should be <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code>. Hit Finish when ready and the Java file will be created and added to the project.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-8.png" src="../../../../_images/using-the-ide-8.png" />
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> file will automatically open for editing. Let’s break down what each section of the default template is.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * To change this license header, choose License Headers in Project Properties.</span>
+<span class="cm"> * To change this template file, choose Tools | Templates</span>
+<span class="cm"> * and open the template in the editor.</span>
+<span class="cm"> */</span>
+</pre></div>
+</td></tr></table></div>
+<p>This is the <em>License header</em>. License headers are normally required when you are going to release code or projects to the public. For personal use they are not really required.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.edu.firstproject</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><em>Packages</em> are a way of organizing Java classes into a namespace. This is mostly useful for when you create a library and the library requires multiple classes.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author james</span>
+<span class="cm"> */</span>
+</pre></div>
+</td></tr></table></div>
+<p>This is the Javadoc comment for the HelloWorld Class. Notice how the author tag is automatically added for you. This is useful for tracking who created what. Some projects can get very big and tracking down the author can be crucial.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This is the class definition. This is created by default to prevent errors with the class name not matching the filename. Notice how the class is currently using the indentation style of K&amp;R. We will change this to Allman by moving the starting brace <code class="docutils literal notranslate"><span class="pre">{</span></code> to line 13. We should get this:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="adding-the-simple-java-program">
+<h2>Adding the Simple Java Program<a class="headerlink" href="#adding-the-simple-java-program" title="Permalink to this headline"></a></h2>
+<p>Let’s add the simple Java program, compile it, then run it.</p>
+<p>To add the simple Java program to the HelloWorld.java we can see that we are only missing one section. The contents of of the HelloWorld class.</p>
+<p>Add this to the contents of the HelloWorld class</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">//Display message Hello World! on the console</span>
+   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">HelloWorld.java</span></code> should now fully look like this:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * To change this license header, choose License Headers in Project Properties.</span>
+<span class="cm"> * To change this template file, choose Tools | Templates</span>
+<span class="cm"> * and open the template in the editor.</span>
+<span class="cm"> */</span>
+<span class="kn">package</span> <span class="nn">com.edu.firstproject</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author james</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">//Display message Hello World! on the console</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>To compile the project we will hit the build icon or use <code class="docutils literal notranslate"><span class="pre">F11</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-9.png" src="../../../../_images/using-the-ide-9.png" />
+</div>
+<p>You should notice a window popup on the bottom of the IDE. This is the output console.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-10.png" src="../../../../_images/using-the-ide-10.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On first build maven might take a few seconds as it will downloading dependencies need for compilation.</p>
+</div>
+<p>To run the project and see some output we hit the green arrow by the build icon. Alternatively <code class="docutils literal notranslate"><span class="pre">F6</span></code> can be used as well.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-11.png" src="../../../../_images/using-the-ide-11.png" />
+</div>
+<p>A popup will come up asking you to select the main class.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-12.png" src="../../../../_images/using-the-ide-12.png" />
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">com.edu.firstproject.HelloWorld</span></code> and hit the <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Main</span> <span class="pre">Class</span></code> button. The project will then run and the output can be seen in the console window as displayed below.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/using-the-ide-13.png" src="../../../../_images/using-the-ide-13.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Lesson 2: Writing Some Programs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="exercises.html" class="btn btn-neutral float-right" title="Exercises" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

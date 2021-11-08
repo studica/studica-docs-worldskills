@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloading the JDK &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Writing your first Java Program" href="writing-your-first-java-program.html" />
+    <link rel="prev" title="Lesson 1: Installing Java" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Studica Robotics<img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/reading-a-barcode/index.html">Reading a Barcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Unit 2: Starting Java</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Lesson 1: Installing Java</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Downloading the JDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="writing-your-first-java-program.html">Writing your first Java Program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing-the-ide.html">Installing an IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson2/index.html">Lesson 2: Writing Some Programs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Unit 2: Starting Java</a> &raquo;</li>
+          <li><a href="index.html">Lesson 1: Installing Java</a> &raquo;</li>
+      <li>Downloading the JDK</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/JavaCurriculum/unit2/lesson1/downloading-the-jdk.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="downloading-the-jdk">
+<h1>Downloading the JDK<a class="headerlink" href="#downloading-the-jdk" title="Permalink to this headline"></a></h1>
+<p>The Java JDK is required for most development in Java.</p>
+<div class="section" id="installing-the-jdk">
+<h2>Installing the JDK<a class="headerlink" href="#installing-the-jdk" title="Permalink to this headline"></a></h2>
+<p>The latest JDK can be found on the Oracle website <a class="reference external" href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html">here</a>. Select the correct install for your OS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An Oracle account will be required to download <code class="docutils literal notranslate"><span class="pre">JDK</span> <span class="pre">11</span></code>. This is due to the recent release of <code class="docutils literal notranslate"><span class="pre">JDK</span> <span class="pre">14</span></code>. The IDE we use in the curriculum does support the new JDK; however, the workaround is something we won’t be covering in this curriculum.</p>
+</div>
+<p>Run the JDK installation file, this will require Admin privileges.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/downloading-the-jdk-1.png" src="../../../../_images/downloading-the-jdk-1.png" />
+</div>
+<p>The installation wizard will open. Follow the prompts and install the JDK. When complete you should see a window like the one below.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/downloading-the-jdk-2.png" src="../../../../_images/downloading-the-jdk-2.png" />
+</div>
+</div>
+<div class="section" id="adding-java-to-path">
+<h2>Adding Java to PATH<a class="headerlink" href="#adding-java-to-path" title="Permalink to this headline"></a></h2>
+<p>Sometimes the JAVA_HOME is not set correctly after installing the JDK. To verify if you have the JAVA_HOME set correctly open the command prompt and type in the following command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java
+</pre></div>
+</div>
+<p>If it is not set correctly you will see the following error:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&#39;java&#39; is not recognized as an internal or external command,
+operable program or batch file.
+</pre></div>
+</div>
+<p>To fix this we need to add JAVA_HOME to the PATH in environment variables. To get to environment variables hit the <code class="docutils literal notranslate"><span class="pre">WIN</span></code> + <code class="docutils literal notranslate"><span class="pre">R</span></code> key to open run. In run type <code class="docutils literal notranslate"><span class="pre">&quot;SystemPropertiesAdvanced&quot;</span></code> and hit enter. This will open the Advanced tab in System Properties.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/downloading-the-jdk-3.png" src="../../../../_images/downloading-the-jdk-3.png" />
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Environment</span> <span class="pre">Variables</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/downloading-the-jdk-4.png" src="../../../../_images/downloading-the-jdk-4.png" />
+</div>
+<p>In the first section <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">variables</span></code>, Find the variable <code class="docutils literal notranslate"><span class="pre">Path</span></code> and select it and hit <code class="docutils literal notranslate"><span class="pre">Edit...</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../../_images/downloading-the-jdk-5.png" src="../../../../_images/downloading-the-jdk-5.png" />
+</div>
+<p>Hit <code class="docutils literal notranslate"><span class="pre">New</span></code> and enter the following <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Java\jdk-11.0.7\bin</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you installed the JDK in a different location use that path instead.</p>
+</div>
+<p>Repeat the same process above for the <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">variables</span></code>.</p>
+<p>To verify that the Path is set correctly open the command prompt again and enter the command <code class="docutils literal notranslate"><span class="pre">java</span></code>. There should be a response as shown below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;java
+Usage: java <span class="o">[</span>options<span class="o">]</span> &lt;mainclass&gt; <span class="o">[</span>args...<span class="o">]</span>
+           <span class="o">(</span>to execute a class<span class="o">)</span>
+   or  java <span class="o">[</span>options<span class="o">]</span> -jar &lt;jarfile&gt; <span class="o">[</span>args...<span class="o">]</span>
+           <span class="o">(</span>to execute a jar file<span class="o">)</span>
+   or  java <span class="o">[</span>options<span class="o">]</span> -m &lt;module&gt;<span class="o">[</span>/&lt;mainclass&gt;<span class="o">]</span> <span class="o">[</span>args...<span class="o">]</span>
+       java <span class="o">[</span>options<span class="o">]</span> --module &lt;module&gt;<span class="o">[</span>/&lt;mainclass&gt;<span class="o">]</span> <span class="o">[</span>args...<span class="o">]</span>
+           <span class="o">(</span>to execute the main class <span class="k">in</span> a module<span class="o">)</span>
+   or  java <span class="o">[</span>options<span class="o">]</span> &lt;sourcefile&gt; <span class="o">[</span>args<span class="o">]</span>
+           <span class="o">(</span>to execute a single source-file program<span class="o">)</span>
+
+ Arguments following the main class, <span class="nb">source</span> file, -jar &lt;jarfile&gt;,
+ -m or --module &lt;module&gt;/&lt;mainclass&gt; are passed as the arguments to
+ main class.
+
+ where options include:
+
+    -cp &lt;class search path of directories and zip/jar files&gt;
+    -classpath &lt;class search path of directories and zip/jar files&gt;
+    --class-path &lt;class search path of directories and zip/jar files&gt;
+                  A <span class="p">;</span> separated list of directories, JAR archives,
+                  and ZIP archives to search <span class="k">for</span> class files.
+    -p &lt;module path&gt;
+    --module-path &lt;module path&gt;...
+                  A <span class="p">;</span> separated list of directories, each directory
+                  is a directory of modules.
+    --upgrade-module-path &lt;module path&gt;...
+                  A <span class="p">;</span> separated list of directories, each directory
+                  is a directory of modules that replace upgradeable
+                  modules <span class="k">in</span> the runtime image
+    --add-modules &lt;module name&gt;<span class="o">[</span>,&lt;module name&gt;...<span class="o">]</span>
+                  root modules to resolve <span class="k">in</span> addition to the initial module.
+                  &lt;module name&gt; can also be ALL-DEFAULT, ALL-SYSTEM,
+                  ALL-MODULE-PATH.
+    --list-modules
+                  list observable modules and <span class="nb">exit</span>
+    -d &lt;module name&gt;
+    --describe-module &lt;module name&gt;
+                  describe a module and <span class="nb">exit</span>
+    --dry-run     create VM and load main class but <span class="k">do</span> not execute main method.
+                  The --dry-run option may be useful <span class="k">for</span> validating the
+                  command-line options such as the module system configuration.
+    --validate-modules
+                  validate all modules and <span class="nb">exit</span>
+                  The --validate-modules option may be useful <span class="k">for</span> finding
+                  conflicts and other errors with modules on the module path.
+    -D&lt;name&gt;<span class="o">=</span>&lt;value&gt;
+                  <span class="nb">set</span> a system property
+    -verbose:<span class="o">[</span>class<span class="p">|</span>module<span class="p">|</span>gc<span class="p">|</span>jni<span class="o">]</span>
+                  <span class="nb">enable</span> verbose output <span class="k">for</span> the given subsystem
+    -version      print product version to the error stream and <span class="nb">exit</span>
+    --version     print product version to the output stream and <span class="nb">exit</span>
+    -showversion  print product version to the error stream and <span class="k">continue</span>
+    --show-version
+                  print product version to the output stream and <span class="k">continue</span>
+    --show-module-resolution
+                  show module resolution output during startup
+    -? -h -help
+                  print this <span class="nb">help</span> message to the error stream
+    --help        print this <span class="nb">help</span> message to the output stream
+    -X            print <span class="nb">help</span> on extra options to the error stream
+    --help-extra  print <span class="nb">help</span> on extra options to the output stream
+    -ea<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+    -enableassertions<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+                  <span class="nb">enable</span> assertions with specified granularity
+    -da<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+    -disableassertions<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+                  disable assertions with specified granularity
+    -esa <span class="p">|</span> -enablesystemassertions
+                  <span class="nb">enable</span> system assertions
+    -dsa <span class="p">|</span> -disablesystemassertions
+                  disable system assertions
+    -agentlib:&lt;libname&gt;<span class="o">[=</span>&lt;options&gt;<span class="o">]</span>
+                  load native agent library &lt;libname&gt;, e.g. -agentlib:jdwp
+                  see also -agentlib:jdwp<span class="o">=</span><span class="nb">help</span>
+    -agentpath:&lt;pathname&gt;<span class="o">[=</span>&lt;options&gt;<span class="o">]</span>
+                  load native agent library by full pathname
+    -javaagent:&lt;jarpath&gt;<span class="o">[=</span>&lt;options&gt;<span class="o">]</span>
+                  load Java programming language agent, see java.lang.instrument
+    -splash:&lt;imagepath&gt;
+                  show splash screen with specified image
+                  HiDPI scaled images are automatically supported and used
+                  <span class="k">if</span> available. The unscaled image filename, e.g. image.ext,
+                  should always be passed as the argument to the -splash option.
+                  The most appropriate scaled image provided will be picked up
+                  automatically.
+                  See the SplashScreen API documentation <span class="k">for</span> more information
+    @argument files
+                  one or more argument files containing options
+    -disable-@files
+                  prevent further argument file expansion
+    --enable-preview
+                  allow classes to depend on preview features of this release
+To specify an argument <span class="k">for</span> a long option, you can use --&lt;name&gt;<span class="o">=</span>&lt;value&gt; or
+--&lt;name&gt; &lt;value&gt;.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Lesson 1: Installing Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="writing-your-first-java-program.html" class="btn btn-neutral float-right" title="Writing your first Java Program" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

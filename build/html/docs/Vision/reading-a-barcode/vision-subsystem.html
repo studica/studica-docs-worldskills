@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vision Subsystem &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Robot Container Part 1" href="robot-container.html" />
+    <link rel="prev" title="Watchdog Listener Script" href="watchdog-script.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Studica Robotics<img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reading a Barcode</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vmx-setup.html">Setup Dependencies on the VMX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barcode-script.html">Barcode Python Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watchdog-script.html">Watchdog Listener Script</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Vision Subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot-container.html">Robot Container Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision-command.html">Vision Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot-container2.html">Robot Container Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploying-to-the-robot.html">Deploying To The Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading-a-barcode.html">Reading a Barcode</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit2/index.html">Unit 2: Starting Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Reading a Barcode</a> &raquo;</li>
+      <li>Vision Subsystem</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Vision/reading-a-barcode/vision-subsystem.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="vision-subsystem">
+<h1>Vision Subsystem<a class="headerlink" href="#vision-subsystem" title="Permalink to this headline"></a></h1>
+<p>The Vision Subsystem will house the core of the code. It is always a good idea to have a Vision subsystem that will hold all the getters and setters for the vision on the robot.</p>
+<div class="section" id="visionsubsystem-java">
+<h2>VisionSubsystem.java<a class="headerlink" href="#visionsubsystem-java" title="Permalink to this headline"></a></h2>
+<div class="section" id="imports">
+<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"></a></h3>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">frc.robot.subsystems</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">edu.wpi.first.networktables.NetworkTable</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.networktables.NetworkTableEntry</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.networktables.NetworkTableInstance</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.wpilibj.smartdashboard.SmartDashboard</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">1</span></code> is the package setup, and will assign this class to the package.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">3</span></code> is the import for networktables; this allows us to talk with the vision Scripts.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">4</span></code> is the import for network table entries and allows us to read the data from the table.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">5</span></code> is the import for the networktables instance and is used to get the table.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">6</span></code> is the import for SmartDashboard, which will be used to put values for user display.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">7</span></code> is the import for SubsystemBase, which is required to have this class become a subsystem.</p></li>
+</ul>
+</div>
+<div class="section" id="class">
+<h3>Class<a class="headerlink" href="#class" title="Permalink to this headline"></a></h3>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VisionSubsystem</span> <span class="kd">extends</span> <span class="n">SubsystemBase</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">9</span></code> creates the class <code class="docutils literal notranslate"><span class="pre">VisionSubsystem</span></code> and extends SubsystemBase to have this class be a subsystem.</p></li>
+</ul>
+</div>
+<div class="section" id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline"></a></h3>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">NetworkTableInstance</span> <span class="n">inst</span> <span class="o">=</span> <span class="n">NetworkTableInstance</span><span class="p">.</span><span class="na">getDefault</span><span class="p">();</span>
+<span class="kd">private</span> <span class="n">NetworkTable</span> <span class="n">table</span> <span class="o">=</span> <span class="n">inst</span><span class="p">.</span><span class="na">getTable</span><span class="p">(</span><span class="s">&quot;Vision&quot;</span><span class="p">);</span>
+<span class="kd">private</span> <span class="n">NetworkTableEntry</span> <span class="n">data</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">11</span></code> creates the NetworkTableInstance</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">12</span></code> creates the table</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">13</span></code> creates the table entry reference</p></li>
+</ul>
+</div>
+<div class="section" id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline"></a></h3>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">VisionSubsystem</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SmartDashboard</span><span class="p">.</span><span class="na">putBoolean</span><span class="p">(</span><span class="s">&quot;Get New Barcode&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">15</span></code> is the constructor and will create the VisionSubsystem when called.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">17</span></code> Will create an entry in the smartdashboard called <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">New</span> <span class="pre">Barcode</span></code> and sets its default value to <strong>false</strong>.</p></li>
+</ul>
+</div>
+<div class="section" id="setter">
+<h3>Setter<a class="headerlink" href="#setter" title="Permalink to this headline"></a></h3>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">readBarcode</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">table</span><span class="p">.</span><span class="na">getEntry</span><span class="p">(</span><span class="s">&quot;readBarcode&quot;</span><span class="p">).</span><span class="na">setBoolean</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">20</span></code> is the setter that is called when a new barcode should be read.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">22</span></code> will update the readBarcode flag in networktables to <strong>true</strong>. This, in turn, will tell the vision scripts to read a new barcode and update the data keys.</p></li>
+</ul>
+</div>
+<div class="section" id="getter">
+<h3>Getter<a class="headerlink" href="#getter" title="Permalink to this headline"></a></h3>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">printBarcode</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="na">getEntry</span><span class="p">(</span><span class="s">&quot;barcodeData&quot;</span><span class="p">);</span>
+    <span class="n">SmartDashboard</span><span class="p">.</span><span class="na">putString</span><span class="p">(</span><span class="s">&quot;Barcode Data&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;Nothing was read&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">25</span></code> is the method that will be called to get the current value of the <strong>barcodeData</strong> entry.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">27</span></code> assigns the entry to the <strong>data</strong> object.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">28</span></code> places the string value of <strong>data</strong> to the dashboard.</p></li>
+</ul>
+</div>
+<div class="section" id="periodic-loop">
+<h3>Periodic Loop<a class="headerlink" href="#periodic-loop" title="Permalink to this headline"></a></h3>
+<p>The periodic loop is used to check the current value of the <strong>barcodeData</strong> entry for every robot loop.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">periodic</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printBarcode</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">31</span></code> is the required Override to tell the compiler to use this periodic method and not the one built into SubsystemBase.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">32</span></code> is the periodic method.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">34</span></code> will call the <code class="docutils literal notranslate"><span class="pre">printBarcode</span></code> method every robot loop.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="full-subsystem-code">
+<h2>Full Subsystem Code<a class="headerlink" href="#full-subsystem-code" title="Permalink to this headline"></a></h2>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">frc.robot.subsystems</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">edu.wpi.first.networktables.NetworkTable</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.networktables.NetworkTableEntry</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.networktables.NetworkTableInstance</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.wpilibj.smartdashboard.SmartDashboard</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">VisionSubsystem</span> <span class="kd">extends</span> <span class="n">SubsystemBase</span>
+<span class="p">{</span>
+    <span class="kd">private</span> <span class="n">NetworkTableInstance</span> <span class="n">inst</span> <span class="o">=</span> <span class="n">NetworkTableInstance</span><span class="p">.</span><span class="na">getDefault</span><span class="p">();</span>
+    <span class="kd">private</span> <span class="n">NetworkTable</span> <span class="n">table</span> <span class="o">=</span> <span class="n">inst</span><span class="p">.</span><span class="na">getTable</span><span class="p">(</span><span class="s">&quot;Vision&quot;</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="n">NetworkTableEntry</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">VisionSubsystem</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">SmartDashboard</span><span class="p">.</span><span class="na">putBoolean</span><span class="p">(</span><span class="s">&quot;Get New Barcode&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">readBarcode</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">table</span><span class="p">.</span><span class="na">getEntry</span><span class="p">(</span><span class="s">&quot;readBarcode&quot;</span><span class="p">).</span><span class="na">setBoolean</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printBarcode</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="na">getEntry</span><span class="p">(</span><span class="s">&quot;barcodeData&quot;</span><span class="p">);</span>
+        <span class="n">SmartDashboard</span><span class="p">.</span><span class="na">putString</span><span class="p">(</span><span class="s">&quot;Barcode Data&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;Nothing was read&quot;</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">periodic</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">printBarcode</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="watchdog-script.html" class="btn btn-neutral float-left" title="Watchdog Listener Script" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot-container.html" class="btn btn-neutral float-right" title="Robot Container Part 1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

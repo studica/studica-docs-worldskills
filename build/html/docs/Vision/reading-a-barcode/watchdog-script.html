@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watchdog Listener Script &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Vision Subsystem" href="vision-subsystem.html" />
+    <link rel="prev" title="Barcode Python Script" href="barcode-script.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Studica Robotics<img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reading a Barcode</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vmx-setup.html">Setup Dependencies on the VMX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barcode-script.html">Barcode Python Script</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Watchdog Listener Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision-subsystem.html">Vision Subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot-container.html">Robot Container Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vision-command.html">Vision Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot-container2.html">Robot Container Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploying-to-the-robot.html">Deploying To The Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading-a-barcode.html">Reading a Barcode</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit2/index.html">Unit 2: Starting Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Reading a Barcode</a> &raquo;</li>
+      <li>Watchdog Listener Script</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Vision/reading-a-barcode/watchdog-script.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="watchdog-listener-script">
+<h1>Watchdog Listener Script<a class="headerlink" href="#watchdog-listener-script" title="Permalink to this headline"></a></h1>
+<p>The watchdog listener monitors changes in the barcodes.txt file and sends those changes back to the robot and shuffleboard. The watchdog listener is also used to read the networktables and see if a new barcode must be read.</p>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">watchdog.observers</span> <span class="kn">import</span> <span class="n">Observer</span>
+<span class="kn">from</span> <span class="nn">watchdog.events</span> <span class="kn">import</span> <span class="n">FileSystemEventHandler</span>
+<span class="kn">from</span> <span class="nn">networktables</span> <span class="kn">import</span> <span class="n">NetworkTables</span>
+<span class="kn">from</span> <span class="nn">networktables.util</span> <span class="kn">import</span> <span class="n">ntproperty</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</td></tr></table></div>
+<p>There are a few more imports for this script over the barcode script.</p>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">4</span></code> is the observer import and is used to create the listener for a file.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">5</span></code> is the FileSystemEventHandler which creates functions that check for changes to files</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">6</span></code> is the main NetworkTables import, used to send and receive info from the robot.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">7</span></code> is the ntproperty import and is used to create tables and properties.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">8</span></code> is the thread import to create threads.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">9</span></code> is the os import and used for sending commands to the terminal.</p></li>
+</ul>
+</div>
+<div class="section" id="create-barcodes-file">
+<h2>Create Barcodes File<a class="headerlink" href="#create-barcodes-file" title="Permalink to this headline"></a></h2>
+<p>The watchdog script will be run as a startup script, which makes it a good idea to create the barcodes.txt file if it does not exist to avoid errors when reading the file.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/pi/barcodes.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">12</span></code> will create the barcodes.txt if it does not exist</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">13</span></code> closes the file to prevent issues of the file being open when it should be closed</p></li>
+</ul>
+</div>
+<div class="section" id="connect-to-networktables">
+<h2>Connect to NetworkTables<a class="headerlink" href="#connect-to-networktables" title="Permalink to this headline"></a></h2>
+<p>Before anything can happen, a connection to NetworkTables needs to be established. NetworkTables does not run right away and needs some time for the server and client to start. The below code handles this.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Create thread to make sure networktables is connected</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Condition</span><span class="p">()</span>
+<span class="n">notified</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span>
+
+<span class="c1">#Create a listener</span>
+<span class="k">def</span> <span class="nf">connectionListener</span><span class="p">(</span><span class="n">connected</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">cond</span><span class="p">:</span>
+        <span class="n">notified</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">cond</span><span class="o">.</span><span class="n">notify</span><span class="p">()</span>
+
+<span class="c1">#Instantiate NetworkTables</span>
+<span class="n">NetworkTables</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s2">&quot;10.12.34.2&quot;</span><span class="p">)</span>
+<span class="n">NetworkTables</span><span class="o">.</span><span class="n">addConnectionListener</span><span class="p">(</span><span class="n">connectionListener</span><span class="p">,</span> <span class="n">immediateNotify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#Wait until connected</span>
+<span class="k">with</span> <span class="n">cond</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">notified</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">cond</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>The above may look complicated, but it is pretty simple.</p>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">16</span></code> creates a conditional thread</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">17</span></code> creates a boolean array</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">20</span></code> defines a new function call connectionListener; this function listens for a connection and changes the condition when connected.</p></li>
+<li><p>Lines <code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">-</span> <span class="pre">23</span></code> is a statement that when connected to update conditions</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">26</span></code> will initialize a connection</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">27</span></code> adds a listener to check if connected</p></li>
+<li><p>Lines <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">-</span> <span class="pre">32</span></code> will hang until a connection is made</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure the IP address used in line 26 matches the IP address of the VMX WiFi AP.</p>
+</div>
+</div>
+<div class="section" id="create-the-vision-tables">
+<h2>Create the Vision Tables<a class="headerlink" href="#create-the-vision-tables" title="Permalink to this headline"></a></h2>
+<p>To successfully send data between the watchdog and the robot code, it is good to create a couple of properties to hold this data. The properties can be read on the watchdog side and the robot side.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">ntBarcodeData</span> <span class="o">=</span> <span class="n">ntproperty</span><span class="p">(</span><span class="s1">&#39;/Vision/barcodeData&#39;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">)</span>
+<span class="n">ntBarcodeType</span> <span class="o">=</span> <span class="n">ntproperty</span><span class="p">(</span><span class="s1">&#39;/Vision/barcodeType&#39;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">)</span>
+<span class="n">ntReadBarcode</span> <span class="o">=</span> <span class="n">ntproperty</span><span class="p">(</span><span class="s1">&#39;/Vision/readBarcode&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#Get Table</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">NetworkTables</span><span class="o">.</span><span class="n">getTable</span><span class="p">(</span><span class="s1">&#39;Vision&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Lines <code class="docutils literal notranslate"><span class="pre">35</span> <span class="pre">&amp;</span> <span class="pre">36</span></code> create the barcode properties.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">37</span></code> creates the command property used for executing the barcode script for a new barcode.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">40</span></code> assigns the <code class="docutils literal notranslate"><span class="pre">Vision</span></code> table to a variable for later use.</p></li>
+</ul>
+<p>The first value of property is the <strong>key</strong> and the second is the default value. The default value also creates the property type. In the above cases <code class="docutils literal notranslate"><span class="pre">ntBarcodeData</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">ntBarcodeType</span></code> will be <strong>strings</strong>, whereas <code class="docutils literal notranslate"><span class="pre">ntReadBarcode</span></code> is a <strong>boolean</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When creating a table, the <strong>key</strong> of the table must always start with a <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+</div>
+</div>
+<div class="section" id="file-system-handler">
+<h2>File System Handler<a class="headerlink" href="#file-system-handler" title="Permalink to this headline"></a></h2>
+<p>To optimize the code that it does not open, read, close the code continuously. A FileSystemEventHandler can be used. In this case, the use of watchdog is perfect. This way, nothing will happen unless the file is modified. If there is no modification to the file, i.e., a new barcode is read, it will do nothing.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyHandler</span><span class="p">(</span><span class="n">FileSystemEventHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_modified</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./home/pi/barcodes.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">putString</span><span class="p">(</span><span class="s1">&#39;barcodeData&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">putString</span><span class="p">(</span><span class="s1">&#39;barcodeType&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span> <span class="c1">#when file is not created yet</span>
+
+<span class="n">event_handler</span> <span class="o">=</span> <span class="n">MyHandler</span><span class="p">()</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="n">Observer</span><span class="p">()</span>
+<span class="n">observer</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="n">event_handler</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./home/pi/barcodes.txt&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">observer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">43</span></code> creates a class that uses the FileSystemEventHandler</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">44</span></code> creates the function <strong>on_modified</strong> which is an extension of the FileSystemEventHandler. This function will be called when the event handler detects a modification to the file.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">45</span> <span class="pre">&amp;</span> <span class="pre">50</span></code> is used to catch errors.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">46</span></code> opens the <strong>barcodes.txt</strong> in read mode.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">47</span></code> will read the first line of the file and add it as the <strong>barcodeData</strong> data.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">48</span></code> will read the second line of the file and add it as the <strong>barcodeType</strong> data.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">49</span></code> closes the file to ensure no issues.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">53</span></code> creates the event handler</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">54</span></code> creates the observer</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">55</span></code> configures the observer with the event handler and file to watch</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">56</span></code> starts the observer thread</p></li>
+</ul>
+</div>
+<div class="section" id="forever-loop">
+<h2>Forever Loop<a class="headerlink" href="#forever-loop" title="Permalink to this headline"></a></h2>
+<p>This script needs to run forever and handle a flag sent from the robot to take a new barcode reading.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">table</span><span class="o">.</span><span class="n">getBoolean</span><span class="p">(</span><span class="s1">&#39;readBarcode&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">putBoolean</span><span class="p">(</span><span class="s1">&#39;readBarcode&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;python3 /home/pi/readBarcode.py&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="n">observer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">59</span></code> is the while loop that never ends</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">60</span></code> checks to see if the robot code is requesting a new barcode scan.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">61</span></code> flips the <strong>readBarcode</strong> flag to False to prevent a double read.</p></li>
+<li><p>Line <code class="docutils literal notranslate"><span class="pre">62</span></code> runs the <code class="docutils literal notranslate"><span class="pre">readBarcode.py</span></code> script</p></li>
+<li><p>Lines <code class="docutils literal notranslate"><span class="pre">63</span> <span class="pre">-</span> <span class="pre">66</span></code> are used if the script ever wants to end. In this case, a KeyboardInterrupt is required to end. As this script will run as a startup script, the observer should never end.</p></li>
+</ul>
+</div>
+<div class="section" id="setting-the-script-to-run-as-at-startup">
+<h2>Setting the Script to run as at Startup<a class="headerlink" href="#setting-the-script-to-run-as-at-startup" title="Permalink to this headline"></a></h2>
+<p>Setting the watchdog script to run at startup is very simple.</p>
+<p>In terminal open rc.local</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano /etc/rc.local
+</pre></div>
+</div>
+<p>Scroll to the bottom with the arrow keys.</p>
+<p>Above <code class="docutils literal notranslate"><span class="pre">exit</span> <span class="pre">0</span></code> put:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 /home/pi/watchdogListener.py <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>To save, hit <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">X</span></code> then <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Including the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> at the end will fork the process to the background and prevent other processes from hanging.</p>
+</div>
+<p>It is now possible to reboot, and the script will be running.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There will be no indication that the script is running.</p>
+</div>
+</div>
+<div class="section" id="full-script">
+<h2>Full Script<a class="headerlink" href="#full-script" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1">#imports</span>
+<span class="kn">from</span> <span class="nn">watchdog.observers</span> <span class="kn">import</span> <span class="n">Observer</span>
+<span class="kn">from</span> <span class="nn">watchdog.events</span> <span class="kn">import</span> <span class="n">FileSystemEventHandler</span>
+<span class="kn">from</span> <span class="nn">networktables</span> <span class="kn">import</span> <span class="n">NetworkTables</span>
+<span class="kn">from</span> <span class="nn">networktables.util</span> <span class="kn">import</span> <span class="n">ntproperty</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1">#Create the barcodes file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/pi/barcodes.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#Create thread to make sure networktables is connected</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Condition</span><span class="p">()</span>
+<span class="n">notified</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span>
+
+<span class="c1">#Create a listener</span>
+<span class="k">def</span> <span class="nf">connectionListener</span><span class="p">(</span><span class="n">connected</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">cond</span><span class="p">:</span>
+        <span class="n">notified</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">cond</span><span class="o">.</span><span class="n">notify</span><span class="p">()</span>
+
+<span class="c1">#Instantiate NetworkTables</span>
+<span class="n">NetworkTables</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s2">&quot;10.12.34.2&quot;</span><span class="p">)</span>
+<span class="n">NetworkTables</span><span class="o">.</span><span class="n">addConnectionListener</span><span class="p">(</span><span class="n">connectionListener</span><span class="p">,</span> <span class="n">immediateNotify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#Wait until connected</span>
+<span class="k">with</span> <span class="n">cond</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">notified</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">cond</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+<span class="c1">#Create the vision Table</span>
+<span class="n">ntBarcodeData</span> <span class="o">=</span> <span class="n">ntproperty</span><span class="p">(</span><span class="s1">&#39;/Vision/barcodeData&#39;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">)</span>
+<span class="n">ntBarcodeType</span> <span class="o">=</span> <span class="n">ntproperty</span><span class="p">(</span><span class="s1">&#39;/Vision/barcodeType&#39;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">)</span>
+<span class="n">ntReadBarcode</span> <span class="o">=</span> <span class="n">ntproperty</span><span class="p">(</span><span class="s1">&#39;/Vision/readBarcode&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#Get Table</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">NetworkTables</span><span class="o">.</span><span class="n">getTable</span><span class="p">(</span><span class="s1">&#39;Vision&#39;</span><span class="p">)</span>
+
+<span class="c1">#Create the system handler</span>
+<span class="k">class</span> <span class="nc">MyHandler</span><span class="p">(</span><span class="n">FileSystemEventHandler</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_modified</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./home/pi/barcodes.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">putString</span><span class="p">(</span><span class="s1">&#39;barcodeData&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">putString</span><span class="p">(</span><span class="s1">&#39;barcodeType&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span> <span class="c1">#when file is not created yet</span>
+
+<span class="n">event_handler</span> <span class="o">=</span> <span class="n">MyHandler</span><span class="p">()</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="n">Observer</span><span class="p">()</span>
+<span class="n">observer</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="n">event_handler</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./home/pi/barcodes.txt&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">observer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1">#The forever loop</span>
+<span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">table</span><span class="o">.</span><span class="n">getBoolean</span><span class="p">(</span><span class="s1">&#39;readBarcode&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">putBoolean</span><span class="p">(</span><span class="s1">&#39;readBarcode&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;python3 /home/pi/readBarcode.py&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="n">observer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="barcode-script.html" class="btn btn-neutral float-left" title="Barcode Python Script" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vision-subsystem.html" class="btn btn-neutral float-right" title="Vision Subsystem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

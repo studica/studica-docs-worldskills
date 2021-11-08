@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting Sensors and Actuators &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="WPI Channel Addressing" href="wpi-channel-addressing.html" />
+    <link rel="prev" title="Networking" href="networking.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Studica Robotics<img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Vision/sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Vision/installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Vision/reading-a-barcode/index.html">Reading a Barcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit2/index.html">Unit 2: Starting Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Connecting Sensors and Actuators</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/VMX/setup.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="connecting-sensors-and-actuators">
+<span id="vmx-electrical-wiring"></span><h1>Connecting Sensors and Actuators<a class="headerlink" href="#connecting-sensors-and-actuators" title="Permalink to this headline"></a></h1>
+<p>The VMX Robotics Controller provides a large number of electrical power and signal “pins” which connect to external devices including Sensors and Actuators.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This summary of VMX IO configuration is sufficient for most robot Programming uses; more detailed information is available in the <a class="reference external" href="https://pdocs.kauailabs.com/vmx-pi/intro/hardware-reference-manual/">Hardware Reference Manual</a>.</p>
+</div>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/Enclosure_Top_Trimmed.jpg"><img alt="../../_images/Enclosure_Top_Trimmed.jpg" src="../../_images/Enclosure_Top_Trimmed.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">VMX Connector Blocks</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>VMX provides several different Connector Blocks.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 41%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Connector Block</p></th>
+<th class="head"><p>Connector Type</p></th>
+<th class="head"><p>Location on VMX</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Flex DIO Header</p></td>
+<td><p>3-pin PWM-style</p></td>
+<td><p>Left-side Top</p></td>
+</tr>
+<tr class="row-odd"><td><p>High Current DIO Header</p></td>
+<td><p>3-pin PWM-style</p></td>
+<td><p>Left-side mid</p></td>
+</tr>
+<tr class="row-even"><td><p>Analog Input Header</p></td>
+<td><p>3-pin PWM-style</p></td>
+<td><p>Left-side bottom</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comm DIO Connectors</p></td>
+<td><p>4-pin JST GH</p></td>
+<td><p>Bottom-left</p></td>
+</tr>
+<tr class="row-even"><td><p>Flex DIO Connectors</p></td>
+<td><p>4-pin JST GH</p></td>
+<td><p>Bottom-middle</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAN Connector</p></td>
+<td><p>2-wire Weidmuller</p></td>
+<td><p>Bottom-right</p></td>
+</tr>
+</tbody>
+</table>
+<p>Three (3) types of Connectors are used:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/3Wire_PWM_Connector_Edited.png"><img alt="../../_images/3Wire_PWM_Connector_Edited.png" src="../../_images/3Wire_PWM_Connector_Edited.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">3-pin PWM-style Connector</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/4Pin_JST_GH_Connector_Edited.png"><img alt="../../_images/4Pin_JST_GH_Connector_Edited.png" src="../../_images/4Pin_JST_GH_Connector_Edited.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">4-pin JST GH Connector</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/CAN_Wire.jpg"><img alt="../../_images/CAN_Wire.jpg" src="../../_images/CAN_Wire.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">2-Wire CAN Wire</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+<p><a class="reference external" href="https://www.studica.com/ca/en/Worldskills2021/pwm-cable-set-tjc8-3-pin-22awg-f-f-12-pcs_1.html">3-pin PWM-style Connectors</a>, <a class="reference external" href="https://www.studica.com/ca/en/Worldskills2021/vmx-wire-pack.html">JST GH Connectors and Breakout Boards</a> and <a class="reference external" href="https://www.studica.com/ca/en/Worldskills2021/titan-wire-pack.html">CAN Wires</a> are available for purchase online.</p>
+<div class="section" id="flexdio-connectors">
+<h2>FlexDIO Connectors<a class="headerlink" href="#flexdio-connectors" title="Permalink to this headline"></a></h2>
+<p>FlexDIO Connectors are a set of four locking JST GH connectors (4 pins each) with power, ground, signal A and signal B on each connector.  These connectors are designed to support Quadrature Encoders, but may also be configured for use as Digital Inputs, Interrupts, Digital Outputs, PWM Generators or Counters.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_FlexDIO_Annotated.jpg"><img alt="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_FlexDIO_Annotated.jpg" src="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_FlexDIO_Annotated.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">FlexDIO Connectors</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="flexdio-header">
+<h2>FlexDIO Header<a class="headerlink" href="#flexdio-header" title="Permalink to this headline"></a></h2>
+<p>The FlexDIO Header provides 4 sets of power, ground, and a single signal channel.  The signals may be configured to support Quadrature Encoders, Digital Inputs, Interrupts, Digital Outputs, PWM Generators or Counters. Note that only 2 of the pins on this header support Quadrature Encoders, see below for details.</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_FlexDIO_Header_Annotated.jpg"><img alt="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_FlexDIO_Header_Annotated.jpg" src="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_FlexDIO_Header_Annotated.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">FlexDIO Header</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="can-connector">
+<h2>CAN Connector<a class="headerlink" href="#can-connector" title="Permalink to this headline"></a></h2>
+<p>The CAN Connector accepts a pair of wires (CANH and CANL signals) with bare ends, which connect to a CAN bus.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_CAN_Connector_Annotated.jpg"><img alt="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_CAN_Connector_Annotated.jpg" src="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_CAN_Connector_Annotated.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">CAN Connector</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="high-current-dio-header">
+<h2>High-Current DIO Header<a class="headerlink" href="#high-current-dio-header" title="Permalink to this headline"></a></h2>
+<p>The High-Current DIO Header provides 10 sets of power, ground, and a single signal channel.  The signals may be configured to support Digital Inputs, Interrupts, Digital Outputs, PWM Generators or Relays.</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_HiCurrDIO_Header_Annotated.jpg"><img alt="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_HiCurrDIO_Header_Annotated.jpg" src="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_HiCurrDIO_Header_Annotated.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">High-Current DIO Header</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The High-Current DIO Header may be configured in either <em>Output</em> or <em>Input</em> Direction, see below for details.</p>
+</div>
+</div>
+<div class="section" id="analog-input-header">
+<h2>Analog Input Header<a class="headerlink" href="#analog-input-header" title="Permalink to this headline"></a></h2>
+<p>The Analog Input Header provides 4 sets of power, ground, and a single signal channel.  The signals may be configured to support Analog Accumulation and/or Analog-triggered Interrupts.</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_Analog_Input_Header.jpg"><img alt="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_Analog_Input_Header.jpg" src="../../_images/FlexDIO_HCDIO_And_AnalogIn_Headers_Trimmed_Analog_Input_Header.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Analog Input Header</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="commdio-connectors">
+<h2>CommDIO Connectors<a class="headerlink" href="#commdio-connectors" title="Permalink to this headline"></a></h2>
+<p>The three (3) CommDIO Connectors are three locking JST GH connectors (4 pins each) with different sets of power/ground/signals.  Each connector may be configured to communicate using the corresponding digital communication protocol.  Alternatively, the Input Channels may be configured for use as Digital Inputs or Interrupts; Output Channels may be configured for use as Digital Outputs or PWM.</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_CommDIO_Annotated.jpg"><img alt="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_CommDIO_Annotated.jpg" src="../../_images/CommDIO_FlexDIO_And_CAN_Connectors_Trimmed_CommDIO_Annotated.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">CommDIO Connectors</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</div>
+<p>Each of the four pins on each connector have a different definition, depending upon the type:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 15%" />
+<col style="width: 22%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>I/O Channel Type  Pin 1</p></th>
+<th class="head"><p>Pin 2</p></th>
+<th class="head"><p>Pin 3</p></th>
+<th class="head"><p>Pin 4</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I2C</p></td>
+<td><p>Ground</p></td>
+<td><p>Power (5 or 3.3V)</p></td>
+<td><p>SDA [OUTPUT]</p></td>
+<td><p>SCL [OUTPUT]</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTL UART</p></td>
+<td><p>Ground</p></td>
+<td><p>Power (5 or 3.3V)</p></td>
+<td><p>TX [OUTPUT]</p></td>
+<td><p>RX [INPUT]</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI</p></td>
+<td><p>SCK [OUTPUT]</p></td>
+<td><p>MOSI [OUTPUT]</p></td>
+<td><p>MISO [INPUT]</p></td>
+<td><p>CS [OUTPUT]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike the I2C and TTL UART Connectors, the SPI connector has 4 signal pins and does not provide power and ground.</p>
+</div>
+</div>
+<div class="section" id="output-voltage-selection">
+<h2>Output Voltage Selection<a class="headerlink" href="#output-voltage-selection" title="Permalink to this headline"></a></h2>
+<p>Either 5 or 3.3V power output for external devices (both power and signal level) may be selected for Flex, High Current and Comm DIOs and also for power pins on the Analog Input Header.</p>
+<div class="figure align-center" id="id11">
+<a class="reference internal image-reference" href="../../_images/OutputVoltageSelection.png"><img alt="../../_images/OutputVoltageSelection.png" src="../../_images/OutputVoltageSelection.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Output Voltage Selection Jumpers</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If any of the external devices connected to pins in any of these groups are not 5V tolerant, ensure the voltage selection jumper is set to 3.3V to avoid damage to the external device.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Output Voltage Selection Jumper can only be accessed by opening the VMX enclosure.</p>
+</div>
+</div>
+<div class="section" id="high-current-dio-channel-direction-configuration">
+<h2>High Current DIO Channel Direction configuration<a class="headerlink" href="#high-current-dio-channel-direction-configuration" title="Permalink to this headline"></a></h2>
+<p>The entire bank of High Current DIOs can be either all outputs (default), or all inputs.  Direction selection is performed in hardware via the High Current DIO Input/Output Jumper.  If the jumper is present, all High Current DIOs function as outputs, otherwise they function as inputs.</p>
+<p>Output Configuration: 10 High Current DIO Pins are Digital Outputs
+Input Configuration: 10 High Current DIO Pins are Digital Inputs</p>
+<div class="figure align-center" id="id12">
+<a class="reference internal image-reference" href="../../_images/HighCurrentDIODirectionConfiguration.png"><img alt="../../_images/HighCurrentDIODirectionConfiguration.png" src="../../_images/HighCurrentDIODirectionConfiguration.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">High Current DIO Channel Direction Jumper</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</div>
+<p>The High Current Direction setting impacts the behavior of PWM, Relay and Digital IO Channels, described further below. Therefore this setting is one of the first things to verify in case of improper operation of the High Current DIO Channels.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the default Direction (Output) unless your configuration requires more digital inputs.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Output Voltage Selection Jumper can only be accessed by opening the VMX enclosure.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="networking.html" class="btn btn-neutral float-left" title="Networking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wpi-channel-addressing.html" class="btn btn-neutral float-right" title="WPI Channel Addressing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

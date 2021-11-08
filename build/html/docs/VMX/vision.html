@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring and Testing the SR Pro Camera &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Calibrating and Using the navX-sensor IMU" href="navx.html" />
+    <link rel="prev" title="WPI Channel Addressing" href="wpi-channel-addressing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Studica Robotics<img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Vision/sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Vision/installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Vision/reading-a-barcode/index.html">Reading a Barcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit2/index.html">Unit 2: Starting Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JavaCurriculum/unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Configuring and Testing the SR Pro Camera</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/VMX/vision.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="configuring-and-testing-the-sr-pro-camera">
+<h1>Configuring and Testing the SR Pro Camera<a class="headerlink" href="#configuring-and-testing-the-sr-pro-camera" title="Permalink to this headline"></a></h1>
+<p>Once the SR Pro Camera has been installed onto the VMX Robotics Controller, the next step is to ensure the camera is configured correctly and to verify the camera images can be accessed on the Raspberry Pi.</p>
+<div class="section" id="configuring-raspberry-pi-s-camera-interface">
+<h2>Configuring Raspberry Pi’s Camera Interface<a class="headerlink" href="#configuring-raspberry-pi-s-camera-interface" title="Permalink to this headline"></a></h2>
+<p>By default, the VMX Robotics Controller Raspberry Pi SD Card enables the Raspberry Pi Camera interface.  This can be verified from the Raspberry Pi “Preferences-&gt;Raspberry Pi Configuration” Menu Item:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/RaspberryPiInterfaceConfigDialog.jpg"><img alt="../../_images/RaspberryPiInterfaceConfigDialog.jpg" src="../../_images/RaspberryPiInterfaceConfigDialog.jpg" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-text">Raspberry Interface Configuration Dialog</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>The “Camera” interface should be enabled; if this setting is changed, the Raspberry Pi must be rebooted for the change to take effect.</p>
+</div>
+<div class="section" id="testing-the-camera">
+<h2>Testing the Camera<a class="headerlink" href="#testing-the-camera" title="Permalink to this headline"></a></h2>
+<p>To verify basic camera option, remove the SR Pro Lens cap, and acquire a still image by running the raspistill command from a Raspberry Pi terminal:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/raspistill-image.png"><img alt="../../_images/raspistill-image.png" src="../../_images/raspistill-image.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-text">Acquiring an Image to File with raspistill</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>Once acquired, the image can be viewed from the Raspberry Pi Desktop.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/raspistill-image-desktop-annotated.png"><img alt="../../_images/raspistill-image-desktop-annotated.png" src="../../_images/raspistill-image-desktop-annotated.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-text">Viewing the image captured with raspistill</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<p>NOTE:  If your VMX Robotics Controller has an actively running Robot Program that is accessing the camera, raspistill will fail to acquire an image and output an error message.</p>
+<p>If you are confident the SR Pro Camera is securely installed and still encounter an error message when Testing the Camera using raspistill, it’s possible a Robot Program running on the VMX Robotics Controller already has access to the SR Pro Camera; in this case, you can shut down any actively running Robot Program by issuing this command at a Raspberry Pi console:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">frcKillRobot</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>To restart the robot program, you can later run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">frcRunRobot</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="raspberry-pi-camera-video-device-id">
+<h2>Raspberry Pi Camera Video Device ID<a class="headerlink" href="#raspberry-pi-camera-video-device-id" title="Permalink to this headline"></a></h2>
+<p>When writing code to access the SR Pro Camera, the Video Input Device number must be used to address the Camera.</p>
+<p>By default, when the SR Pro Camera is the only Video Input Device connected to the Raspberry Pi, it’s Video Input Device number is 0.</p>
+<p>The Raspberry Pi raspistill utility can verify this, as it will display the Video Input Device number when the “-v” (verbose) option is provided as shown below:</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/raspistill-verbose-camera-id-annotated.png"><img alt="../../_images/raspistill-verbose-camera-id-annotated.png" src="../../_images/raspistill-verbose-camera-id-annotated.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-text">Displaying the Video Input Device number using raspistil’s verbose mode.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="simple-camera-test-script">
+<h2>Simple Camera Test Script<a class="headerlink" href="#simple-camera-test-script" title="Permalink to this headline"></a></h2>
+<p>The following python script, which runs directly on the Raspberry Pi, can be used to acquire video from the SR Pro Camera; this script uses the OpenCV Library to acquire images from the SR Pro Camera, convert them to grayscale, and render the images to the Raspberry Pi display.  This script continues to run until the “ESCAPE” key is pressed.</p>
+<p>Note that in the script code below, the “0” parameter to the cv2.VideoCapture() function indicates that Video Input Device 0 should be used.</p>
+<p>Since both OpenCV and Python are pre-installed on the VMX Robotics Controller SD-Card, no other software must be installed to run the following script:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">640</span><span class="p">)</span> <span class="c1"># Width</span>
+<span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">480</span><span class="p">)</span> <span class="c1"># Height</span>
+
+<span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span> <span class="c1"># &#39;ESC&#39; to exit</span>
+        <span class="k">break</span>
+
+<span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Simply save the above code to a file with a “.py” extension (for example “sr_pro_test.py”), and then execute it from a Raspbery Pi console by running this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">sr_pro_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-the-sr-pro-camera-using-the-wpi-library">
+<h2>Accessing the SR Pro Camera using the WPI Library<a class="headerlink" href="#accessing-the-sr-pro-camera-using-the-wpi-library" title="Permalink to this headline"></a></h2>
+<p>The SR Pro Camera may be accessed from a Robot Program via the WPI Library CameraServer class, which works with the Raspberry Pi’s V4L2 driver to both configure and acquire camera data.</p>
+<p>The Video Input Device number described above is used to specify the video camera in the WPI Library CameraServer class, as shown below:</p>
+<p>// Creates UsbCamera and MjpegServer and connects them
+int sr_pro_video_input_device_number = 0;
+CameraServer.getInstance().startAutomaticCapture(sr_pro_video_input_device_number);</p>
+<p>WPI Library-based vision processing techniques are documented in the <a class="reference external" href="https://docs.wpilib.org/en/stable/docs/software/vision-processing/introduction/index.html">WPI Libary vision processing documentation</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wpi-channel-addressing.html" class="btn btn-neutral float-left" title="WPI Channel Addressing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="navx.html" class="btn btn-neutral float-right" title="Calibrating and Using the navX-sensor IMU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

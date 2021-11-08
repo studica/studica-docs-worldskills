@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offline Installer &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Programming" href="../programming/index.html" />
+    <link rel="prev" title="Software Setup" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Studica Robotics<img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software Setup</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Offline Installer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../VMX/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Vision/sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Vision/installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Vision/reading-a-barcode/index.html">Reading a Barcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit2/index.html">Unit 2: Starting Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit3/index.html">Unit 3: Java Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../JavaCurriculum/unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Software Setup</a> &raquo;</li>
+      <li>Offline Installer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Software/software-setup/offline-installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This setup is for Java/C++ only</p>
+</div>
+<div class="section" id="offline-installer">
+<h1>Offline Installer<a class="headerlink" href="#offline-installer" title="Permalink to this headline"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the USB in your kit does not contain the correct files, they can be downloaded <a class="reference external" href="https://studicalimited.sharepoint.com/:f:/s/SR-Resources/EthAxkm4x1dNropZVW7TmpwB9mmQFKnIrEiO4Vgcd51rzA?e=woH78E">here</a>.</p>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Windows 7: You <strong>must</strong> install the standalone version of .NET Version 4.62+ which can be found <a class="reference external" href="https://support.microsoft.com/en-us/help/3151800/the-net-framework-4-6-2-offline-installer-for-windows">here</a>. Before preceding!</p>
+</div>
+<p>The offline installation files will be located in the USB provided inside the collection. Locate and run the file named <code class="docutils literal notranslate"><span class="pre">WPILibInstaller_Windows64-2020.3.2.exe</span></code> or <code class="docutils literal notranslate"><span class="pre">WPILibInstaller_Windows32-2020.3.2.exe</span></code> based on your OS.</p>
+<div class="figure align-center">
+<img alt="../../../_images/installer-1.png" src="../../../_images/installer-1.png" />
+</div>
+<p>Installing for <em>All Users</em> will require admin privileges and install for all users on the machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Software will be installed to <code class="docutils literal notranslate"><span class="pre">C:\Users\Public\wpilib\YYYY</span></code>. YYYY Corresponds to the currently suppored year.</p>
+</div>
+<p><strong>Installing VS Code</strong></p>
+<blockquote>
+<div><p>Due to licensing reasons with VS Code the installer does not contain it bundled in. To overcome this hit the <em>Select/Download VS Code</em> button.</p>
+<div class="figure align-center">
+<img alt="../../../_images/installer-2.png" src="../../../_images/installer-2.png" />
+</div>
+<p>This will open up the selector tool.</p>
+<div class="figure align-center">
+<img alt="../../../_images/installer-3.png" src="../../../_images/installer-3.png" />
+</div>
+<p>Select the <em>Select Existing Download</em> option and then select the file <code class="docutils literal notranslate"><span class="pre">OfflineVsCodeFiles-1.41.1.zip</span></code>. This will change back to the installer window and <em>Execute Install</em> can be run.</p>
+<div class="figure align-center">
+<img alt="../../../_images/installer-5.png" src="../../../_images/installer-5.png" />
+</div>
+</div></blockquote>
+<p><strong>What was just Installed</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Visual Studio Code</em> - The preferred and supported IDE for robot code development.</p></li>
+<li><p><em>C++ Compiler</em> - Toolchains required for building C++ code.</p></li>
+<li><p><em>Java JDK/JRE</em> - Specific version of the JDK/JRE that is used to build code.</p></li>
+<li><p><em>Gradle</em> - Specific version of Gradle used for building and deploying Java or C++ code</p></li>
+<li><p><em>WPILib Tools</em> - Tools used for robot enhancement</p></li>
+<li><p><em>WPILib Dependencies</em> - OpenCV, etc.</p></li>
+<li><p><em>VS Code Extensions</em> - WPILib extensions for robot code development</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The installer creates a separate version of VS Code for robotics development, even if VS Code is already installed locally. This is done to prevent workflows from breaking.</p>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section and all macOS examples was completed and tested using macOS High Sierra</p>
+</div>
+<p>The macOS installation requires multiple individual steps to be completed.</p>
+<p><strong>VS Code Install</strong></p>
+<blockquote>
+<div><p>VS Code needs to be installed before the extensions are installed. The preferred version of VS Code is <code class="docutils literal notranslate"><span class="pre">1.41.1</span></code> which can be found in the provided USB stick in the macOS folder. The file is called <code class="docutils literal notranslate"><span class="pre">VSCode-darwin-stable.zip</span></code>. Double click on the zip folder if it’s not extracted already and drag the <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> into the <strong>Applications</strong> folder.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-1.png" src="../../../_images/offline-installation-1.png" />
+</div>
+<p>After dragging to the Applications folder the VS Code Icon will be visible in Applications</p>
+<img alt="../../../_images/offline-installation-2.png" class="align-center" src="../../../_images/offline-installation-2.png" />
+</div></blockquote>
+<p><strong>WPILib Install</strong></p>
+<blockquote>
+<div><p>The WPILib file <code class="docutils literal notranslate"><span class="pre">WPILib_Mac-2020.3.2.tar.gz</span></code> can be found in the macOS folder in the USB provided.</p>
+<p>Double click on the <code class="docutils literal notranslate"><span class="pre">WPILib_Mac-2020.3.2.tar.gz</span></code> to remove the <code class="docutils literal notranslate"><span class="pre">.gz</span></code> extension. Double click again on the <code class="docutils literal notranslate"><span class="pre">WPILib_Mac-2020.3.2.tar</span></code> to remove the <code class="docutils literal notranslate"><span class="pre">.tar</span></code> extension. Drag the <code class="docutils literal notranslate"><span class="pre">WPILib_Mac-2020.3.2</span></code> folder into Downloads.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-3.png" src="../../../_images/offline-installation-3.png" />
+</div>
+<p>Open the terminal and run these commands</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir wpilib/2020
+
+cp -R ~/Downloads/WPILib_Mac-2020.3.2/ ~/wpilib/2020
+</pre></div>
+</div>
+<p>This will create the appropriate directories for WPILib and move the contents of <code class="docutils literal notranslate"><span class="pre">WPILib_Mac-2020.3.2</span></code> to the <code class="docutils literal notranslate"><span class="pre">~/wpilib/2020</span></code> folder. When done the folder structure should look like this.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-4.png" src="../../../_images/offline-installation-4.png" />
+</div>
+<p>The tools need to be updated so they can be used. Run the commands below to do so.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/wpilib/2020/tools
+
+python ToolsUpdater.py
+</pre></div>
+</div>
+<p>An example of using the terminal is shown below.</p>
+<img alt="../../../_images/offline-installation-5.png" class="align-center" src="../../../_images/offline-installation-5.png" />
+</div></blockquote>
+<p><strong>Installing Extensions</strong></p>
+<blockquote>
+<div><p>For VS Code to work properly the WPILib extensions need to be installed. Open VS Code and use the shortcut <code class="docutils literal notranslate"><span class="pre">Cmd-Shift-P</span></code> to open the command pallet. Type in the command <code class="docutils literal notranslate"><span class="pre">Extensions:</span> <span class="pre">Install</span> <span class="pre">from</span> <span class="pre">VSIX</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-6.png" src="../../../_images/offline-installation-6.png" />
+</div>
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">~/wpilib/2020/vsCodeExtensions</span></code> folder, select <code class="docutils literal notranslate"><span class="pre">Cpp.vsix</span></code> and hit install.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-7.png" src="../../../_images/offline-installation-7.png" />
+</div>
+<p>Repeat this step for all the <code class="docutils literal notranslate"><span class="pre">vsix</span></code> files located in <code class="docutils literal notranslate"><span class="pre">~/wpilib/2020/vsCodeExtensions</span></code>.</p>
+<p><strong>They must be completed in this order:</strong></p>
+<ol class="arabic simple">
+<li><p>Cpp.vsix</p></li>
+<li><p>JavaLang.vsix</p></li>
+<li><p>JavaDeps.vsix</p></li>
+<li><p>JavaDebug.vsix</p></li>
+<li><p>WPILib.vsix</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On the bottom right of the VS Code window popups will show saying if the installation is complete. Wait until there is a completed popup before preceding with the next extension. Also when installing the JavaLang.vsix there may be an error shown. <strong>This should be ignored for now</strong></p>
+</div>
+</div></blockquote>
+<p><strong>Getting VS Code to use Java 11</strong></p>
+<blockquote>
+<div><p>VS Code needs to be pointed to where the WPILib Java Home is. This is simply done by running the following command <code class="docutils literal notranslate"><span class="pre">WPILib:</span> <span class="pre">Set</span> <span class="pre">VS</span> <span class="pre">Code</span> <span class="pre">Java</span> <span class="pre">Home</span> <span class="pre">to</span> <span class="pre">FRC</span> <span class="pre">Home</span></code>.</p>
+<img alt="../../../_images/offline-installation-8.png" class="align-center" src="../../../_images/offline-installation-8.png" />
+</div></blockquote>
+<p><strong>What was just Installed</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Visual Studio Code</em> - The preferred and supported IDE for robot code development.</p></li>
+<li><p><em>C++ Compiler</em> - Toolchains required for building C++ code.</p></li>
+<li><p><em>Java JDK/JRE</em> - Specific version of the JDK/JRE that is used to build code.</p></li>
+<li><p><em>Gradle</em> - Specific version of Gradle used for building and deploying Java or C++ code</p></li>
+<li><p><em>WPILib Tools</em> - Tools used for robot enhancement</p></li>
+<li><p><em>WPILib Dependencies</em> - OpenCV, etc.</p></li>
+<li><p><em>VS Code Extensions</em> - WPILib extensions for robot code development</p></li>
+</ul>
+</div></blockquote>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section and all Linux examples was completed and tested using Ubuntu Desktop 20.04 LTS</p>
+</div>
+<p>The Linux installation requires multiple individual steps to be completed.</p>
+<p><strong>Installing VS Code</strong></p>
+<blockquote>
+<div><p>VS Code needs to be installed before the extensions are installed. The preferred version of VS Code is <code class="docutils literal notranslate"><span class="pre">1.41.1</span></code> which can be found in the Linux folder in the USB provided.</p>
+<p>Using the file <code class="docutils literal notranslate"><span class="pre">code_1.41.1-1576681836_amd64.deb</span></code>, right click on the file and select <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">With</span> <span class="pre">Other</span> <span class="pre">Application</span></code> and chose <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Install</span></code>. When software install opens verify the Version number as <code class="docutils literal notranslate"><span class="pre">1.41.1</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Install</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-11.png" src="../../../_images/offline-installation-11.png" />
+</div>
+<p>There should be an Authentication prompt asking for the user to input their password. After the Authentication window the install will start and should only take a minute.</p>
+</div></blockquote>
+<p><strong>WPILib Installation</strong></p>
+<blockquote>
+<div><p>The WPILib file <code class="docutils literal notranslate"><span class="pre">WPILib_Linux-2020.3.2.tar.gz</span></code> can be found in the Linux folder on the provided USB. Place the file in the Downloads folder. Right click on the <code class="docutils literal notranslate"><span class="pre">WPILib_Linux-2020.3.2.tar.gz</span></code> and select <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Here</span></code>. This will extract the contents and they can be moved.</p>
+<p>Open Terminal and run these commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/wpilib/2020
+
+mv -v ~/Downloads/WPILib_Linux-2020.3.2/* ~/wpilib/2020
+
+python3 ~/wpilib/2020/tools/ToolsUpdater.py
+</pre></div>
+</div>
+<p>This will move everything to the correct location and run the updater for the tools.</p>
+</div></blockquote>
+<p><strong>VS Code Extensions</strong></p>
+<blockquote>
+<div><p>For VS Code to be used for robotics the extensions from WPILib need to be installed.</p>
+<ol class="arabic">
+<li><p>Open VS Code using terminal by typing in <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p></li>
+<li><p>To open the command palette use <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> or hit <code class="docutils literal notranslate"><span class="pre">F1</span></code>.</p></li>
+<li><p>In the command palette run the command <code class="docutils literal notranslate"><span class="pre">Extensions:</span> <span class="pre">Install</span> <span class="pre">From</span> <span class="pre">VSIX</span></code>.</p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-21.png" src="../../../_images/offline-installation-21.png" />
+</div>
+</li>
+<li><p>Extensions can be found in <code class="docutils literal notranslate"><span class="pre">~/wpilib/2020/vsCodeExtensions</span></code></p>
+<div class="figure align-center">
+<img alt="../../../_images/offline-installation-31.png" src="../../../_images/offline-installation-31.png" />
+</div>
+</li>
+</ol>
+<p><strong>Install the Extensions in this Order</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Cpp.vsix</p></li>
+<li><p>JavaLang.vsix</p></li>
+<li><p>JavaDeps.vsix</p></li>
+<li><p>JavaDebug.vsix</p></li>
+<li><p>WPILib.vsix</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After installing an extension it’s recommended to close and reopen VS Code.</p>
+</div>
+</div></blockquote>
+<p><strong>Getting VS Code to use Java 11</strong></p>
+<blockquote>
+<div><p>VS Code needs to be pointed to where the WPILib Java Home is. This is simply done by running the following command <code class="docutils literal notranslate"><span class="pre">WPILib:</span> <span class="pre">Set</span> <span class="pre">VS</span> <span class="pre">Code</span> <span class="pre">Java</span> <span class="pre">Home</span> <span class="pre">to</span> <span class="pre">FRC</span> <span class="pre">Home</span></code>.</p>
+<img alt="../../../_images/offline-installation-41.png" class="align-center" src="../../../_images/offline-installation-41.png" />
+</div></blockquote>
+<p><strong>Vulkan Installation</strong></p>
+<blockquote>
+<div><p>For the simulation GUI to run, Vulkan is required. To install Vulkan there is a <code class="docutils literal notranslate"><span class="pre">libvulkan1_1.2.131.2-1_amd64.deb</span></code> file located in the Linux folder on the USB. Right click on the file and select <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">With</span> <span class="pre">Other</span> <span class="pre">Application</span></code> and chose <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Install</span></code>. This will then bring up the software install screen where you will hit <code class="docutils literal notranslate"><span class="pre">Install</span></code>, and the driver will then proceed to install.</p>
+</div></blockquote>
+<p><strong>What was just Installed</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Visual Studio Code</em> - The preferred and supported IDE for robot code development.</p></li>
+<li><p><em>C++ Compiler</em> - Toolchains required for building C++ code.</p></li>
+<li><p><em>Java JDK/JRE</em> - Specific version of the JDK/JRE that is used to build code.</p></li>
+<li><p><em>Gradle</em> - Specific version of Gradle used for building and deploying Java or C++ code</p></li>
+<li><p><em>WPILib Tools</em> - Tools used for robot enhancement</p></li>
+<li><p><em>WPILib Dependencies</em> - OpenCV, etc.</p></li>
+<li><p><em>VS Code Extensions</em> - WPILib extensions for robot code development</p></li>
+<li><p><em>Vulkan</em> - Low overhead graphics API</p></li>
+</ul>
+</div></blockquote>
+</div></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Software Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../programming/index.html" class="btn btn-neutral float-right" title="Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variables &mdash; Studica Robotics 1.0.0 documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/studica-rtd.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/Studica_Favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Exercises" href="exercises.html" />
+    <link rel="prev" title="Data Types" href="data-types.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Studica Robotics<img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../GettingStarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html">Java API</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/software-setup/index.html">Software Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/programming/index.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/setup/index.html">LabVIEW Setup (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/toolkit/index.html">LabVIEW Toolkit (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labview/using-labview/index.html">Using LabVIEW (Beta)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Software/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Control Station</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ControlStation/index.html">Control Station</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Building System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../BuildingSystem/robotics-and-control-systems/index.html">Robotics and Control Systems</a></li>
+</ul>
+<p class="caption"><span class="caption-text">VMX</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/setup.html">Connecting Sensors and Actuators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/wpi-channel-addressing.html">WPI Channel Addressing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/vision.html">Configuring and Testing the SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/navx.html">Calibrating and Using the navX-sensor IMU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/update.html">Updating Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/os-image.html">VMX OS Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VMX/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Titan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/titan.html">Titan Quad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/programing-the-titan.html">Programming the Titan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/download-update-app.html">Download Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/using-the-update-app.html">Using the Update App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/titan-status-light.html">Titan Status Light</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Titan/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Sensors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/cobra.html">Cobra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/ultrasonic.html">Ultrasonic Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/sharpIR.html">Sharp IR Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/limit-switches.html">Limit Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensors/encoders.html">Encoders</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Vision</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/sr-pro-camera.html">SR Pro Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/installing-the-ribbon-cable.html">Installing the Ribbon Cable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Vision/reading-a-barcode/index.html">Reading a Barcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Motors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Motors/servo-motors.html">Servo Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Motors/maverick-dc-motor.html">Maverick DC Motor</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Servo Control</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Servo/servo-power-block.html">Servo Power Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Servo/servo-smart-programmer.html">Servo Smart Programmer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Curriculum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../unit1/index.html">Unit 1: Introduction to Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit2/index.html">Unit 2: Starting Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Unit 3: Java Essentials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Lesson 1: Data Types and Variables</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data-types.html">Data Types</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercise-answers.html">Exercise Answers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson2/index.html">Lesson 2: Type Casting and Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson3/index.html">Lesson 3: Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson4/index.html">Lesson 4: Math and Boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson5/index.html">Lesson 5: If/Else Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson6/index.html">Lesson 6: Switch Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson7/index.html">Lesson 7: Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lesson8/index.html">Lesson 8: Arrays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../unit4/index.html">Unit 4: Inputs and Methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Contributing/style-guide.html">Style Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/studica/studica-docs-worldskills/issues">Report an Issue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Studica Robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Unit 3: Java Essentials</a> &raquo;</li>
+          <li><a href="index.html">Lesson 1: Data Types and Variables</a> &raquo;</li>
+      <li>Variables</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/JavaCurriculum/unit3/lesson1/variables.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"></a></h1>
+<p>Variables are a way of storing data that can be used and changed throughout the program.</p>
+<div class="section" id="variable-declaration">
+<h2>Variable Declaration<a class="headerlink" href="#variable-declaration" title="Permalink to this headline"></a></h2>
+<p>Before a variable may be used it must be declared. This tells the compiler to allocate memory for the variable. The format for declaring a variable is shown below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dataType variableName;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>dataType is the data type that the variable holds.</p></li>
+<li><p>variableName is the name of the variable you wish to give.</p></li>
+</ul>
+<p>Some examples of real world variables:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">area</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">letter</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Variables of the same data type can be declared together.</p>
+<p><strong>Instead of:</strong></p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Use:</strong></p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Variables should have initial values. It is easy to do this when declaring them.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="mf">42.5</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">letter</span> <span class="o">=</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="variable-naming">
+<h2>Variable Naming<a class="headerlink" href="#variable-naming" title="Permalink to this headline"></a></h2>
+<p>Variables follow a <a class="reference external" href="https://en.wikipedia.org/wiki/Camel_case">camel case</a> naming structure. This means that the first word is lower case and any preceding word in the variable has a capital first letter.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Bad naming of variables ie. no camelCase</span>
+<span class="kt">int</span> <span class="n">Hellothere</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">thatsreallycool</span><span class="p">;</span>
+
+<span class="c1">// Good naming of variables using camelCase</span>
+<span class="kt">int</span> <span class="n">helloThere</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">thatsReallyCool</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>If you notice it becomes easier to read the different words in the variable.</p>
+<p>Variables containing more than one word should be joined together.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Bad variable naming</span>
+<span class="kt">int</span> <span class="n">hello_There</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">thats</span><span class="o">-</span><span class="n">really</span><span class="o">-</span><span class="n">cool</span><span class="p">;</span>
+
+<span class="c1">// Good variable naming</span>
+<span class="kt">int</span> <span class="n">helloThere</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">thatsReallyCool</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Variables must always start with a lowercase letter, an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> or a <code class="docutils literal notranslate"><span class="pre">$</span></code> sign. Variables cannot start with a number or any other symbol.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Acceptable starts of variables</span>
+<span class="kt">int</span> <span class="n">hello</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">_variable</span><span class="p">;</span>
+<span class="kt">long</span> <span class="n">$money</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Variables should always be descriptive but not to long and match the function.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Good Example</span>
+
+<span class="c1">// Variables for calculating Pythagorean theorem</span>
+<span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="c1">// Bad Example</span>
+
+<span class="c1">// Variables for calculating Pythagorean theorem</span>
+<span class="kt">double</span> <span class="n">edge</span><span class="p">,</span> <span class="n">longerEdge</span><span class="p">,</span> <span class="n">reallyLongEdge</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline"></a></h2>
+<p>Constants are a special type of variable that cannot change during the operation of the program. Constants are useful for values that wont change or don’t need to change.</p>
+<p>To declare a constant we use:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>final dataType CONSTANT_NAME = valueOfConstant;
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">final</span></code> tells the compiler that this variable cannot be changed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike variables constants use all caps for naming. Also if more than one word is in the constant name we use an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> to separate them.</p>
+</div>
+<p>Some examples</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="kt">int</span> <span class="n">CONTROLLER_AXIS</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">final</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159265358979</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="using-variables-in-code">
+<h2>Using Variables in code<a class="headerlink" href="#using-variables-in-code" title="Permalink to this headline"></a></h2>
+<p>Variables make programing easy lets go through some examples.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Variables</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Output</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<p>Line 5 holds the variable and its initial value. The variable is <code class="docutils literal notranslate"><span class="pre">x</span></code>, the data type is <code class="docutils literal notranslate"><span class="pre">int</span></code> and the value of the variable is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Line 6 is the output of the variable. When printing a variable the quotations <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> are not used.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Variables</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kd">final</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159265358979</span><span class="p">;</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The Value of pi to 15 decimal places is: &quot;</span> <span class="o">+</span> <span class="n">PI</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Output</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The Value of pi to 15 decimal places is: 3.14159265358979
+</pre></div>
+</div>
+<p>Line 5 holds the variable which is being used as a constant.</p>
+<p>Line 6 is the output. Notice how this time we are mixing a String with a variable. The String “The Value of pi to 15 decimal places is: ” and variable PI are joined by using <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Variables</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">6.84</span><span class="p">;</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Original Variable x: &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="p">);</span>
+      <span class="n">x</span> <span class="o">=</span> <span class="mf">10.8</span><span class="p">;</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Changed Variable x: &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Output</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Original Variable x: 6.84
+Changed Variable x: 10.8
+</pre></div>
+</div>
+<p>In this example we define the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> and give it the value of <code class="docutils literal notranslate"><span class="pre">6.84</span></code> on line 5. On line 7 we assign x a new value of <code class="docutils literal notranslate"><span class="pre">10.8</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data-types.html" class="btn btn-neutral float-left" title="Data Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="exercises.html" class="btn btn-neutral float-right" title="Exercises" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Studica.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
