@@ -89,30 +89,6 @@ Programming the Sharp IR Sensor
 
         The accessor function will output the range in cm.  
 
-        .. note:: The valid Analog ports are ``0-3``
-        
-    .. tab:: Roscpp
+        .. note:: The valid Analog ports are ``0-3`` 
 
-        .. code-block:: c++
-            :linenos:
-            
-            //Include the Sharp Library
-            #include "Sharp_ros.h"
-            
-            /**
-             * Constructors
-             * Sharp's ros threads (publishers and services) will run asynchronously in the background
-             */
-             SharpROS sharp(&nh, &vmx);
-             // or can use
-             SharpROS sharp(&nh, &vmx, channel);
-             
-             //Use these to directly access the data
-             sharp.GetIRDistance(); //converts the average voltage read
-             sharp.GetRawVoltage(); //returns the average voltage
-             
-        The accessor function will output the range in cm.  
-
-        .. note:: The valid Analog channels are ``22-25``
-        
-        .. important:: Subscribe to sharp topics to access the data being published and write callbacks to pass messages between various processes.
+    
