@@ -52,6 +52,9 @@ Reading a Digital Input
              * DIO ros threads (publishers and services) will run asynchronously in the background
              */
             
+            ros::NodeHandle nh; //internal reference to the ROS node that tourm program will use to interacts with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, defalut is 50hz within a valid range of 4-200Hz
+            
             DigitalOuptutROS(&nh, &vmx, channel);
             DigitalInputROS(&nh, &vmx, channel);
             
@@ -68,5 +71,5 @@ Reading a Digital Input
             msg2.request.data = duration; //Configure ping duration for a length of 10 microseconds
             setDuration.call(msg2);
             
-         .. important:: Subscribe to DI_ros topics to access the data being published and write callbacks to pass messages between various processes.
+         .. important:: Subscribe to DI topics to access the data being published and write callbacks to pass messages between various processes.
             

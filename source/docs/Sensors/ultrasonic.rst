@@ -103,9 +103,13 @@ Programming the Ultrasonic Distance Sensor
             #include "Ping_ros.h"
             
             /**
-             * Constructors
+             * Constructor
              * Ping's ros threads (publishers and services) will run asynchronously in the background
              */
+             
+            ros::NodeHandle nh; //internal reference to the ROS node that tourm program will use to interacts with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, defalut is 50hz within a valid range of 4-200Hz
+            
             PingROS ping(&nh, &vmx, 8, 9);
             ping.Ping(); //Sends an ultrasonic pulse for the ping object to read
             
@@ -123,4 +127,4 @@ Programming the Ultrasonic Distance Sensor
 
         .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
         
-        .. important:: Subscribe to ping topics to access the data being published and write callbacks to pass messages between various processes.
+        .. important:: Subscribe to Ping topics to access the data being published and write callbacks to pass messages between various processes.
