@@ -124,7 +124,7 @@ Programming the Ultrasonic Distance Sensor
                return ping.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
             }
          
-        The accessor functions will then output the range in either microseconds, inches, or mm.  
+        The accessor functions will then output the range in either microseconds, inches, or cm.  
 
         .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
         
