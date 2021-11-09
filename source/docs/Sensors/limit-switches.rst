@@ -36,3 +36,4 @@ Reading a Digital Input
 
             //Use these to access data
             input.Get(); //Will return true for a high signal and false for a low signal
+            

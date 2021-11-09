@@ -93,13 +93,22 @@ Programming the Cobra
             #include "Cobra_ros.h"
             
             /**
-             * Constructors
+             * Constructor
              * Cobra's ros threads (publishers and services) will run asynchronously in the background
              */
-            CobraROS cobra(&nh, &vmx);
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
-            //Use these to directly access data
+            CobraROS cobra(&nh, &vmx); //default device address is 0x48 and default voltage is 5.0F
+            // or can use
+            CobraROS cobra(&nh, &vmx, deviceAddress);
+            // or if sensor is using 3.3V, refVoltage(3.3F)
+            CobraROS cobra(&nh, &vmx, deviceAddress, refVoltage);
+            
+            // Use these to directly access data
             cobra.GetVoltage(channel); //returns a float
             cobra.GetRawValue(channel); //returns an int
             
-        .. note:: Subscribe to cobra topics to access the data being published and write callbacks to pass messages between various processes.
+        The accessor functions will output either the voltage (0 - 5V) or the raw ADC value (0 - 2047).
+            
+        .. important:: Subscribe to Cobra topics to access the data being published and write callbacks to pass messages between various processes.

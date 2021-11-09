@@ -147,7 +147,40 @@ Standard Servo
             servo.SetAngle(degrees); //Range 0° - 300°
 
         The function will allow you to set the angle of the servo
+        
+    .. tab:: Roscpp
 
+        .. code-block:: c++  
+         :linenos:
+         
+         //Include the Servo Library
+         #include "Servo_ros.h"
+         
+         /**
+          * Constructor
+          * Servo's ros threads (publishers and services) will run asynchronously in the background
+          */
+          
+         ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+         VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+         
+         ServoRos servo(&nh, &vmx, channel);
+         ros::ServiceClient setAngle;
+         
+         // Use these to directly access data
+         servo.GetMinAngle(); //returns a double
+         servo.GetMaxAngle(); //returns a double
+         
+         // Declaring message type
+         vmxpi_ros::Float msg;
+         
+         // Setting the servo angle
+         float angle = 45.0 //Range -150° - 150°
+         msg.request.data = angle;
+         setAngle.call(msg);
+         
+        .. important:: Subscribe to Servo topics to access the data being published and write callbacks to pass messages between various processes.
+        
 Continuous Servo
 ^^^^^^^^^^^^^^^^
 
