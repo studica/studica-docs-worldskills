@@ -52,8 +52,8 @@ Reading a Digital Input
              * DIO ros threads (publishers and services) will run asynchronously in the background
              */
             
-            ros::NodeHandle nh; //internal reference to the ROS node that tourm program will use to interacts with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, defalut is 50hz within a valid range of 4-200Hz
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
             DigitalOuptutROS(&nh, &vmx, channel);
             DigitalInputROS(&nh, &vmx, channel);
@@ -61,11 +61,11 @@ Reading a Digital Input
             ros::ServiceClient sendPing, setDuration;
             
             // Declaring message types
-            std_srvs::Empty msg1; //ROS service type for sending a signal to a ROS node
-            vmxpi_ros::Int msg2; //VMX-pi service type
+            std_srvs::Empty msg1;
+            vmxpi_ros::Int msg2;
             
-            //Use these to send a ping signal and set duration
-            sendPing.call(msg1); //Send a ping singal with default duration 10 microseconds
+            // Use these to send a ping signal and set duration, default duration: 10 microseconds
+            sendPing.call(msg1);
             
             int duration = 10;
             msg2.request.data = duration; //Configure ping duration for a length of 10 microseconds

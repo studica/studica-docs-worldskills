@@ -104,8 +104,8 @@ Programming the Sharp IR Sensor
              * Sharp's ros threads (publishers and services) will run asynchronously in the background
              */
              
-            ros::NodeHandle nh; //internal reference to the ROS node that tourm program will use to interacts with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, defalut is 50hz within a valid range of 4-200Hz
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
              SharpROS sharp(&nh, &vmx);
              // or can use
@@ -117,6 +117,6 @@ Programming the Sharp IR Sensor
              
         The accessor function will output the range in cm.  
 
-        .. note:: The valid Analog channels are ``22-25``
+        .. note:: The valid Analog channels are ``22-25``. These are different from the WPI Analog Input Channels.
         
         .. important:: Subscribe to Sharp topics to access the data being published and write callbacks to pass messages between various processes.

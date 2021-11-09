@@ -161,8 +161,8 @@ Standard Servo
           * Servo's ros threads (publishers and services) will run asynchronously in the background
           */
           
-         ros::NodeHandle nh; //internal reference to the ROS node that tourm program will use to interacts with the ROS system
-         VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, defalut is 50hz within a valid range of 4-200Hz
+         ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+         VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
          
          ServoRos servo(&nh, &vmx, channel);
          ros::ServiceClient setAngle;
@@ -174,7 +174,7 @@ Standard Servo
          // Declaring message type
          vmxpi_ros::Float msg;
          
-         // Using the "/13/servo/set_angle service to set the servo angle
+         // Setting the servo angle
          float angle = 45.0 //Range -150° - 150°
          msg.request.data = angle;
          setAngle.call(msg);

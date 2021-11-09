@@ -96,8 +96,8 @@ Programming the Cobra
              * Constructor
              * Cobra's ros threads (publishers and services) will run asynchronously in the background
              */
-            ros::NodeHandle nh; //internal reference to the ROS node that tourm program will use to interacts with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, defalut is 50hz within a valid range of 4-200Hz
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
             CobraROS cobra(&nh, &vmx); //default device address is 0x48 and default voltage is 5.0F
             // or can use
