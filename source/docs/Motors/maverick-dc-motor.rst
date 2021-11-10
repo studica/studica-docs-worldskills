@@ -24,7 +24,7 @@ Motor Specs
       - ---
     * - Gear Ratio
       - ---
-      - 1:60
+      - 1:61
       - ---
     * - No Load RPM
       - 88
@@ -71,4 +71,4 @@ Motor Specs
       - 6
       - ---
 
-.. note:: With a CPR of ``6`` and a gear ratio of ``1:60`` the encoder counts per revolution on the output shaft will be :math:`\begin{equation}6*60*4 = 1440\end{equation}`
+.. note:: With a CPR of ``6`` and a gear ratio of ``1:61`` the encoder counts per revolution on the output shaft will be :math:`\begin{equation}6*61*4 = 1464\end{equation}`

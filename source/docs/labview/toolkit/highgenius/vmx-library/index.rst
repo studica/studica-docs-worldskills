@@ -134,21 +134,21 @@ LabVIEW VMX-Library Available Pins
    
     *  - Function
        - LabVIEW Interface
-    *  - M0 Limit Low
-       - 0
     *  - M0 Limit High
+       - 0
+    *  - M0 Limit Low
        - 1
-    *  - M1 Limit Low
-       - 2
     *  - M1 Limit High
+       - 2
+    *  - M1 Limit Low
        - 3
-    *  - M2 Limit Low
-       - 4
     *  - M2 Limit High
+       - 4
+    *  - M2 Limit Low
        - 5
-    *  - M3 Limit Low
-       - 6
     *  - M3 Limit High
+       - 6
+    *  - M3 Limit Low
        - 7
     *  - M0 Encoder
        - 0

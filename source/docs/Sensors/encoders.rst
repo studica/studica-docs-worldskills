@@ -32,19 +32,19 @@ Example
 Lets look at an example using the Maverick with the 100mm omni wheel attached directly on the shaft of the motor. 
 
 - ``r`` = 51 mm (actual measured value)
-- ``ticksPerRev`` = 1440 (encoder counts per 1 revolution of the motor output shaft)
+- ``ticksPerRev`` = 1464 (encoder counts per 1 revolution of the motor output shaft)
 - ``gearRatio`` = 1:1
 
 .. math::
 
       \begin{equation}
       {distancePerTick} = \frac{2 \pi r}{ticksPerRev * gearRatio}
-      = \frac{2 \pi 51}{1440 * 1}
-      = \frac{102 \pi}{1440}
-      = 0.2225294796
+      = \frac{2 \pi 51}{1464 * 1}
+      = \frac{102 \pi}{1464}
+      = 0.218881455
       \end{equation}
 
-Therefor we can conculde that the distancePerTick for the Maverick using the 100mm omni wheels is **0.2225294796**. 
+Therefor we can conculde that the distancePerTick for the Maverick using the 100mm omni wheels is **0.218881455**. 
 
 Application
 ~~~~~~~~~~~
@@ -57,28 +57,28 @@ Now that we have the distancePerTick we can calculate the distance traveled. Thi
 
 Where:
 
-- ``distancePerTick`` = 0.2225294796
+- ``distancePerTick`` = 0.218881455
 - ``encoderCount`` = is the incremental count from the encoder
 
 Lets look at a few examples:
 
 **One Wheel Rotation**
 
-encoderCount = 1440
+encoderCount = 1464
 
 .. math::
 
-    distance = {0.2225294796} * {1440} = 320.44 mm
+    distance = {0.218881455} * {1464} = 320.44 mm
 
 .. note:: The distance measured is in mm as the radius was specficed in mm.
 
 **Ten Wheel Rotations**
 
-encoderCount = 14400
+encoderCount = 14640
 
 .. math::
 
-    distance = {0.2225294796} * {14400} = 3204.43 mm
+    distance = {0.218881455} * {14640} = 3204.43 mm
 
 Code
 ^^^^
@@ -108,7 +108,7 @@ Now that we know the math behind it, let's look at how to program the encoder fo
             public static final int wheelRadius             = 51;
 
             //Encoder pulses per rotation of motor shaft    
-            public static final int pulsePerRotation        = 1440;
+            public static final int pulsePerRotation        = 1464;
 
             //Gear ratio between motor shaft and output shaft
             public static final double gearRatio            = 1/1;
@@ -181,7 +181,7 @@ Now that we know the math behind it, let's look at how to program the encoder fo
                      * Motor Constants
                      */
                     #define TITAN_ID                42
-                    #define MOTOR_N                   2
+                    #define MOTOR_N                 2
 
                     /**
                      * Encoder Constants
@@ -191,7 +191,7 @@ Now that we know the math behind it, let's look at how to program the encoder fo
                     #define wheelRadius             51
 
                     //Encoder pulses per rotation of motor shaft    
-                    #define pulsePerRotation        1440
+                    #define pulsePerRotation        1464
 
                     //Gear ratio between motor shaft and output shaft
                     #define gearRatio               1/1
@@ -307,7 +307,7 @@ Fortunately, the Titan has an internal RPM count, so no external math is require
                      * Motor Constants
                      */
                     #define TITAN_ID                42
-                    #define MOTOR_N                   2
+                    #define MOTOR_N                 2
 
                     /**
                      * Objects
