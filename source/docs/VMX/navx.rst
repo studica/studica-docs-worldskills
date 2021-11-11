@@ -354,7 +354,41 @@ Magnetometer Calibration can be accomplished with a single, simple calibration p
 
 
 
+Programming the NavX Sensor
+---------------------------
 
+.. tabs::
+
+    .. tab:: Roscpp
+    
+        .. code-block:: c++
+            :linenos:
+            
+            //Include the NavX Library
+            #include "navX_ros_wrapper.h"
+            
+            
+            double yawAngle;
+            // Returns the current yaw value (in degrees, from -180 to 180) reported by the sensor
+            void angleCallback(const std_msgs::Float32::ConstPtr& msg)
+            {
+               yawAngle = msg->data;
+            }
+            
+            /**
+             * Constructor
+             * NavX's ros threads (publishers and services) will run asynchronously in the background
+             */
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+            ros::Subsriber yawAngle_sub;
+            
+            navXROSWrapper navx(&nh, &vmx);
+            
+            // Subscribing to NavX angle topic to access the angle data
+            yawAngle_sub = nh.subscribe("navx/yaw", 1, angleCallback);
+            
+        .. important:: Subscribe to NavX topics to access the data being published and write callbacks to pass messages between various processes.
 
 
 
