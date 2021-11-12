@@ -156,30 +156,56 @@ Standard Servo
          //Include the Servo Library
          #include "Servo_ros.h"
          
-         /**
-          * Constructor
-          * Servo's ros threads (publishers and services) will run asynchronously in the background
-          */
-          
-         ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-         VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
          
-         ServoRos servo(&nh, &vmx, channel);
-         ros::ServiceClient setAngle;
+         double servo_angle;
+            
+         void servo_angle_Cb(const std_msgs::Float32::ConstPtr& msg)
+         {
+            servo_angle = msg->data;
+         }
          
-         // Use these to directly access data
-         servo.GetMinAngle(); //returns a double
-         servo.GetMaxAngle(); //returns a double
-         
-         // Declaring message type
-         vmxpi_ros::Float msg;
-         
-         // Setting the servo angle
-         float angle = 45.0 //Range -150° - 150°
-         msg.request.data = angle;
-         setAngle.call(msg);
+         int main(int argc, char **argv
+         {
+            
+            ros::init(argc, argv, "servo_node");
+            
+            /**
+             * Constructor
+             * Servo's ros threads (publishers and services) will run asynchronously in the background
+             */
+             
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+            
+            ros::ServiceClient setAngle;
+            ros::Subsrciber servo_angle_sub;
+            
+            ServoRos servo(&nh, &vmx, channel);
+
+            // Use these to directly access data
+            servo.GetAngle(); //returns a double;
+            servo.GetMinAngle(); //returns a double
+            servo.GetMaxAngle(); //returns a double
+            
+            // Declaring message type
+            vmxpi_ros::Float msg;
+            
+            // Setting the servo angle
+            float angle = 45.0 //Range -150° - 150°
+            msg.request.data = angle;
+            setAngle.call(msg);
+            
+            // Subscribing to Servo angle topic to access the angle data
+            servo_angle_sub = nh.subscribe("channel/channel_index/servo/angle", 1, servo_angle_Cb);
+           
+            ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+            return 0;
+         }
          
         .. important:: Subscribe to Servo topics to access the data being published and write callbacks to pass messages between various processes.
+        
+        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
         
 Continuous Servo
 ^^^^^^^^^^^^^^^^

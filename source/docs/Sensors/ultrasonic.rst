@@ -102,30 +102,51 @@ Programming the Ultrasonic Distance Sensor
             //Include the Ping Library
             #include "Ping_ros.h"
             
-            /**
-             * Constructor
-             * Ping's ros threads (publishers and services) will run asynchronously in the background
-             */
-             
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
-            PingROS ping(&nh, &vmx, 8, 9);
-            ping.Ping(); //Sends an ultrasonic pulse for the ping object to read
+            double ping_cm;
             
-            //Create an accessor function
-            double getDistance()
+            void ping_cm_Cb(const std_msgs::Float32::ConstPtr& msg)
             {
+               ping_cm = msg->data;
+            }
+            
+            int main(int argc, char **argv
+            {
+            
+               ros::init(argc, argv, "ping_node");
+               
+               /**
+                * Constructor
+                * Ping's ros threads (publishers and services) will run asynchronously in the background
+                */
+                
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               ros::Subsriber pingCM_sub;
+               
+               PingROS ping(&nh, &vmx, 8, 9);
+               ping.Ping(); //Sends an ultrasonic pulse for the ping object to read
+               
+               // Use these to directly access data
                uint32_t distance = ping.GetRawValue();
-               return ping.GetRawValue(); // returns distance in microseconds
+               
+               ping.GetRawValue(); // returns distance in microseconds
                // or can use
-               return ping.GetDistanceCM(distance); //converts microsecond distance from GetRawValue() to CM
+               ping.GetDistanceCM(distance); //converts microsecond distance from GetRawValue() to CM
                // or can use
-               return ping.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
+               ping.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
+               
+               // Subscribing to Ping distance topic to access the distance data
+               pingCM_sub = nh.subscribe("channel/9/ping/dist/cm", 1, ping_cm_Cb);
+               
+               ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
             }
          
         The accessor functions will then output the range in either microseconds, inches, or cm.  
 
         .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
         
-        .. important:: Subscribe to Ping topics to access the data being published and write callbacks to pass messages between various processes.
+        .. important:: Subscribe to Ping topics to access the data being published and write callbacks to pass messages between various processes. For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.

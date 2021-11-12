@@ -99,24 +99,49 @@ Programming the Sharp IR Sensor
             //Include the Sharp Library
             #include "Sharp_ros.h"
             
-            /**
-             * Constructor
-             * Sharp's ros threads (publishers and services) will run asynchronously in the background
-             */
-             
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
-             SharpROS sharp(&nh, &vmx);
-             // or can use
-             SharpROS sharp(&nh, &vmx, channel);
+            double sharp_dist;
+            
+            void sharp_dist_Cb(const std_msgs::Float32::ConstPtr& msg)
+            {
+               sharp_dist = msg->data;
+            }
+            
+            int main(int argc, char **argv
+            {
+            
+               ros::init(argc, argv, "sharp_node");
+               
+               /**
+                * Constructor
+                * Sharp's ros threads (publishers and services) will run asynchronously in the background
+                */
+                
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               ros::Subsriber sharpDist_sub;
+               
+               SharpROS sharp(&nh, &vmx);
+               // or can use
+               SharpROS sharp(&nh, &vmx, channel);
+               
+               //Use these to directly access the data
+               sharp.GetIRDistance(); //converts the average voltage read, outputs the range in cm
+               sharp.GetRawVoltage(); //returns the average voltage
+               
+               // Subscribing to Sharp distance topic to access the distance data
+               sharpDist_sub = nh.subscribe("channel/22/sharp_ir/dist", 1, sharp_dist_Cb);
+                
+               ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
+            }
              
-             //Use these to directly access the data
-             sharp.GetIRDistance(); //converts the average voltage read
-             sharp.GetRawVoltage(); //returns the average voltage
-             
-        The accessor function will output the range in cm.  
+        The valid Analog channels are ``22-25``. These are different from the WPI Analog Input Channels.
 
-        .. note:: The valid Analog channels are ``22-25``. These are different from the WPI Analog Input Channels.
-        
         .. important:: Subscribe to Sharp topics to access the data being published and write callbacks to pass messages between various processes.
+        
+        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
+        
+        

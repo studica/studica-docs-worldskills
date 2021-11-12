@@ -92,23 +92,49 @@ Programming the Cobra
             //Include the Cobra Library
             #include "Cobra_ros.h"
             
-            /**
-             * Constructor
-             * Cobra's ros threads (publishers and services) will run asynchronously in the background
-             */
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
-            CobraROS cobra(&nh, &vmx); //default device address is 0x48 and default voltage is 5.0F
-            // or can use
-            CobraROS cobra(&nh, &vmx, deviceAddress);
-            // or if sensor is using 3.3V, refVoltage(3.3F)
-            CobraROS cobra(&nh, &vmx, deviceAddress, refVoltage);
+            double c1Voltage;
             
-            // Use these to directly access data
-            cobra.GetVoltage(channel); //returns a float
-            cobra.GetRawValue(channel); //returns an int
+            // Returns the channel 1 voltage value reported by the sensor
+            void c1_v_Callback(const std_msgs::Float32::ConstPtr& msg)
+            {
+               c1Voltage = msg->data;
+            }
+            
+            int main(int argc, char **argv
+            {
+            
+               ros::init(argc, argv, "cobra_node");
+               
+               /**
+                * Constructor
+                * Cobra's ros threads (publishers and services) will run asynchronously in the background
+                */
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               ros::Subscriber c1_v_sub;
+               
+               CobraROS cobra(&nh, &vmx); //default device address is 0x48 and default voltage is 5.0F
+               // or can use
+               CobraROS cobra(&nh, &vmx, deviceAddress);
+               // or if sensor is using 3.3V, refVoltage(3.3F)
+               CobraROS cobra(&nh, &vmx, deviceAddress, refVoltage);
+               
+               // Use these to directly access data
+               cobra.GetVoltage(channel); //returns a float
+               cobra.GetRawValue(channel); //returns an int
+               
+               // Subscribing to a Cobra voltage topic to access the voltage data
+               c1_v_sub = nh.subscribe("cobra/c1/voltage", 1, c1_v_Callback);
+               
+               ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
+            }
             
         The accessor functions will output either the voltage (0 - 5V) or the raw ADC value (0 - 2047).
             
         .. important:: Subscribe to Cobra topics to access the data being published and write callbacks to pass messages between various processes.
+        
+        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
