@@ -158,8 +158,9 @@ Standard Servo
          
          
          double servo_angle;
-            
-         void servo_angle_Cb(const std_msgs::Float32::ConstPtr& msg)
+         
+         // Returns the angle value set by the Servo motor
+         void servo_angle_callback(const std_msgs::Float32::ConstPtr& msg)
          {
             servo_angle = msg->data;
          }
@@ -196,7 +197,7 @@ Standard Servo
             setAngle.call(msg);
             
             // Subscribing to Servo angle topic to access the angle data
-            servo_angle_sub = nh.subscribe("channel/channel_index/servo/angle", 1, servo_angle_Cb);
+            servo_angle_sub = nh.subscribe("channel/channel_index/servo/angle", 1, servo_angle_callback);
            
             ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                

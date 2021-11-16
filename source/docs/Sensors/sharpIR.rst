@@ -102,7 +102,8 @@ Programming the Sharp IR Sensor
             
             double sharp_dist;
             
-            void sharp_dist_Cb(const std_msgs::Float32::ConstPtr& msg)
+            // Returns the distance value reported by the Sharp IR sensor
+            void sharp_dist_callback(const std_msgs::Float32::ConstPtr& msg)
             {
                sharp_dist = msg->data;
             }
@@ -131,7 +132,7 @@ Programming the Sharp IR Sensor
                sharp.GetRawVoltage(); //returns the average voltage
                
                // Subscribing to Sharp distance topic to access the distance data
-               sharpDist_sub = nh.subscribe("channel/22/sharp_ir/dist", 1, sharp_dist_Cb);
+               sharpDist_sub = nh.subscribe("channel/22/sharp_ir/dist", 1, sharp_dist_callback);
                 
                ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                

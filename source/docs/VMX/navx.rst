@@ -370,8 +370,8 @@ Programming the NavX Sensor
             
             double yawAngle;
             
-            // Returns the current yaw value (in degrees, from -180 to 180) reported by the sensor
-            void angleCallback(const std_msgs::Float32::ConstPtr& msg)
+            // Returns the current yaw value (in degrees, from -180 to 180) reported by the NavX sensor
+            void angle_callback(const std_msgs::Float32::ConstPtr& msg)
             {
                yawAngle = msg->data;
             }
@@ -392,7 +392,7 @@ Programming the NavX Sensor
                navXROSWrapper navx(&nh, &vmx);
                
                // Subscribing to NavX angle topic to access the angle data
-               yawAngle_sub = nh.subscribe("navx/yaw", 1, angleCallback);
+               yawAngle_sub = nh.subscribe("navx/yaw", 1, angle_callback);
                
                ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                

@@ -103,11 +103,12 @@ Programming the Ultrasonic Distance Sensor
             #include "Ping_ros.h"
             
             
-            double ping_cm;
+            double ping_dist_cm;
             
-            void ping_cm_Cb(const std_msgs::Float32::ConstPtr& msg)
+            // Returns the distance value reported by the Ultrasonic Distance sensor
+            void ping_cm_callback(const std_msgs::Float32::ConstPtr& msg)
             {
-               ping_cm = msg->data;
+               ping__dist_cm = msg->data;
             }
             
             int main(int argc, char **argv
@@ -125,21 +126,20 @@ Programming the Ultrasonic Distance Sensor
                
                ros::Subsriber pingCM_sub;
                
-               PingROS ping(&nh, &vmx, 8, 9);
-               ping.Ping(); //Sends an ultrasonic pulse for the ping object to read
+               PingROS ultrasonic(&nh, &vmx, 8, 9); //channel_index_out(8), channel_index_in(9)
+               ultrasonic.Ping(); //Sends an ultrasonic pulse for the ultrasonic object to read
                
                // Use these to directly access data
-               uint32_t distance = ping.GetRawValue();
+               uint32_t distance = ultrasonic.GetRawValue();
                
-               ping.GetRawValue(); // returns distance in microseconds
+               ultrasonic.GetRawValue(); // returns distance in microseconds
                // or can use
-               ping.GetDistanceCM(distance); //converts microsecond distance from GetRawValue() to CM
+               ultrasonic.GetDistanceCM(distance); //converts microsecond distance from GetRawValue() to CM
                // or can use
-               ping.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
+               ultrasonic.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
                
                // Subscribing to Ping distance topic to access the distance data
-               pingCM_sub = nh.subscribe("channel/9/ping/dist/cm", 1, ping_cm_Cb);
-               
+               pingCM_sub = nh.subscribe("channel/9/ping/dist/cm", 1, ping_cm_callback); //This is subscribing to channel 9, which is the input channel set in the constructor               
                ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                
                return 0;

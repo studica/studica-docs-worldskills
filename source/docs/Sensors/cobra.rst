@@ -93,12 +93,12 @@ Programming the Cobra
             #include "Cobra_ros.h"
             
             
-            double c1Voltage;
+            double channel_1_V;
             
-            // Returns the channel 1 voltage value reported by the sensor
-            void c1_v_Callback(const std_msgs::Float32::ConstPtr& msg)
+            // Returns the channel 1 voltage value reported by the Cobra sensor
+            void c1_v_callback(const std_msgs::Float32::ConstPtr& msg)
             {
-               c1Voltage = msg->data;
+               channel_1_V = msg->data;
             }
             
             int main(int argc, char **argv
@@ -126,7 +126,7 @@ Programming the Cobra
                cobra.GetRawValue(channel); //returns an int
                
                // Subscribing to a Cobra voltage topic to access the voltage data
-               c1_v_sub = nh.subscribe("cobra/c1/voltage", 1, c1_v_Callback);
+               c1_v_sub = nh.subscribe("cobra/c1/voltage", 1, c1_v_callback);
                
                ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                

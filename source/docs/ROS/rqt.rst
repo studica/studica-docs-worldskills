@@ -1,4 +1,0 @@
-RQT
-===
-
-.. note:: In Progress
