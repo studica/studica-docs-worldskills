@@ -13,7 +13,7 @@ Exchanging information with ROS can take many forms, whether it be asynchronousl
 
 .. figure:: images/ros_comm_model.png
     :align: center
-    :width: 50%
+    :width: 65%
 
 ROS Master
 ^^^^^^^^^^
@@ -23,17 +23,17 @@ ROS master can be thought of as the main message-passing server that tracks the 
 Subscribers and Publishers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Like previously mentioned, the subscribe/publish messaging model is one of the main ways ROS is used. For example, let's assume we have a camera on our robot and we want a way to read, process, and ouput the image feed from the camera for navigation or object tracking. To begin, the nodes must register with ROS master, this is the hub where the message-passing will occur. After registering, the Camera Node will advertise the image data to a trivial topic /image_feed.
+Like previously mentioned, the subscribe/publish messaging model is one of the main ways ROS is used. For example, let's assume we have a camera on our robot and we want a way to read, process, and ouput the image feed from the camera for navigation or object tracking. To begin, the nodes must register with ROS master, this is the hub where the message-passing will occur. After registering, the Camera Node will advertise the image data to a trivial topic called ``/image_feed``.
 
 .. figure:: images/image_feed_model.png
     :align: center
-    :width: 50%
+    :width: 65%
     
-With Peer-to-Peer connection now established, its time for the Image Processing Node to process the incoming video stream and output to another topic called /image/output_video.
+With Peer-to-Peer connection now established, its time for the Image Processing Node to process the incoming video stream and output to another topic called ``/image/output_video``.
 
 .. figure:: images/image_output_model.png
     :align: center
-    :width: 50%
+    :width: 65%
 
 Another subscriber can be written to view the video feed by writing a callback to the image output topic, however ROS has a framework known as rqt with many plugins like ``rqt_image_view``, that provides a GUI for displaying images using image transport.
 
@@ -43,8 +43,12 @@ Another subscriber can be written to view the video feed by writing a callback t
 Services and Clients
 ^^^^^^^^^^^^^^^^^^^^
 
+Services/Clients are another way of passing messages, ROS services follow the basic request-response style remote procedure call (RPCs). Any node can call a service, these are referred to as clients, services are useful when a quick operation is desired. Similar to the subscriber/publisher, a ROS node provides a service under a string name that is registered with ROS Master. For example let's take a service, ``/set_motor_speed``, to set a motor speed using this, clients will send a ``request`` containing the desired motor speed value by calling the service and await an ensuing response.
 
-
+.. figure:: images/motor_service_model.png
+    :align: center
+    :width: 65%
+    
 
 
 VMX-pi ROS Package
@@ -53,6 +57,6 @@ After following the steps in the Getting Started section, now you are ready to s
 
 .. figure:: images/ros_packages.png
     :align: center
-    :width: 50%
+    :width: 65%
     
 The next sections will go over using the ROS package to write simple subscribers and publishers, as well as writing simple services and clients to pass messages between nodes.
