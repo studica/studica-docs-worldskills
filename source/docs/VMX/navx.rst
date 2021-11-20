@@ -376,7 +376,7 @@ Programming the NavX Sensor
                yawAngle = msg->data;
             }
             
-            int main(int argc, char **argv
+            int main(int argc, char **argv)
             {
             
                ros::init(argc, argv, "navx_node");
@@ -401,7 +401,7 @@ Programming the NavX Sensor
             
         .. important:: Subscribe to NavX topics to access the data being published and write callbacks to pass messages between various processes.
         
-        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
+        .. note:: For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
 
 
 

@@ -101,7 +101,7 @@ Programming the Cobra
                channel_1_V = msg->data;
             }
             
-            int main(int argc, char **argv
+            int main(int argc, char **argv)
             {
             
                ros::init(argc, argv, "cobra_node");
@@ -137,4 +137,4 @@ Programming the Cobra
             
         .. important:: Subscribe to Cobra topics to access the data being published and write callbacks to pass messages between various processes.
         
-        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
+        .. note:: For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.

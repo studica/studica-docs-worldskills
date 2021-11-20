@@ -165,7 +165,7 @@ Standard Servo
             servo_angle = msg->data;
          }
          
-         int main(int argc, char **argv
+         int main(int argc, char **argv)
          {
             
             ros::init(argc, argv, "servo_node");
@@ -206,7 +206,7 @@ Standard Servo
          
         .. important:: Subscribe to Servo topics to access the data being published and write callbacks to pass messages between various processes.
         
-        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
+        .. note:: For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
         
 Continuous Servo
 ^^^^^^^^^^^^^^^^

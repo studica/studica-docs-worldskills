@@ -108,7 +108,7 @@ Programming the Sharp IR Sensor
                sharp_dist = msg->data;
             }
             
-            int main(int argc, char **argv
+            int main(int argc, char **argv)
             {
             
                ros::init(argc, argv, "sharp_node");
@@ -143,6 +143,6 @@ Programming the Sharp IR Sensor
 
         .. important:: Subscribe to Sharp topics to access the data being published and write callbacks to pass messages between various processes.
         
-        .. note:: For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
+        .. note:: For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
         
         

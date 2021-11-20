@@ -4,7 +4,22 @@ The ROS Package
 What is ROS?
 ------------
 
-ROS (Robot Operating System) is an open-source operating system that allows for functionalities such as low-level device control, message-passing between processes, and package management. The tools and libraries available make it possible to build, write, and run code across multiple computers. The main advantage of ROS is its peer-to-peer network, this allows for communication across multiple nodes and devices without requiring an auxilliary server computer or server software. This means processes distributed across various machines can interact using the ROS communication framework.
+ROS (Robot Operating System) is an open-source collection of software frameworks for robot development, it allows for functionalities such as low-level device control, message-passing between processes, and package management. The tools and libraries available make it possible to build, write, and run code across multiple computers. The main advantage of ROS is its peer-to-peer network, this allows for communication across multiple nodes and devices without requiring an auxilliary server computer or server software. This means processes distributed across various machines can interact using the ROS communication framework.
+
+Why Noetic?
+^^^^^^^^^^^
+    
+Essentially, a distribution (distro) is a set of ROS packages rolled up into a release, there are various distributions of ROS each with different functionalities to suit the needs of different robots.
+
+.. figure:: images/ros_noetic.jpg
+    :align: center
+    :width: 40%
+    
+ROS Noetic is currently the final and latest version of ROS 1 available with an EOL date set for May 2025, this means another distribution of the operating system will not be released for ROS 1. However, Noetic is an LTS release meaning it will have support throughout its lifetime though no major functionality will be added. Moreover, ROS 2 is only available on Ubuntu and not Raspbian, which is the official supported operating system for the Raspberry Pi. Raspbian is required as the `VMX-pi HAL Library <https://www.kauailabs.com/public_files/vmx-pi/apidocs/hal_cpp/html/index.html>`__ for the Raspberry Pi only supports the operating system. Below is a summary of distros released prior to ROS Noetic:
+
+.. figure:: images/ros_distros.jpg
+    :align: center
+    :width: 65%
 
 General Overview
 ----------------
@@ -23,7 +38,7 @@ ROS master can be thought of as the main message-passing server that tracks the 
 Subscribers and Publishers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Like previously mentioned, the subscribe/publish messaging model is one of the main ways ROS is used. For example, let's assume we have a camera on our robot and we want a way to read, process, and ouput the image feed from the camera for navigation or object tracking. To begin, the nodes must register with ROS master, this is the hub where the message-passing will occur. After registering, the Camera Node will advertise the image data to a trivial topic called ``/image_feed``.
+Like previously mentioned, the subscribe/publish messaging model is one of the main ways ROS is used. For example, let's assume we have a camera on our robot and we want a way to read, process, and ouput the image feed from the camera for navigation or object tracking. To begin, the nodes must register with ROS master, this is done before the nodes can establish a peer-to-peer communication whith eachother before message-passing can occur. After registering, the Camera Node will advertise the image data to a trivial topic called ``/image_feed`` while the Image Processing Node will subscribe to ``/image_feed``.
 
 .. figure:: images/image_feed_model.png
     :align: center
