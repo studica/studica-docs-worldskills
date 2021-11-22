@@ -99,35 +99,35 @@ Programming the Ultrasonic Distance Sensor
         .. code-block:: c++
             :linenos:
             
-            //Include the Ping Library
-            #include "Ping_ros.h"
+            //Include the Ultrasonic Library
+            #include "Ultrasonic_ros.h"
             
             
-            double ping_dist_cm;
+            double ultrasonic_cm;
             
             // Returns the distance value reported by the Ultrasonic Distance sensor
-            void ping_cm_callback(const std_msgs::Float32::ConstPtr& msg)
+            void ultrasonic_cm_callback(const std_msgs::Float32::ConstPtr& msg)
             {
-               ping__dist_cm = msg->data;
+               ultrasonic_cm = msg->data;
             }
             
-            int main(int argc, char **argv
+            int main(int argc, char **argv)
             {
             
-               ros::init(argc, argv, "ping_node");
+               ros::init(argc, argv, "ultrasonic_node");
                
                /**
                 * Constructor
-                * Ping's ros threads (publishers and services) will run asynchronously in the background
+                * Ultrasonic's ros threads (publishers and services) will run asynchronously in the background
                 */
                 
                ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
                VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
                
-               ros::Subsriber pingCM_sub;
+               ros::Subsriber ultrasonicCM_sub;
                
-               PingROS ultrasonic(&nh, &vmx, 8, 9); //channel_index_out(8), channel_index_in(9)
-               ultrasonic.Ping(); //Sends an ultrasonic pulse for the ultrasonic object to read
+               UltrasonicROS ultrasonic(&nh, &vmx, 8, 9); //channel_index_out(8), channel_index_in(9)
+               ultrasonic.Ultrasonic(); //Sends an ultrasonic pulse for the ultrasonic object to read
                
                // Use these to directly access data
                uint32_t distance = ultrasonic.GetRawValue();
@@ -138,8 +138,9 @@ Programming the Ultrasonic Distance Sensor
                // or can use
                ultrasonic.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
                
-               // Subscribing to Ping distance topic to access the distance data
-               pingCM_sub = nh.subscribe("channel/9/ping/dist/cm", 1, ping_cm_callback); //This is subscribing to channel 9, which is the input channel set in the constructor               
+               // Subscribing to Ultrasonic distance topic to access the distance data
+               ultrasonicCM_sub = nh.subscribe("channel/9/ultrasonic/dist/cm", 1, ultrasonic_cm_callback); //This is subscribing to channel 9, which is the input channel set in the constructor
+               
                ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                
                return 0;
@@ -149,4 +150,4 @@ Programming the Ultrasonic Distance Sensor
 
         .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
         
-        .. important:: Subscribe to Ping topics to access the data being published and write callbacks to pass messages between various processes. For more information on programming with ROS, refer to: http://wiki.ros.org/ROS/Tutorials.
+        .. important:: Subscribe to Ultrasonic topics to access the data being published and write callbacks to pass messages between various processes. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.

@@ -33,7 +33,7 @@ Exchanging information with ROS can take many forms, whether it be asynchronousl
 ROS Master
 ^^^^^^^^^^
 
-ROS master can be thought of as the main message-passing server that tracks the network addresses of all the other nodes. It informs subscribers about nodes publishing on a particular topic in order for the subscriber and publisher to establish a peer-to-peer connection. The nodes must know the location of ROS master on startup via ROS_MASTER_URI, which is the enviroment variable responsible for this. Conveniently this is automatically set by default when the ROSDISTRO(noetic) setup file is sourced. For more information on sourcing setup files, refer to the ``Getting Started`` section.
+ROS master can be thought of as the main message-passing server that tracks the network addresses of all the other nodes. It informs subscribers about nodes publishing on a particular topic in order for the subscriber and publisher to establish a peer-to-peer connection. The nodes must know the location of ROS master on startup via ``ROS_MASTER_URI``, which is the enviroment variable responsible for this. Conveniently this is automatically set by default when the ROSDISTRO(noetic) setup file is sourced. For more information on sourcing setup files, refer to the ``Getting Started`` section.
 
 Subscribers and Publishers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,7 +50,7 @@ With Peer-to-Peer connection now established, its time for the Image Processing 
     :align: center
     :width: 65%
 
-Another subscriber can be written to view the video feed by writing a callback to the image output topic, however ROS has a framework known as rqt with many plugins like ``rqt_image_view``, that provides a GUI for displaying images using image transport.
+Another subscriber can be written to view the video feed by writing a callback to the image output topic, however ROS has a framework known as rqt with many plugins like ``rqt_image_view``, that provide a GUI for displaying images using image transport.
 
 .. note:: Refer to the RQT section for more information on the rqt GUI and its plugins.
 
@@ -68,7 +68,7 @@ Services/Clients are another way of passing messages, ROS services follow the ba
 
 VMX-pi ROS Package
 ------------------
-After following the steps in the Getting Started section, now you are ready to start using the ROS library for the Studica Robot Platform. ROS functionaly has been implemented for a variety of Studica's hardware, refer to Studica's `Roscpp API <LINK>`__ for more information on the classes and methods available. Below are the ROS pacakages:
+After following the steps in the Getting Started section, now you are ready to start using the ROS library for the Studica Robot Platform. ROS functionality has been implemented for a variety of Studica's hardware, refer to Studica's `Roscpp API <LINK>`__ for more information on the classes and methods available. Below are the ROS pacakages:
 
 .. figure:: images/ros_packages.png
     :align: center
