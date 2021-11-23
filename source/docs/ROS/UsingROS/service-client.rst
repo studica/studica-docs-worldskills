@@ -51,7 +51,7 @@ To declare more services, run:
 
 .. code-block:: rst
 
-   /home/pi/catkin_ws/src/vmxpi_ros/vmxpi_ros/srv
+   cd /home/pi/catkin_ws/src/vmxpi_ros/vmxpi_ros/srv
    
 .. code-block:: rst
 
