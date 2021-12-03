@@ -378,7 +378,7 @@ Programming the NavX Sensor
             
             int main(int argc, char **argv)
             {
-            
+               system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
                ros::init(argc, argv, "navx_node");
             
                /**
@@ -401,7 +401,7 @@ Programming the NavX Sensor
             
         .. important:: Subscribe to NavX topics to access the data being published and write callbacks to pass messages between various processes.
         
-        .. note:: For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
+        .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
 
 
 

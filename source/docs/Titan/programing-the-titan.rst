@@ -215,7 +215,7 @@ Full Example
                
                 int main(int argc, char **argv)
                 {
-                  
+                   system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
                    ros::init(argc, argv, "titan_node");
                   
                    /**
@@ -243,7 +243,7 @@ Full Example
 
                    msg.request.speed = 1.0; //Setting the motor 1 speed to 1.0
                    msg.request.motor = 0;
-                   set_m_speed.call(msg1);
+                   set_m_speed.call(msg);
                   
                    // Subscribing to Motor 1 speed topic to access the speed data
                    motor1_speed_sub = nh.subscribe("titan/motor1/speed", 1, motor1_speed_callback);
@@ -255,4 +255,4 @@ Full Example
                
             .. important:: Subscribe to Titan topics to access the data being published and write callbacks to pass messages between various processes.
             
-            .. note:: For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
+            .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.

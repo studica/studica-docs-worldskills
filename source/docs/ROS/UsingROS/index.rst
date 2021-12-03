@@ -7,3 +7,4 @@ Using ROS
    intro-to-ros
    subscriber-publisher
    service-client
+   programming-with-ros
