@@ -122,8 +122,8 @@ Programming the Cobra
                CobraROS cobra(&nh, &vmx, deviceAddress, refVoltage);
                
                // Use these to directly access data
-               cobra.GetVoltage(channel); //returns a float
-               cobra.GetRawValue(channel); //returns an int
+               float voltage = cobra.GetVoltage(channel); //returns a float
+               int raw_cobra = cobra.GetRawValue(channel); //returns an int
                
                // Subscribing to a Cobra voltage topic to access the voltage data
                c1_v_sub = nh.subscribe("cobra/c1/voltage", 1, c1_v_callback);

@@ -387,7 +387,7 @@ Programming the NavX Sensor
                 */
                ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
                VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
-               ros::Subsriber yawAngle_sub;
+               ros::Subscriber yawAngle_sub;
                
                navXROSWrapper navx(&nh, &vmx);
                

@@ -21,7 +21,9 @@ For the purposes of this demonstration we will use the NavX's ROS Library for re
    
    int main(int argc, char **argv)
    {
+      system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
       ros::init(argc, argv, "update_rate_server");
+      
       ros::NodeHandle nh;
    
       ros::ServiceServer update_rate = nh.advertiseService("get_update_rate", &navXROSWrapper::GetUpdateRate);
@@ -124,7 +126,9 @@ Writing the Client Node
    
    int main(int argc, char **argv)
    {
+      system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
       ros::init(argc, argv, "update_rate_client");
+      
       ros::NodeHandle nh;
    
       ros::ServiceClient update_rate_client = nh.serviceClient<vmxpi_ros::IntRes>("get_update_rate");

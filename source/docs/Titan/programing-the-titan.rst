@@ -45,10 +45,20 @@ Motor Setup
             //Include the TitanQuad Library
             #include "TitanDriver_ros_wrapper.h"
             
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
-            
-            TitanDriverROSWrapper titan(&nh, &vmx);
+            int main(int argc, char **argv)
+            {
+               system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+               ros::init(argc, argv, "titan_node");
+
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               TitanDriverROSWrapper titan(&nh, &vmx);
+               
+               ros::spin() //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
+            }
           
         .. note:: ``TITAN_CAN_ID`` is the CAN id for the Titan, by defualt it is 42. ``TITAN_MOTOR_NUMBER`` is the motor port to be used. Valid range is ``0 - 3``, this corresponds to the M0 - M3 on the Titan.
 
@@ -93,9 +103,8 @@ Setting Motor Speed
             :linenos:
             
             /**
-             * Sets the speed of a motor
-             * 
-             * @param speed range -1.0 to 1.0 (0 stop)
+             * Sets the speed of a motor by sending a request to the motor-speed server
+             * speed range -1.0 to 1.0 (0 stop)
              */
              
              ros::ServiceClient set_m_speed = nh->serviceClient<vmxpi_ros::MotorSpeed>("titan/set_motor_speed");
@@ -104,7 +113,7 @@ Setting Motor Speed
 
              msg.request.speed = rightSpeed;
              msg.request.motor = 0;
-             set_m_speed.call(msg1);
+             set_m_speed.call(msg);
             
         .. note:: This is a demonstration of calling the motor speed service using the ``set_motor_speed`` server.
 
@@ -232,16 +241,15 @@ Full Example
                    TitanDriverROSWrapper titan(&nh, &vmx);
 
                   /**
-                   * Sets the speed of a motor
-                   * 
-                   * @param speed range -1.0 to 1.0 (0 stop)
+                   * Sets the speed of a motor by sending a request to the motor-speed server
+                   * speed range -1.0 to 1.0 (0 stop)
                    */
                 
                    set_m_speed = nh.serviceClient<vmxpi_ros::MotorSpeed>("titan/set_motor_speed");
                   
                    vmxpi_ros::MotorSpeed msg;
 
-                   msg.request.speed = 1.0; //Setting the motor 1 speed to 1.0
+                   msg.request.speed = 1.0; //Setting the motor 0 speed to 1.0
                    msg.request.motor = 0;
                    set_m_speed.call(msg);
                   

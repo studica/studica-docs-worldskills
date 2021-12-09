@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-Congradulations on joining the worldskills mobile robotics enviroment. On this documentation site you will find lots of content relating to the worldskills mobile robotics collection. This covers hardware and the software side of the collection. 
+Congratulations on joining the worldskills mobile robotics enviroment. On this documentation site you will find lots of content relating to the worldskills mobile robotics collection. This covers hardware and the software side of the collection. 
 
 Below are the first steps to getting your robot moving.
 

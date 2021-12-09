@@ -121,15 +121,15 @@ Programming the Sharp IR Sensor
                ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
                VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
                
-               ros::Subsriber sharpDist_sub;
+               ros::Subscriber sharpDist_sub;
                
                SharpROS sharp(&nh, &vmx);
                // or can use
                SharpROS sharp(&nh, &vmx, channel);
                
                //Use these to directly access the data
-               sharp.GetIRDistance(); //converts the average voltage read, outputs the range in cm
-               sharp.GetRawVoltage(); //returns the average voltage
+               double dist_cm = sharp.GetIRDistance(); //converts the average voltage read, outputs the range in cm
+               double voltage = sharp.GetRawVoltage(); //returns the average voltage
                
                // Subscribing to Sharp distance topic to access the distance data
                sharpDist_sub = nh.subscribe("channel/22/sharp_ir/dist", 1, sharp_dist_callback);

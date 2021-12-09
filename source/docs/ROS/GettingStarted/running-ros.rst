@@ -64,6 +64,7 @@ Running a command with the ``sudo`` prefix is required for commands that require
 
 .. code-block:: rst
    
+   cd catkin_ws/src
    sudo su
 
 5. Now, run the following command to start the nodes in the launch file.

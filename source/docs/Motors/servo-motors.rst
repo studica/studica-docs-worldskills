@@ -179,25 +179,28 @@ Standard Servo
             VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
             ros::ServiceClient setAngle;
-            ros::Subsrciber servo_angle_sub;
+            ros::Subscriber servo_angle_sub;
             
-            ServoRos servo(&nh, &vmx, channel);
+            ServoROS servo(&nh, &vmx, channel);
 
             // Use these to directly access data
             servo.GetAngle(); //returns a double;
             servo.GetMinAngle(); //returns a double
             servo.GetMaxAngle(); //returns a double
             
+            // Using the set_angle service, channel index is declared in the constructor
+            setAngle = nh.serviceClient<vmxpi_ros::Float>("channel/channel_index/servo/set_angle");
+            
             // Declaring message type
             vmxpi_ros::Float msg;
             
             // Setting the servo angle
-            float angle = 45.0 //Range -150° - 150°
+            float angle = 45.0; //Range -150° - 150°
             msg.request.data = angle;
             setAngle.call(msg);
             
             // Subscribing to Servo angle topic to access the angle data
-            servo_angle_sub = nh.subscribe("channel/channel_index/servo/angle", 1, servo_angle_callback);
+            servo_angle_sub = nh.subscribe("channel/channel_index/servo/angle", 1, servo_angle_callback); //channel_index is the input channel set in the constructor
            
             ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
                
