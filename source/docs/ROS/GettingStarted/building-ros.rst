@@ -356,8 +356,8 @@ The previous section analyzed the major sections of a ``CMakeLists.txt`` file, l
 
 .. code-block:: rst
 
-   add_executable(talker src/talker.cpp)
-   target_link_libraries(talker ${catkin_LIBRARIES})
-   add_dependencies(talker beginner_tutorials_generate_messages_cpp)
+   add_executable(...)
+   target_link_libraries(...)
+   add_dependencies(...)
    
 .. note:: The CMakeLists.txt file has already been configured to build the ``main_node`` executable with all the currently available packages in Studica's ROS library, hence you can simply begin writing your program in ``main.cpp``.
