@@ -42,7 +42,7 @@ This will create two additional ``build`` and ``devel`` folders in the ``catkin_
 
 .. code-block:: rst
    
-   git clone <REPO LINK>
+   git clone https://github.com/studica/VMX-ROS.git
    
    
 5. Lastly, run ``catkin build`` once again to build the newly cloned repository in the catkin workspace.
