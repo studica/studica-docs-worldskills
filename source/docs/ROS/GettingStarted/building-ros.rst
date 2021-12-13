@@ -4,24 +4,24 @@ Building ROS
 CMakeLists.txt
 --------------
 
-The ``CMakeLists.txt`` file is the input to CMake, which is a system that manages the build process in a compiler-independent manner. To access this software, CMakeLists.txt configuration files are created that detail how the code should be built, these in turn generate the standard makefiles for compiling a program on Linux operating systems like the Rasbian for the VMX-pi. In the ``catkin_ws``, the CMakeLists.txt used is a standard CMakeLists.txt file with a few more restrictions.
+The ``CMakeLists.txt`` file is the input to CMake, which is a system that manages the build process for ROS in a compiler-independent manner. To access this software, CMakeLists.txt configuration files are created that detail how the code should be built, these in turn generate the standard makefiles for compiling a program on Linux operating systems like Rasbian for the VMX-pi. In the ``catkin_ws``, the CMakeLists.txt used is a standard CMakeLists.txt file with a few more restrictions.
 
 Structure
 ^^^^^^^^^
 
 1. Required CMake Version (cmake_minimum_required)
 
-2. Package Name (project())
+2. Package Name (``project()``)
 
-3. Find other CMake/Catkin packages needed for build (find_package())
+3. Find other CMake/Catkin packages needed for build (``find_package()``)
 
-4. Message/Service/Action Generators (add_message_files(), add_service_files(), add_action_files())
+4. Message/Service/Action Generators (``add_message_files()``, ``add_service_files()``, ``add_action_files()``)
 
-5. Invoke message/service/action generation (generate_messages())
+5. Invoke message/service/action generation (``generate_messages()``)
 
-6. Specify package build info export (catkin_package())
+6. Specify package build info export (``catkin_package()``)
 
-7. Libraries/Executables to build (add_library()/add_executable()/target_link_libraries())
+7. Libraries/Executables to build (``add_library()``/``add_executable()``/``target_link_libraries()``)
 
 Writing a CMakeLists.txt file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -237,7 +237,7 @@ When a package is found following the function call, this leads to the generatio
 
 Remember, catkin packages are not components of catkin, they must be specified as compnents using CMake's components feature to save time. Calling ``find_package()`` on catkin packages is beneficial since their files, paths, and libraries are added as catkin_variables as mentioned earlier.
 
-4. The catkin_package macro generates cmake config files for your package. This is required to declare things to be passed to dependent projects. Note, this function must be called before the ``add_library()`` or ``add_executable()``.
+4. The ``catkin_package()`` macro generates cmake config files for your package. This is required to declare things to be passed to dependent projects. Note, this function must be called before the ``add_library()`` or ``add_executable()``.
 
 .. code-block:: rst
    
@@ -256,7 +256,7 @@ Remember, catkin packages are not components of catkin, they must be specified a
 
 - DEPENDS - Non-catkin CMake projects that this project depends on.
 
-Uncommenting the lines in the code-block above, this indicates that exported headers go in the include folder of the package. We know the ``${PROJECT_NAME}`` variable is the value passed in the ``project()`` fucntion from before, ``roscpp`` and ``rospy`` are packages needed in order to build/run this package, and finally the package depends on ``system_lib``.
+Uncommenting the lines in the code-block above, this indicates that exported headers go in the include folder of the package. We know the ``${PROJECT_NAME}`` variable is the value passed in the ``project()`` function from before, ``roscpp`` and ``rospy`` are packages needed in order to build/run this package, and finally the package depends on ``system_lib``.
 
 5. Specify additional locations of header files, the current packages ``/include/`` directory should be listed before other ``/include`` locations.
 
@@ -277,7 +277,7 @@ Uncommenting the lines in the code-block above, this indicates that exported hea
      /usr/local/include/vmxpi
    )
 
-6. The add_library() CMake function is used to specify libraries to build, the ``SHARED IMPORTED GLOBAL`` arguments set the type of library to be created. For non-Windows platforms like Rasbian, the primary library file for a ``SHARED`` library is the ``.so`` file, the ``GLOBAL`` option extends the scope of the target (first argument) in the directory it is created and beyond.
+6. The add_library() CMake function is used to specify libraries to build, the ``SHARED IMPORTED GLOBAL`` arguments set the type of library to be created. For non-Windows platforms like Rasbian, the primary library file for a ``SHARED`` library is the ``.so`` file, the ``GLOBAL`` option extends the scope of the target (``vmxpi_hal``) in the directory it is created and beyond.
 
 .. code-block:: rst
 
@@ -313,7 +313,7 @@ Uncommenting the lines in the code-block above, this indicates that exported hea
       digitalout_ros
       ${catkin_LIBRARIES}
 
-10. Add dependencies using ``add_dependencies`` to the target (``test_node``) defined in the ``add_executable()`` call prior, this is done for targets that depend on other targets than need messages, services, and actions to be built. Essentially, messages from other packages inside the catkin workspace need a dependency added to their generation targets, this is often the case as one of the primary uses of ROS is this message-passing aspect between packages.
+10. Add dependencies using ``add_dependencies()`` to the target (``test_node``) defined in the ``add_executable()`` call prior, this is done for targets that depend on other targets that need messages, services, and actions to be built. Essentially, messages from other packages inside the catkin workspace need a dependency added to their generation targets, this is often the case as one of the primary uses of ROS is this message-passing aspect between packages.
 
 .. code-block:: rst
 
@@ -330,7 +330,7 @@ Uncommenting the lines in the code-block above, this indicates that exported hea
       digitalout_ros
       ${PROJECT_NAME}_gencfg)
 
-11. The macros ``add_message_files(...)``, ``add_service_files(...)`, ``add_action_files(...)``, ``generate_messages(...)`` were not included in the example for the ``vmxpi_ros_bringup`` package, but the functions must come BEFORE the ``catkin_package`` macro in this order:
+11. The macros ``add_message_files(...)``, ``add_service_files(...)``, ``add_action_files(...)``, ``generate_messages(...)`` were not included in the example for the ``vmxpi_ros_bringup`` package, but the functions must come BEFORE the ``catkin_package()`` macro in this order:
  
 .. code-block:: rst
 
@@ -341,7 +341,7 @@ Uncommenting the lines in the code-block above, this indicates that exported hea
    generate_messages(...)
    catkin_package(...)
 
-``add_message_files(...)``, ``add_service_files(...)`, ``add_action_files(...)`` handle messages, services, and actions respectively, followed by a call to invoke generation:
+``add_message_files(...)``, ``add_service_files(...)``, ``add_action_files(...)`` handle messages, services, and actions respectively, followed by a call to invoke generation:
 
 .. code-block::
 
@@ -352,7 +352,7 @@ Uncommenting the lines in the code-block above, this indicates that exported hea
 Configuring CMakeLists.txt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The previous section analyzed the major sections of a ``CMakeLists.txt`` file, luckily most of the work is already done when the repository is cloned. The main thing to remember when it is time to build your programs are to generate executables, set dependencies, and set libraries to link the target against. To do this, add the following lines at the end of the ``vmxpi_ros_bringup`` CMakeLists.txt file:
+The previous section analyzed the major sections of a ``CMakeLists.txt`` file, luckily most of the work is already done when the repository is cloned. The main things to remember when it is time to build your programs are to generate executables, set dependencies, and set libraries to link the target against. To do this, add the following lines at the end of the ``vmxpi_ros_bringup`` CMakeLists.txt file:
 
 .. code-block:: rst
 
