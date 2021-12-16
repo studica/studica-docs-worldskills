@@ -99,33 +99,53 @@ Programming the Ultrasonic Distance Sensor
         .. code-block:: c++
             :linenos:
             
-            //Include the Ping Library
-            #include "Ping_ros.h"
+            //Include the Ultrasonic Library
+            #include "Ultrasonic_ros.h"
             
-            /**
-             * Constructor
-             * Ping's ros threads (publishers and services) will run asynchronously in the background
-             */
-             
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
-            PingROS ping(&nh, &vmx, 8, 9);
-            ping.Ping(); //Sends an ultrasonic pulse for the ping object to read
+            double ultrasonic_cm;
             
-            //Create an accessor function
-            double getDistance()
+            // Returns the distance value reported by the Ultrasonic Distance sensor
+            void ultrasonic_cm_callback(const std_msgs::Float32::ConstPtr& msg)
             {
-               uint32_t distance = ping.GetRawValue();
-               return ping.GetRawValue(); // returns distance in microseconds
+               ultrasonic_cm = msg->data;
+            }
+            
+            int main(int argc, char **argv)
+            {
+               system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+               ros::init(argc, argv, "ultrasonic_node");
+               
+               /**
+                * Constructor
+                * Ultrasonic's ros threads (publishers and services) will run asynchronously in the background
+                */
+                
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               ros::Subscriber ultrasonicCM_sub;
+               
+               UltrasonicROS ultrasonic(&nh, &vmx, 8, 9); //channel_index_out(8), channel_index_in(9)
+               ultrasonic.Ultrasonic(); //Sends an ultrasonic pulse for the ultrasonic object to read
+                              
+               // Use these to directly access data
+               uint32_t raw_distance = ultrasonic.GetRawValue(); // returns distance in microseconds
                // or can use
-               return ping.GetDistanceCM(distance); //converts microsecond distance from GetRawValue() to CM
+               uint32_t cm_distance = ultrasonic.GetDistanceCM(raw_distance); //converts microsecond distance from GetRawValue() to CM
                // or can use
-               return ping.GetDistanceIN(distance); //converts microsecond distance from GetRawValue() to IN
+               uint32_t inch_distance = ultrasonic.GetDistanceIN(raw_distance); //converts microsecond distance from GetRawValue() to IN
+                    
+               // Subscribing to Ultrasonic distance topic to access the distance data
+               ultrasonicCM_sub = nh.subscribe("channel/9/ultrasonic/dist/cm", 1, ultrasonic_cm_callback); //This is subscribing to channel 9, which is the input channel set in the constructor
+               
+               ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
             }
          
         The accessor functions will then output the range in either microseconds, inches, or cm.  
 
-        .. note:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``
+        .. important:: The valid digital pairs for Trigger and Echo pins are (Trigger, Echo) ``(0,1)``, ``(2,3)``, ``(4,5)``, ``(6,7)``, ``(8, 9)``, ``(10,11)``. Subscribe to Ultrasonic topics to access the data being published and write callbacks to pass messages between various processes.
         
-        .. important:: Subscribe to Ping topics to access the data being published and write callbacks to pass messages between various processes.
+        .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.

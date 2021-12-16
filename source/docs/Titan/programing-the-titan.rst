@@ -35,8 +35,32 @@ Motor Setup
             private:
                 studica::TitanQuad motor{TITAN_CAN_ID, TITAN_MOTOR_NUMBER};
         
-        .. note:: ``TITAN_CAN_ID`` is the CAN id for the Titan, by defualt it is 42. ``TITAN_MOTOR_NUMBER`` is the motor port to be used. Valid range is ``0 - 3``, this corresponds to the M0 - M3 on the Titan. 
+        .. note:: ``TITAN_CAN_ID`` is the CAN id for the Titan, by defualt it is 42. ``TITAN_MOTOR_NUMBER`` is the motor port to be used. Valid range is ``0 - 3``, this corresponds to the M0 - M3 on the Titan.
+        
+    .. tab:: Roscpp
+    
+        .. code-block:: c++
+            :linenos:
+            
+            //Include the TitanQuad Library
+            #include "TitanDriver_ros_wrapper.h"
+            
+            int main(int argc, char **argv)
+            {
+               system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+               ros::init(argc, argv, "titan_node");
 
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               TitanDriverROSWrapper titan(&nh, &vmx);
+               
+               ros::spin() //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
+            }
+          
+        .. note:: ``TITAN_CAN_ID`` is the CAN id for the Titan, by defualt it is 42. ``TITAN_MOTOR_NUMBER`` is the motor port to be used. Valid range is ``0 - 3``, this corresponds to the M0 - M3 on the Titan.
 
 Setting Motor Speed
 -------------------
@@ -72,6 +96,27 @@ Setting Motor Speed
             {
                 motor.Set(speed);
             }
+            
+    .. tab:: Roscpp
+    
+         .. code-block:: c++
+            :linenos:
+            
+            /**
+             * Sets the speed of a motor by sending a request to the motor-speed server
+             * speed range -1.0 to 1.0 (0 stop)
+             */
+             
+             ros::ServiceClient set_m_speed = nh->serviceClient<vmxpi_ros::MotorSpeed>("titan/set_motor_speed");
+             
+             vmxpi_ros::MotorSpeed msg;
+
+             msg.request.speed = rightSpeed;
+             msg.request.motor = 0;
+             set_m_speed.call(msg);
+            
+        .. note:: This is a demonstration of calling the motor speed service using the ``set_motor_speed`` server.
+
 
 Full Example
 ------------
@@ -161,3 +206,61 @@ Full Example
                 }        
 
 
+    .. tab:: Roscpp
+
+            .. code-block:: c++  
+                :linenos:
+               
+                //Include the TitanQuad Library
+                #include "TitanDriver_ros_wrapper.h"
+                
+                double motor1_speed;
+                
+                // Returns the speed of motor 1
+                void motor1_speed_callback(const std_msgs::Float32::ConstPtr& msg)
+                {
+                   motor1_speed = msg->data;
+                }
+               
+                int main(int argc, char **argv)
+                {
+                   system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+                   ros::init(argc, argv, "titan_node");
+                  
+                   /**
+                    * Constructor
+                    * Titan's ros threads (publishers and services) will run asynchronously in the background
+                    */
+                   
+                   ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+                   VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+                  
+                   ros::ServiceClient set_m_speed;
+                   ros::Subscriber motor1_speed_sub;
+                  
+                   TitanDriverROSWrapper titan(&nh, &vmx);
+
+                  /**
+                   * Sets the speed of a motor by sending a request to the motor-speed server
+                   * speed range -1.0 to 1.0 (0 stop)
+                   */
+                
+                   set_m_speed = nh.serviceClient<vmxpi_ros::MotorSpeed>("titan/set_motor_speed");
+                  
+                   vmxpi_ros::MotorSpeed msg;
+
+                   msg.request.speed = 1.0; //Setting the motor 0 speed to 1.0
+                   msg.request.motor = 0;
+                   set_m_speed.call(msg);
+                  
+                   // Subscribing to Motor 1 speed topic to access the speed data
+                   motor1_speed_sub = nh.subscribe("titan/motor1/speed", 1, motor1_speed_callback);
+                 
+                   ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+                     
+                   return 0;
+                }
+               
+            .. important:: Subscribe to Titan topics to access the data being published and write callbacks to pass messages between various processes.
+            
+            .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.

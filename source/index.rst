@@ -101,6 +101,14 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    
 .. toctree::
    :maxdepth: 1
+   :caption: ROS (Beta)
+   
+   docs/ROS/GettingStarted/index
+   docs/ROS/UsingROS/index
+   docs/ROS/rqt
+   
+.. toctree::
+   :maxdepth: 1
    :caption: Contributing
    
    docs/Contributing/style-guide

@@ -92,23 +92,49 @@ Programming the Cobra
             //Include the Cobra Library
             #include "Cobra_ros.h"
             
-            /**
-             * Constructor
-             * Cobra's ros threads (publishers and services) will run asynchronously in the background
-             */
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
             
-            CobraROS cobra(&nh, &vmx); //default device address is 0x48 and default voltage is 5.0F
-            // or can use
-            CobraROS cobra(&nh, &vmx, deviceAddress);
-            // or if sensor is using 3.3V, refVoltage(3.3F)
-            CobraROS cobra(&nh, &vmx, deviceAddress, refVoltage);
+            double channel_1_V;
             
-            // Use these to directly access data
-            cobra.GetVoltage(channel); //returns a float
-            cobra.GetRawValue(channel); //returns an int
+            // Returns the channel 1 voltage value reported by the Cobra sensor
+            void c1_v_callback(const std_msgs::Float32::ConstPtr& msg)
+            {
+               channel_1_V = msg->data;
+            }
+            
+            int main(int argc, char **argv)
+            {
+               system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+               ros::init(argc, argv, "cobra_node");
+               
+               /**
+                * Constructor
+                * Cobra's ros threads (publishers and services) will run asynchronously in the background
+                */
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               
+               ros::Subscriber c1_v_sub;
+               
+               CobraROS cobra(&nh, &vmx); //default device address is 0x48 and default voltage is 5.0F
+               // or can use
+               CobraROS cobra(&nh, &vmx, deviceAddress);
+               // or if sensor is using 3.3V, refVoltage(3.3F)
+               CobraROS cobra(&nh, &vmx, deviceAddress, refVoltage);
+               
+               // Use these to directly access data
+               float voltage = cobra.GetVoltage(channel); //returns a float
+               int raw_cobra = cobra.GetRawValue(channel); //returns an int
+               
+               // Subscribing to a Cobra voltage topic to access the voltage data
+               c1_v_sub = nh.subscribe("cobra/c1/voltage", 1, c1_v_callback);
+               
+               ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
+            }
             
         The accessor functions will output either the voltage (0 - 5V) or the raw ADC value (0 - 2047).
             
         .. important:: Subscribe to Cobra topics to access the data being published and write callbacks to pass messages between various processes.
+        
+        .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.

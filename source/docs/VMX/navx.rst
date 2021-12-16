@@ -369,26 +369,39 @@ Programming the NavX Sensor
             
             
             double yawAngle;
-            // Returns the current yaw value (in degrees, from -180 to 180) reported by the sensor
-            void angleCallback(const std_msgs::Float32::ConstPtr& msg)
+            
+            // Returns the current yaw value (in degrees, from -180 to 180) reported by the NavX sensor
+            void angle_callback(const std_msgs::Float32::ConstPtr& msg)
             {
                yawAngle = msg->data;
             }
             
-            /**
-             * Constructor
-             * NavX's ros threads (publishers and services) will run asynchronously in the background
-             */
-            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
-            ros::Subsriber yawAngle_sub;
+            int main(int argc, char **argv)
+            {
+               system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+               ros::init(argc, argv, "navx_node");
             
-            navXROSWrapper navx(&nh, &vmx);
-            
-            // Subscribing to NavX angle topic to access the angle data
-            yawAngle_sub = nh.subscribe("navx/yaw", 1, angleCallback);
+               /**
+                * Constructor
+                * NavX's ros threads (publishers and services) will run asynchronously in the background
+                */
+               ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+               VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+               ros::Subscriber yawAngle_sub;
+               
+               navXROSWrapper navx(&nh, &vmx);
+               
+               // Subscribing to NavX angle topic to access the angle data
+               yawAngle_sub = nh.subscribe("navx/yaw", 1, angle_callback);
+               
+               ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+               return 0;
+            }
             
         .. important:: Subscribe to NavX topics to access the data being published and write callbacks to pass messages between various processes.
+        
+        .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
 
 
 

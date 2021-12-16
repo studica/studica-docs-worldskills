@@ -156,30 +156,60 @@ Standard Servo
          //Include the Servo Library
          #include "Servo_ros.h"
          
-         /**
-          * Constructor
-          * Servo's ros threads (publishers and services) will run asynchronously in the background
-          */
-          
-         ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
-         VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
          
-         ServoRos servo(&nh, &vmx, channel);
-         ros::ServiceClient setAngle;
+         double servo_angle;
          
-         // Use these to directly access data
-         servo.GetMinAngle(); //returns a double
-         servo.GetMaxAngle(); //returns a double
+         // Returns the angle value set by the Servo motor
+         void servo_angle_callback(const std_msgs::Float32::ConstPtr& msg)
+         {
+            servo_angle = msg->data;
+         }
          
-         // Declaring message type
-         vmxpi_ros::Float msg;
-         
-         // Setting the servo angle
-         float angle = 45.0 //Range -150° - 150°
-         msg.request.data = angle;
-         setAngle.call(msg);
+         int main(int argc, char **argv)
+         {
+            system("/usr/local/frc/bin/frcKillRobot.sh"); //Terminal call to kill the robot manager used for WPILib before running the executable.
+            ros::init(argc, argv, "servo_node");
+            
+            /**
+             * Constructor
+             * Servo's ros threads (publishers and services) will run asynchronously in the background
+             */
+             
+            ros::NodeHandle nh; //internal reference to the ROS node that the program will use to interact with the ROS system
+            VMXPi vmx(true, (uint8_t)50); //realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+            
+            ros::ServiceClient setAngle;
+            ros::Subscriber servo_angle_sub;
+            
+            ServoROS servo(&nh, &vmx, channel);
+
+            // Use these to directly access data
+            servo.GetAngle(); //returns a double;
+            servo.GetMinAngle(); //returns a double
+            servo.GetMaxAngle(); //returns a double
+            
+            // Using the set_angle service, channel index is declared in the constructor
+            setAngle = nh.serviceClient<vmxpi_ros::Float>("channel/channel_index/servo/set_angle");
+            
+            // Declaring message type
+            vmxpi_ros::Float msg;
+            
+            // Setting the servo angle
+            float angle = 45.0; //Range -150° - 150°
+            msg.request.data = angle;
+            setAngle.call(msg);
+            
+            // Subscribing to Servo angle topic to access the angle data
+            servo_angle_sub = nh.subscribe("channel/channel_index/servo/angle", 1, servo_angle_callback); //channel_index is the input channel set in the constructor
+           
+            ros::spin(); //ros::spin() will enter a loop, pumping callbacks to obtain the latest sensor data
+               
+            return 0;
+         }
          
         .. important:: Subscribe to Servo topics to access the data being published and write callbacks to pass messages between various processes.
+        
+        .. note:: Calling the ``frcKillRobot.sh`` script is necessary since the VMXPi HAL uses the pigpio library, which unfortunately can only be used in one process. Thus, everything that interfaces with the VMXPi must be run on the same executable. For more information on programming with ROS, refer to: `ROS Tutorials <http://wiki.ros.org/ROS/Tutorials>`__.
         
 Continuous Servo
 ^^^^^^^^^^^^^^^^
