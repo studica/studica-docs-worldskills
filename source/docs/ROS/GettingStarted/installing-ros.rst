@@ -1,5 +1,25 @@
+ROS Setup
+=========
+
 Installing ROS Manually
-=======================
+-----------------------
+
+Open a terminal window and run the ``installNoetic.sh`` script to install ROS Noetic. For more information, visit `ROS Noetic <http://wiki.ros.org/noetic/Installation/Debian>`__.
+
+.. code-block:: rst
+
+   ./installNoetic.sh
+
+.. note:: Running the ``installNoetic.sh`` script takes approximately 3 hours, this includes most of the required tools and dependencies needed for the ROS Package, however this does not include ``catkin-tools``.
+
+To install the required ``catkin-tools``, run the following command:
+
+.. code-block:: rst
+
+   sudo apt install python3-catkin-tools python3-osrf-pycommon
+
+Using the ROS Image
+-------------------
 
 To get started, navigate to the `ROS Image <https://studicalimited.sharepoint.com/:f:/s/SR-Resources/EsU13cdnTWNFkZK6vXhLDhEBh7I-i7Ov-6tFDjWFbTGjOg?e=dBrPiC>`__ and download the `ROSImage.zip` file. Unzip the downloaded zip file and refer to the section on flashing image files to an SD card `here <https://docs.wsr.studica.com/en/latest/docs/VMX/os-image.html>`__.
 
@@ -7,6 +27,7 @@ To get started, navigate to the `ROS Image <https://studicalimited.sharepoint.co
 .. note:: The ``ROSImage`` file includes all the required tools and dependencies needed for the ROS Package, however this will require approximately 4.8Gb of disk space.
 
 Insert the SD card into the VMX-pi and continue with the instructions below.
+
 
 Creating a ROS Workspace
 ^^^^^^^^^^^^^^^^^^^^^^^^
