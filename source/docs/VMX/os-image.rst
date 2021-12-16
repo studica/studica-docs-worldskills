@@ -34,7 +34,7 @@ After flashing Etcher will automatically start to validate the flash to ensure t
 .. figure:: images/os-image-4.png
     :align: center
 
-When complete the SD card will be auto edjected and can be stuck directly back into the VMX.
+When complete the SD card will be auto ejected and can be stuck directly back into the VMX.
 
 .. figure:: images/os-image-5.png
     :align: center

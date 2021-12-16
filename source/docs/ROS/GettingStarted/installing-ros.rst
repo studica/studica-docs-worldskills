@@ -1,14 +1,12 @@
 Installing ROS Manually
 =======================
 
-If you haven't already, run the ``installNoetic.sh`` script to install ROS Noetic. For more information, visit `ROS Noetic <http://wiki.ros.org/noetic/Installation/Debian>`__.
+To get started, navigate to the `ROS Image <https://studicalimited.sharepoint.com/:f:/s/SR-Resources/EsU13cdnTWNFkZK6vXhLDhEBh7I-i7Ov-6tFDjWFbTGjOg?e=dBrPiC>`__ and download the `ROSImage.zip` file. Unzip the downloaded zip file and refer to the section on flashing image files to an SD card `here <https://docs.wsr.studica.com/en/latest/docs/VMX/os-image.html>`__.
 
-.. code-block:: rst
-   
-   ./installNoetic.sh
 
-.. note:: Running the ``installNoetic.sh`` script includes all the required tools and dependencies needed for the ROS Package, however this will require some time as the process can take approximately 3 hours.
+.. note:: The ``ROSImage`` file includes all the required tools and dependencies needed for the ROS Package, however this will require approximately 4.8Gb of disk space.
 
+Insert the SD card into the VMX-pi and continue with the instructions below.
 
 Creating a ROS Workspace
 ^^^^^^^^^^^^^^^^^^^^^^^^
