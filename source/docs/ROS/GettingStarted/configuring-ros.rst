@@ -14,11 +14,11 @@ Configuring the ROS Environment
 
 3. Navigate to the work space ``cd catkin_ws/src``
 
-4. Change the name of the ``ros-dev`` folder to ``vmxpi_ros``
+4. Change the name of the ``VMX-ROS`` folder to ``vmxpi_ros``
 
 .. code-block:: rst
    
-   mv /home/pi/catkin_ws/src/ros-dev/ /home/pi/catkin_ws/src/vmxpi_ros
+   mv /home/pi/catkin_ws/src/VMX-ROS/ /home/pi/catkin_ws/src/vmxpi_ros
    
 .. figure:: images/mv_dir.png
  :align: center
@@ -30,7 +30,7 @@ Configuring the ROS Environment
    
    catkin build -cs
 
-.. figure:: images/catkin_build_img.jpg
+.. figure:: images/catkin_build_img.JPG
     :align: center
     :width: 65%
     

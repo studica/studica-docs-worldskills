@@ -3,7 +3,7 @@ Programming With ROS
 
 In the ``vmxpi_ros_bringup/src`` directory there is a ``main.cpp`` file, this is the blank project file where the robot code should go. The empty ``main.cpp`` file has been configured to accept and pass messages between the various packages available in Studica's ROS library.
 
-.. figure:: images/vmxpi_ros_bringup-src.jpg
+.. figure:: images/vmxpi_ros_bringup-src.JPG
     :align: center
     :width: 50%
     

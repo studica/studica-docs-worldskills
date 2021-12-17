@@ -94,7 +94,7 @@ Also add the newly created ``.srv`` file to the ``add_service_files`` in CMakeLi
 
 Below is an example of running the above commands:
 
-.. figure:: images/custom_srv_file.jpg
+.. figure:: images/custom_srv_file.JPG
     :align: center
     :width: 70%
     

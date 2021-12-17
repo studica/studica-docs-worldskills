@@ -24,20 +24,20 @@ There are two ways of loading the ``vmxpi_ros_rqt.perspective`` file:
     
 - Navigate to the Perspectives tab
 
-.. figure:: images/rqt-perspectives.jpg
+.. figure:: images/rqt-perspectives.JPG
     :align: center
     :width: 80%
     
 - Select ``Import...`` from the dropdown
 - Navigate to the location of the ``vmxpi_ros_rqt.perspective`` file and open it
 
-.. figure:: images/rqt-perspectives-2.jpg
+.. figure:: images/rqt-perspectives-2.JPG
     :align: center
     :width: 65%
 
 From the dashboard, three windows should appear containing the Dynamic Reconfigure, Image View, and Node Graph GUIs.
 
-.. figure:: images/rqt-dashboard.jpg
+.. figure:: images/rqt-dashboard.JPG
     :align: center
     :width: 80%
 

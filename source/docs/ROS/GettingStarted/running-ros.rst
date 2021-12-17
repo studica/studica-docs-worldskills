@@ -83,7 +83,7 @@ Navigate to the launch file directory in the file  explorer and open the ``wrapp
    cd /home/pi/catkin_ws/src/vmxpi_ros/vmxpi_ros_bringup/launch
    nano wrapper.launch
    
-.. figure:: images/wrapper_launch.jpg
+.. figure:: images/wrapper_launch.JPG
     :align: center
     :width: 70%
     
@@ -91,6 +91,6 @@ From the image above, there are three nodes in the xml launch file. The ``camera
 
 .. tip :: Observe the resource usage by running ``htop``.
 
-.. figure:: images/htop.jpg
+.. figure:: images/htop.JPG
     :align: center
     :width: 70%
