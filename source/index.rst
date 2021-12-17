@@ -21,6 +21,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
 .. toctree::
    :maxdepth: 1
    :caption: LabVIEW (Beta)
+   
    docs/labview/setup/index
    docs/labview/toolkit/index
    docs/labview/using-labview/index   
