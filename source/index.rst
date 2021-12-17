@@ -17,10 +17,21 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    C++ API <https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html>
    docs/Software/software-setup/index
    docs/Software/programming/index
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: LabVIEW (Beta)
    docs/labview/setup/index
    docs/labview/toolkit/index
-   docs/labview/using-labview/index
-   docs/Software/troubleshooting
+   docs/labview/using-labview/index   
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: ROS (Beta)
+   
+   docs/ROS/GettingStarted/index
+   docs/ROS/UsingROS/index
+   docs/ROS/rqt
 
 .. toctree::
    :maxdepth: 1
@@ -98,14 +109,6 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/JavaCurriculum/unit2/index
    docs/JavaCurriculum/unit3/index
    docs/JavaCurriculum/unit4/index
-   
-.. toctree::
-   :maxdepth: 1
-   :caption: ROS
-   
-   docs/ROS/GettingStarted/index
-   docs/ROS/UsingROS/index
-   docs/ROS/rqt
    
 .. toctree::
    :maxdepth: 1
