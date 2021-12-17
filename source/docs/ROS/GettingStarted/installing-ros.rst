@@ -53,11 +53,11 @@ Creating a ROS Workspace
 
 This will create two additional ``build`` and ``devel`` folders in the ``catkin_ws`` directory.
 
-.. figure:: images/catkin_ws_img.jpg
+.. figure:: images/catkin_ws_img.JPG
     :align: center
     :width: 70%
 
-4. Now clone the ros-dev repo into the ``src`` folder.
+4. Now clone the VMX-ROS repo into the ``src`` folder.
 
 .. code-block:: rst
    

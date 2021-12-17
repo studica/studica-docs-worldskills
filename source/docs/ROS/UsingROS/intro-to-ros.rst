@@ -11,13 +11,13 @@ Why Noetic?
     
 Essentially, a distribution (distro) is a set of ROS packages rolled up into a release, there are various distributions of ROS each with different functionalities to suit the needs of different robots.
 
-.. figure:: images/ros_noetic.jpg
+.. figure:: images/ros_noetic.JPG
     :align: center
     :width: 40%
     
 ROS Noetic is currently the final and latest version of ROS 1 available with an EOL date set for May 2025, this means another distribution of the operating system will not be released for ROS 1. However, Noetic is an LTS release meaning it will have support throughout its lifetime though no major functionality will be added. Moreover, ROS 2 is only available on Ubuntu and not Raspbian, which is the official supported operating system for the Raspberry Pi. Raspbian is required as the `VMX-pi HAL Library <https://www.kauailabs.com/public_files/vmx-pi/apidocs/hal_cpp/html/index.html>`__ for the Raspberry Pi only supports the operating system. Below is a summary of distros released prior to ROS Noetic:
 
-.. figure:: images/ros_distros.jpg
+.. figure:: images/ros_distros.JPG
     :align: center
     :width: 65%
 
