@@ -1,5 +1,5 @@
-LabVIEW Setup (Beta)
-====================
+LabVIEW Setup
+=============
 
 .. toctree::
     :maxdepth: 1
