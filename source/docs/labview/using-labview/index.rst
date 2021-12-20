@@ -1,5 +1,5 @@
-Using LabVIEW (Beta)
-====================
+Using LabVIEW
+=============
 
 This section will go over how to use LabVIEW for VMX and deploying code to the VMX. 
 
