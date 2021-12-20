@@ -15,8 +15,8 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
 
    docs/Software/software-setup/index
    docs/Software/programming/index
-   Java API <https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/JavaAPIDocs/annotated.html>
-   C++ API <https://www.studica.com/downloads/Studica-Robotics/FRC-WSR/Titan/Docs/CppAPIDocs/annotated.html>
+   Java API <http://dev.studica.com/releases/JavaAPIDocs/annotated.html>
+   C++ API <http://dev.studica.com/releases/CppAPIDocs/annotated.html>
 
 .. toctree::
    :maxdepth: 1
@@ -33,6 +33,7 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/ROS/GettingStarted/index
    docs/ROS/UsingROS/index
    docs/ROS/rqt
+   ROS API <http://dev.studica.com/releases/ROSAPIDocs/annotated.html>
 
 .. toctree::
    :maxdepth: 1
