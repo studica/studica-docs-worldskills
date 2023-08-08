@@ -3,6 +3,8 @@ Studica Robotics
 
 Welcome to the Studica Robotics documentation page. Here you will find lots of information and tutorials regarding WorldSkills.
 
+.. hint:: Python is currently only available on the Raspbian OS located on the VMX. Examples of using Python can be found in /usr/local/src/hal_python_examples/ 
+
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
@@ -36,12 +38,6 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/ROS/UsingROS/index
    docs/ROS/rqt
    ROS API <http://dev.studica.com/releases/ROSAPIDocs/annotated.html>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Python (HAL only)
-
-   Python is currently only available on the Raspbian OS located on the VMX. Examples of using Python can be found in /usr/local/src/hal_python_examples/ 
 
 .. toctree::
    :maxdepth: 1
