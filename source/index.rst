@@ -18,9 +18,11 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    Java API <http://dev.studica.com/releases/JavaAPIDocs/annotated.html>
    C++ API <http://dev.studica.com/releases/CppAPIDocs/annotated.html>
 
+.. attention:: The LabVIEW image only currently works on Raspberry Pi 4's that do not have a UKCA marking on the bottom. A new image is in the works but will not be available until late Q4 of 2023.
+
 .. toctree::
    :maxdepth: 1
-   :caption: LabVIEW (Beta)
+   :caption: LabVIEW (Beta) 
    
    docs/labview/setup/index
    docs/labview/toolkit/index
@@ -34,6 +36,12 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/ROS/UsingROS/index
    docs/ROS/rqt
    ROS API <http://dev.studica.com/releases/ROSAPIDocs/annotated.html>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Python (HAL only)
+
+   Python is currently only available on the Raspbian OS located on the VMX. Examples of using Python can be found in /usr/local/src/hal_python_examples/ 
 
 .. toctree::
    :maxdepth: 1
