@@ -84,7 +84,9 @@ Welcome to the Studica Robotics documentation page. Here you will find lots of i
    docs/Sensors/sharpIR
    docs/Sensors/limit-switches
    docs/Sensors/encoders
-   
+
+.. attention:: The SR-Pro Camera was discontinued and replaced with the 3D-Depth Camera. The depth camera acts as a normal camera when plugged in via USB. Depth features and more are coming soon. For those not using the WPILib framework, an SDK is available here for depth features: `SDK <https://www.orbbec.com/developers/orbbec-sdk/>`__
+
 .. toctree::
    :maxdepth: 1
    :caption: Vision
