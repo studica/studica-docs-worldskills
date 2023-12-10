@@ -1,7 +1,7 @@
 Studica Robotics
 ================
 
-Welcome to the Studica Robotics documentation page. Here you will find lots of information and tutorials regarding WorldSkills.
+Welcome to the Studica Robotics documentation page. Here you will find information and tutorials regarding WorldSkills Autonomous Mobile Robot.
 
 .. hint:: Python is currently only available on the Raspbian OS located on the VMX. Examples of using Python can be found in /usr/local/src/hal_python_examples/ 
 
